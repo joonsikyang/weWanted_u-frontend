@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./CDP_Position.scss";
-import CDP_PositionData from "./CDP_PositionData";
+import "./CdpPosition.scss";
+import CdpPositionData from "../CdpPositionData";
 
-class CDP_Position extends Component {
+class CdpPosition extends Component {
   //   constructor() {
   //     super();
   //     this.state = {
@@ -12,7 +12,7 @@ class CDP_Position extends Component {
 
   render() {
     return (
-      <a className="CDP_PositionContainer">
+      <a className="cdp_position">
         <h4>Application Product Manager 어플 매니저</h4>
         <h5>채용보상금 1,000,000원</h5>
         <p>2020.01.24 까지</p>
@@ -21,4 +21,4 @@ class CDP_Position extends Component {
   }
 }
 
-export default CDP_Position;
+export default CdpPosition;
