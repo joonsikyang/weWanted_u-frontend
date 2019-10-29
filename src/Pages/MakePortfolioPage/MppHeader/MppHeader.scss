@@ -1,0 +1,23 @@
+.header {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-align: center;
+  height: 300px;
+
+  .name_title {
+    font-size: 3em;
+    color: rgb(57, 194, 159);
+  }
+
+  .name_input {
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    font-size: 2em;
+    font-weight: 500;
+    width: 200px;
+    text-align: center;
+  }
+}
