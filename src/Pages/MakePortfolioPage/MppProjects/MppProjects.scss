@@ -1,0 +1,60 @@
+.mpp_projects {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 70px;
+  height: 400px;
+
+  .my_projects_container {
+    display: flex;
+    flex-direction: column;
+
+    .project_title_input,
+    .links_input {
+      border: none;
+      border-bottom: 1px solid black;
+      background: transparent;
+      font-size: 1.8em;
+      width: 270px;
+      margin-top: 40px;
+    }
+
+    .links_input {
+      font-size: 1em;
+    }
+  }
+
+  .description_container {
+    margin-left: 50px;
+
+    .project_description_title,
+    .what_did_i_do_title,
+    .tech_stack_title {
+      font-size: 1.2em;
+    }
+    .project_description_input,
+    .what_did_i_do_input,
+    .tech_stack_input {
+      border: none;
+      border-bottom: 1px solid black;
+      background: transparent;
+      width: 500px;
+      height: 50px;
+      font-size: 1em;
+    }
+    .project_description_title {
+      .period {
+        color: rgb(57, 194, 159);
+      }
+    }
+    .what_did_i_do_title {
+      .period {
+        color: rgb(61, 126, 255);
+      }
+    }
+    .tech_stack_title {
+      .period {
+        color: rgb(31, 54, 255);
+      }
+    }
+  }
+}
