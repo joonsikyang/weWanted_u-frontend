@@ -1,45 +1,29 @@
+button {
+  border: none;
+}
+
 .NavBar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  height: 9vh;
+  height: 7vh;
   background-color: #fff;
   border-bottom: 1px solid #efefef;
   position: fixed;
   width: 100%;
-}
 
-.NB_Left {
-  margin-left: 200px;
-}
+  .NB_Logo_Btn {
+    font-size: 1.4em;
+    font-weight: 600;
+    font-family: "icomoon", Helvetica, Arial, "hiragino kaku gothic pro",
+      "meiryo", "Microsoft YaHei", "ms pgothic", "Apple SD Gothic Neo",
+      "Nanum Gothic", "Malgun Gothic", sans-serif;
+  }
 
-.NB_Right {
-  margin-right: 200px;
-}
-
-.NB_Logo_Btn {
-  font-size: 1.4em;
-  font-weight: 600;
-  font-family: "icomoon", Helvetica, Arial, "hiragino kaku gothic pro", "meiryo",
-    "Microsoft YaHei", "ms pgothic", "Apple SD Gothic Neo", "Nanum Gothic",
-    "Malgun Gothic", sans-serif;
-}
-
-.NB_MyAccount_Btn {
-  font-size: 0.9em;
-  font-weight: 450;
-}
-
-.NB_MakePortfolio_Btn {
-  font-size: 0.9em;
-  font-weight: 450;
-}
-
-.NB_LogOut_Btn {
-  font-size: 0.9em;
-  font-weight: 450;
-}
-
-button {
-  border: none;
+  .NB_MyAccount_Btn,
+  .NB_MakePortfolio_Btn,
+  .NB_LogOut_Btn {
+    font-size: 0.9em;
+    font-weight: 450;
+  }
 }

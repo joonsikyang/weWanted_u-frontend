@@ -1,17 +1,23 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-// import NavBar from "../../Components/NavBar";
-import "../../Styles/Reset.scss";
+import NavBar from "../../Components/NavBar";
+import Footer from "../../Components/Footer";
+import "./MainPage.scss";
 
 const MainPage = () => {
   return (
-    <div>
-      {/* <NavBar /> */}
-      <div>hello world</div>
-      <button>FrontEnd</button>
-      <button>BackEnd</button>
-      <button>FullStack</button>
-      <div>Footer</div>
+    <div className="MainPage">
+      <NavBar />
+      <div className="MP_Container">
+        <div className="MP_Background_Image">
+          <div className="MP_Buttons">
+            <button className="MP_FrontEnd_Btn">FrontEnd</button>
+            <button className="MP_BackEnd_Btn">BackEnd</button>
+            <button className="MP_FullStack_Btn">FullStack</button>
+          </div>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 };

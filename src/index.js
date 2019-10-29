@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./Styles/Reset.scss";
 import "./index.css";
-// import Routes from "./Routes";
-import NavBar from "./Components/NavBar";
+import Routes from "./Routes";
 
-ReactDOM.render(<NavBar />, document.getElementById("root"));
+ReactDOM.render(<Routes />, document.getElementById("root"));

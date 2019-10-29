@@ -1,6 +1,5 @@
 import React from "react";
 import "./NavBar.scss";
-import "../../Styles/Reset.scss";
 
 const NavBar = () => {
   return (
