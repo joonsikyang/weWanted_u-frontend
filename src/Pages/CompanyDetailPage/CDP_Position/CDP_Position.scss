@@ -1,0 +1,30 @@
+@import "../../../Styles/Reset.scss";
+
+.CDP_PositionContainer {
+  display: inline-block;
+  border: $border-line;
+  border-radius: 3px;
+  width: calc(50% - 20px);
+  padding: 16px 20px;
+  margin: 0 10px 20px 10px;
+  h4 {
+    font-size: 18px;
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+  }
+  h5 {
+    color: #86939e;
+    font-size: 14px;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  p {
+    color: #666666;
+    font-weight: 800;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+}
