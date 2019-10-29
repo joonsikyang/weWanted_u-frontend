@@ -3,14 +3,14 @@ import "./NavBar.scss";
 
 const NavBar = () => {
   return (
-    <div className="NavBar">
-      <div className="NB_Left">
-        <button className="NB_Logo_Btn">weWantedU</button>
+    <div className="nav_bar">
+      <div className="left">
+        <button className="logo_btn">weWantedU</button>
       </div>
-      <div className="NB_Right">
-        <button className="NB_MyAccount_Btn">My Account</button>
-        <button className="NB_MakePortfolio_Btn">Make Porfolio</button>
-        <button className="NB_LogOut_Btn">Log out</button>
+      <div className="right">
+        <button className="my_account_btn">My Account</button>
+        <button className="make_portfolio_btn">My Porfolio</button>
+        <button className="log_out_btn">Log out</button>
       </div>
     </div>
   );

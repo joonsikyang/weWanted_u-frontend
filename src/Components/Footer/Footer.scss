@@ -1,17 +1,16 @@
-.Footer {
+.footer {
   display: flex;
   justify-content: center;
-  width: 100%;
 
-  .F_Container {
-    padding: 0px 200px;
+  .f_container {
+    padding: 30px 190px;
 
-    .F_Logo_CompName {
+    .logo_comp_name {
       display: flex;
       align-items: center;
       font-weight: 600;
 
-      .F_Logo {
+      .logo {
         background-image: url("https://lh3.googleusercontent.com/Uq3WfEXRa86Ivgw5fA2iOj0X6HltHNvlgbG8ouMkfuAwxiZ-xMVValnL7mxNGFalcg=s180");
         height: 40px;
         width: 40px;
@@ -19,8 +18,9 @@
       }
     }
 
-    .F_Info {
+    .info {
       font-size: 0.7em;
+      word-break: break-word;
     }
   }
 }

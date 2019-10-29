@@ -2,7 +2,7 @@ button {
   border: none;
 }
 
-.NavBar {
+.nav_bar {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -12,7 +12,7 @@ button {
   position: fixed;
   width: 100%;
 
-  .NB_Logo_Btn {
+  .logo_btn {
     font-size: 1.4em;
     font-weight: 600;
     font-family: "icomoon", Helvetica, Arial, "hiragino kaku gothic pro",
@@ -20,9 +20,9 @@ button {
       "Nanum Gothic", "Malgun Gothic", sans-serif;
   }
 
-  .NB_MyAccount_Btn,
-  .NB_MakePortfolio_Btn,
-  .NB_LogOut_Btn {
+  .my_account_btn,
+  .make_portfolio_btn,
+  .log_out_btn {
     font-size: 0.9em;
     font-weight: 450;
   }

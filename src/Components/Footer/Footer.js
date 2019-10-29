@@ -3,13 +3,13 @@ import "./Footer.scss";
 
 const Footer = () => {
   return (
-    <div className="Footer">
-      <div className="F_Container">
-        <div className="F_Logo_CompName">
-          <div className="F_Logo"></div>
-          <div className="F_CompName">weWantedU</div>
+    <div className="footer">
+      <div className="f_container">
+        <div className="logo_comp_name">
+          <div className="logo"></div>
+          <div className="comp_name">weWantedU</div>
         </div>
-        <p className="F_Info">
+        <p className="info">
           (주)YJS (대표이사:weWantedU) | 서울특별시 강남구 테헤란로 427
           위워크타워 | 개인정보보호관리자 : 유병민 | 통신판매번호 :
           2016-서울강남-00207 유료직업소개사업등록번호 : (국내)

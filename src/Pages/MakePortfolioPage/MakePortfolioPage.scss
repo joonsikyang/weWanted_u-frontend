@@ -1,0 +1,11 @@
+.make_portfolio_page {
+  display: flex;
+  flex-direction: column;
+
+  .mpp_container {
+    border: 1px solid black;
+    height: 93vh;
+    overflow: scroll;
+    margin: 60px 200px 5px;
+  }
+}

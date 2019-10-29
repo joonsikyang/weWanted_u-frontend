@@ -1,12 +1,14 @@
-.MainPage {
+@import "../../Styles/Reset.scss";
+
+.main_page {
   display: flex;
   flex-direction: column;
 
-  .MP_Container {
+  .mp_container {
     height: 95vh;
     margin-top: 7vh;
 
-    .MP_Background_Image {
+    .background_image {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,87 +21,61 @@
   }
 }
 
-.MP_FrontEnd_Btn,
-.MP_BackEnd_Btn,
-.MP_FullStack_Btn {
-  width: 400px;
-  height: 400px;
+.front_end_btn,
+.back_end_btn,
+.full_stack_btn {
+  width: 375px;
+  height: 375px;
   border-radius: 50%;
   font-size: 3em;
   color: #fff;
   font-weight: 700;
 }
 
-.MP_FrontEnd_Btn {
+.front_end_btn {
   margin-right: -70px;
   background-color: rgba(57, 194, 159, 0.7);
 }
 
-.MP_FrontEnd_Btn:hover {
+.front_end_btn:hover {
   background-color: rgba(57, 194, 159, 1);
 }
 
-.MP_BackEnd_Btn {
+.back_end_btn {
   background-color: rgba(61, 126, 255, 0.7);
 }
 
-.MP_BackEnd_Btn:hover {
+.back_end_btn:hover {
   background-color: rgba(61, 126, 255, 1);
 }
 
-.MP_FullStack_Btn {
+.full_stack_btn {
   margin-left: -70px;
   background-color: rgba(31, 54, 255, 0.7);
 }
 
-.MP_FullStack_Btn:hover {
+.full_stack_btn:hover {
   background-color: rgba(31, 54, 255, 1);
 }
 
-@media only screen and (max-width: 1200px) {
-  .MP_FrontEnd_Btn,
-  .MP_BackEnd_Btn,
-  .MP_FullStack_Btn {
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    font-size: 2em;
-    color: #fff;
-    font-weight: 700;
-  }
-}
-
-@media only screen and (max-width: 950px) {
-  .MP_FrontEnd_Btn,
-  .MP_BackEnd_Btn,
-  .MP_FullStack_Btn {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    font-size: 1.5em;
-    color: #fff;
-    font-weight: 700;
-  }
-}
-
-@media only screen and (max-width: 760px) {
-  .MP_Buttons {
+@media only screen and (max-width: $IpadBreakPoint) {
+  .buttons {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 400px;
 
-    .MP_FrontEnd_Btn,
-    .MP_BackEnd_Btn,
-    .MP_FullStack_Btn {
-      width: 250px;
+    .front_end_btn,
+    .back_end_btn,
+    .full_stack_btn {
+      width: 300px;
       height: 100px;
       border-radius: 10px;
       font-size: 1.5em;
       color: #fff;
       font-weight: 700;
-      margin: 0;
+      margin: 5px 0px;
     }
   }
 }

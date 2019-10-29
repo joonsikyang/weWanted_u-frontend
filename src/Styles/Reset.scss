@@ -1,3 +1,5 @@
+$IpadBreakPoint: 1024px;
+
 html,
 body,
 div,
@@ -86,7 +88,6 @@ video {
   font-family: -apple-system, Helvetica, Arial, "hiragino kaku gothic pro",
     meiryo, "Microsoft YaHei", "ms pgothic", "Apple SD Gothic Neo",
     "Nanum Gothic", "Malgun Gothic", sans-serif;
-  font: inherit;
   color: #333333;
   vertical-align: baseline;
   box-sizing: border-box;
@@ -126,6 +127,10 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 input:focus,

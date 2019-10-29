@@ -6,14 +6,14 @@ import "./MainPage.scss";
 
 const MainPage = () => {
   return (
-    <div className="MainPage">
+    <div className="main_page">
       <NavBar />
-      <div className="MP_Container">
-        <div className="MP_Background_Image">
-          <div className="MP_Buttons">
-            <button className="MP_FrontEnd_Btn">FrontEnd</button>
-            <button className="MP_BackEnd_Btn">BackEnd</button>
-            <button className="MP_FullStack_Btn">FullStack</button>
+      <div className="mp_container">
+        <div className="background_image">
+          <div className="buttons">
+            <button className="front_end_btn">FrontEnd</button>
+            <button className="back_end_btn">BackEnd</button>
+            <button className="full_stack_btn">FullStack</button>
           </div>
         </div>
       </div>
