@@ -1,23 +1,91 @@
 .header {
-  border: 1px solid black;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-  text-align: center;
-  height: 300px;
+  height: 450px;
+  padding: 0px 30px;
 
-  .name_title {
-    font-size: 3em;
-    color: rgb(57, 194, 159);
+  .title {
+    display: flex;
+    justify-content: center;
+
+    .title_input {
+      border: none;
+      border-bottom: 1px solid black;
+      background: transparent;
+      font-size: 3em;
+      font-weight: 600;
+      font-style: italic;
+      width: 650px;
+      text-align: center;
+      margin-top: 40px;
+      height: 50px;
+
+      .title_input::placeholder {
+        color: grey;
+      }
+    }
   }
 
-  .name_input {
+  .contact_info_title {
+    font-size: 1.8em;
+    .period {
+      color: rgb(57, 194, 159);
+    }
+  }
+  .phone_input,
+  .email_input {
     border: none;
     border-bottom: 1px solid black;
     background: transparent;
-    font-size: 2em;
-    font-weight: 500;
-    width: 200px;
-    text-align: center;
+    margin-right: 15px;
+    margin-top: 10px;
+    width: 250px;
+    font-size: 1em;
   }
+  .phone_input::placeholder,
+  .email_input::placeholder {
+    color: grey;
+  }
+  .blog_link_title {
+    font-size: 1.8em;
+    .period {
+      color: rgb(61, 126, 255);
+    }
+  }
+  .blog_link_input {
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    width: 550px;
+    font-size: 1em;
+  }
+  .blog_link_input::placeholder {
+    color: grey;
+  }
+
+  .about_me_title {
+    font-size: 1.8em;
+    .period {
+      color: rgb(31, 54, 255);
+    }
+  }
+  .about_me_input {
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    width: 600px;
+    height: 90px;
+    font-size: 1em;
+  }
+}
+
+.period {
+  font-size: 60px;
+}
+
+.header_border {
+  border-bottom: 1px solid black;
+  margin: 20px 0px;
+  width: 100%;
 }

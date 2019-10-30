@@ -1,11 +1,49 @@
 .make_portfolio_page {
   display: flex;
   flex-direction: column;
+  background-image: url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .mpp_container {
-    border: 1px solid black;
-    height: 93vh;
-    overflow: scroll;
+    background-color: white;
     margin: 60px 200px 5px;
+
+    .mpp_projects_container {
+      max-height: 700px;
+      height: 100%;
+      overflow: scroll;
+      .projects_title {
+        font-size: 2em;
+        padding: 0px 30px;
+        font-style: italic;
+      }
+    }
+
+    .btn_group {
+      display: flex;
+      justify-content: flex-end;
+      height: 50px;
+      margin: 20px 30px;
+      .add_btn {
+        background-color: rgb(57, 194, 159);
+      }
+      .save_btn {
+        background-color: rgb(61, 126, 255);
+      }
+      .preview_btn {
+        background-color: rgb(31, 54, 255);
+      }
+
+      .add_btn,
+      .save_btn,
+      .preview_btn {
+        width: 110px;
+        border-radius: 10px;
+        color: white;
+        margin: 0px 10px;
+      }
+    }
   }
 }
