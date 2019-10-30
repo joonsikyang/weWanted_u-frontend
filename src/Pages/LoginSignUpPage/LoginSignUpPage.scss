@@ -1,25 +1,26 @@
-// .LSUP_topLine {
-
+// .login_signup_container {
+//   // margin-top: 7vh;
 // }
 
-// .LSUP_title {
-
-// }
-
-.LSUP_loginSignUpContainer {
+.login_signup_container {
   display: flex;
+  height: 100vh;
+  .login_container {
+    background-color: blue;
+    width: 100%;
+  }
+  .signup_container {
+    background-color: cadetblue;
+    width: 100%;
+  }
 }
 
-.LSUP_login {
-  width: 50%;
-  background-color: aquamarine;
+.logo_list {
+  height: 100vh;
+  background-color: yellow;
 }
 
-.LSUP_signUp {
-  width: 50%;
-  background-color: #3a68f9;
+.footer {
+  height: 20vh;
+  background-color: gray;
 }
-
-// .LSUP_bottomLine {
-
-// }

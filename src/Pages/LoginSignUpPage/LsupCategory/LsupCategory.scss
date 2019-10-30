@@ -1,0 +1,37 @@
+.buttons {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  .front_end_btn,
+  .back_end_btn,
+  .full_stack_btn {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    font-size: 3em;
+    color: #fff;
+    font-weight: 700;
+  }
+  .front_end_btn {
+    margin-right: -70px;
+    background-color: rgba(170, 66, 244, 0.7);
+  }
+  .front_end_btn:hover {
+    background-color: rgba(170, 66, 244, 1);
+  }
+  .back_end_btn {
+    background-color: rgba(115, 211, 211, 0.7);
+  }
+  .back_end_btn:hover {
+    background-color: rgba(115, 211, 211, 1);
+  }
+  .full_stack_btn {
+    margin-left: -70px;
+    background-color: rgba(8, 8, 193, 0.7);
+  }
+  .full_stack_btn:hover {
+    background-color: rgba(8, 8, 193, 1);
+  }
+}
