@@ -33,13 +33,21 @@ export class CompanyDetailPage extends Component {
               </ul>
               <p>
                 <span>{data.intro}</span>
-                <h6>주요 업무</h6>
+              </p>
+              <h6>주요 업무</h6>
+              <p>
                 <span>{data.main_tasks}</span>
-                <h6>자격 요건</h6>
+              </p>
+              <h6>자격 요건</h6>
+              <p>
                 <span>{data.requirements}</span>
-                <h6>우대 사항</h6>
+              </p>
+              <h6>우대 사항</h6>
+              <p>
                 <span>{data.preferred_points}</span>
-                <h6>혜택 및 복지</h6>
+              </p>
+              <h6>혜택 및 복지</h6>
+              <p>
                 <span>{data.benefits}</span>
               </p>
             </div>
