@@ -68,15 +68,38 @@
   .main_right {
     width: 340px;
     margin-left: 20px;
-    height: 268px;
-    border: $border-line;
+    height: 338px;
     position: fixed;
     top: 70px;
     right: 10%;
-    h3 {
-      font-size: 23px;
+    .logo_and_name {
+      border: $border-line;
+      display: flex;
+      align-items: center;
+      height: 70px;
+      .logo {
+        width: 50px;
+        height: 50px;
+        background-size: 100%;
+        border: $border-line;
+      }
+      .company_name {
+        font-weight: 600;
+      }
+    }
+    .like_container {
+      height: 70px;
+      border-top: $border-line;
+    }
+    button {
+      background-color: #258bf7;
+      width: 100%;
+      height: 50px;
+      font-size: 16px;
+      color: #ffffff;
       font-weight: 700;
-      margin-bottom: 20px;
+      border-radius: 3px;
+      margin-top: 20px;
     }
   }
 }

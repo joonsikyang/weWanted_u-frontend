@@ -4,19 +4,26 @@ import "../../Styles/Reset.scss";
 import CdpSkillTag from "./CdpSkillTag";
 import { Skills_DATA } from "./CdpPositionData";
 import { CdpPositionData } from "./CdpPositionData";
+import NavBar from "Components/NavBar/NavBar";
+import { CdpCompanyInfoData } from "./CdpPositionData";
+import { detailImgData } from "./CdpPositionData";
+import CdpPosition from "./CdpPosition/CdpPosition";
 
 export class CompanyDetailPage extends Component {
   constructor() {
     super();
     this.state = {
-      data: CdpPositionData
+      positionData: CdpPositionData,
+      companyData: CdpCompanyInfoData,
+      detailData: detailImgData
     };
   }
   render() {
-    const { data } = this.state;
-    console.log({ data });
+    const { positionData, companyData, detailData } = this.state;
+    console.log({ positionData });
     return (
       <div>
+        <NavBar />
         <main className="cdp_main">
           <div className="main_left">
             <div className="detail_image"></div>
@@ -32,21 +39,30 @@ export class CompanyDetailPage extends Component {
                 ))}
               </ul>
               <p>
-                <span>{data.intro}</span>
+                <span>{positionData.intro}</span>
                 <h6>주요 업무</h6>
-                <span>{data.main_tasks}</span>
+                <span>{positionData.main_tasks}</span>
                 <h6>자격 요건</h6>
-                <span>{data.requirements}</span>
+                <span>{positionData.requirements}</span>
                 <h6>우대 사항</h6>
-                <span>{data.preferred_points}</span>
+                <span>{positionData.preferred_points}</span>
                 <h6>혜택 및 복지</h6>
-                <span>{data.benefits}</span>
+                <span>{positionData.benefits}</span>
               </p>
             </div>
           </div>
           <aside className="main_right">
-            <h3>태그</h3>
-            <div className="follow_container"></div>
+            <div className="logo_and_name">
+              <div
+                style={{
+                  backgroundImage: companyData.logo_img
+                }}
+                className="logo"
+              ></div>
+              <div className="company_name">{companyData.name}</div>
+            </div>
+            <CdpPosition />
+            <button>팔로우하기</button>
           </aside>
         </main>
       </div>
