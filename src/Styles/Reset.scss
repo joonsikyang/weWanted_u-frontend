@@ -1,3 +1,5 @@
+$IpadBreakPoint: 1024px;
+
 html,
 body,
 div,
@@ -83,10 +85,9 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font-family: -apple-system, Helvetica, Arial, “hiragino kaku gothic pro”,
-    meiryo, “Microsoft YaHei”, “ms pgothic”, “Apple SD Gothic Neo”,
-    “Nanum Gothic”, “Malgun Gothic”, sans-serif;
-  font: inherit;
+  font-family: -apple-system, Helvetica, Arial, "hiragino kaku gothic pro",
+    meiryo, "Microsoft YaHei", "ms pgothic", "Apple SD Gothic Neo",
+    "Nanum Gothic", "Malgun Gothic", sans-serif;
   color: #333333;
   vertical-align: baseline;
   box-sizing: border-box;
@@ -120,13 +121,18 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: “”;
+  content: "";
   content: none;
 }
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
 input:focus,
 input:active,
 button:focus {
