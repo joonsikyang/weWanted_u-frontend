@@ -1,0 +1,27 @@
+.skills_container {
+  // height: 10vh;
+  overflow: auto;
+  white-space: nowrap;
+  max-width: 1060px;
+  margin: 0 auto 15px auto;
+  .skills_item {
+    width: 120px;
+    margin-right: 9px;
+    border-radius: 3px;
+    display: inline-table;
+    padding: 22.5px;
+    text-align: center;
+    background-color: #3f3e3e;
+    opacity: 0.7;
+    &:hover {
+      cursor: pointer;
+      background-color: #222121;
+    }
+    .skills_item_title {
+      color: #ffffff;
+      margin: 0px auto;
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+}
