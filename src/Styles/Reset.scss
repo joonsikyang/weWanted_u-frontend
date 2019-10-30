@@ -1,4 +1,4 @@
-$border-line: 1px solid #e1e2e3;
+$IpadBreakPoint: 1024px;
 
 html,
 body,
@@ -84,14 +84,13 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 10px;
-  font-family: -apple-system, Helvetica, Arial, “hiragino kaku gothic pro”,
-    meiryo, “Microsoft YaHei”, “ms pgothic”, “Apple SD Gothic Neo”,
-    “Nanum Gothic”, “Malgun Gothic”, sans-serif;
   font: inherit;
+  font-size: 100%;
+  font-family: -apple-system, Helvetica, Arial, "hiragino kaku gothic pro",
+    meiryo, "Microsoft YaHei", "ms pgothic", "Apple SD Gothic Neo",
+    "Nanum Gothic", "Malgun Gothic", sans-serif;
   color: #333333;
   vertical-align: baseline;
-  background-size: 100%;
   box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
@@ -130,10 +129,20 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
+textarea:focus,
 input:focus,
 input:active,
 button:focus {
   outline: none;
 }
 
-$border-line: 1px solid #efefef;
+textarea {
+  resize: none;
+}
+
+$border-line: 1.5px solid #efefef;

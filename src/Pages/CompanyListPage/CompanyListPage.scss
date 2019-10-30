@@ -1,0 +1,15 @@
+@import "../../Styles/Reset.scss";
+.company_list_page {
+  .nav {
+    height: 5vh;
+  }
+  .filterArea {
+    border-bottom: 1px solid #efefef;
+  }
+  .filter_companyList_container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1060px;
+    padding: 20px 0 80px;
+  }
+}

@@ -1,0 +1,29 @@
+button {
+  border: none;
+}
+
+.nav_bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  background-color: #fff;
+  border-bottom: 1px solid #efefef;
+  position: fixed;
+  width: 100%;
+
+  .logo_btn {
+    font-size: 1.4em;
+    font-weight: 600;
+    font-family: "icomoon", Helvetica, Arial, "hiragino kaku gothic pro",
+      "meiryo", "Microsoft YaHei", "ms pgothic", "Apple SD Gothic Neo",
+      "Nanum Gothic", "Malgun Gothic", sans-serif;
+  }
+
+  .my_account_btn,
+  .make_portfolio_btn,
+  .log_out_btn {
+    font-size: 0.9em;
+    font-weight: 450;
+  }
+}
