@@ -1,0 +1,35 @@
+.filter_container {
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  .filter_left,
+  .filter_right {
+    display: flex;
+    padding: 15px;
+    .filter_item {
+      border-radius: 2px;
+      border: 1px solid #e1e2e3;
+      font-size: 13px;
+      font-weight: 400;
+      padding: 0px 15px;
+      margin: 0 10px 0 0;
+      display: flex;
+      align-items: center;
+      div {
+        color: #333;
+      }
+    }
+    .filter_btn {
+      border-radius: 2px;
+      border: 1px solid #e1e2e3;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 0px 15px;
+      display: flex;
+      align-items: center;
+      div {
+        color: rgb(37, 139, 247);
+      }
+    }
+  }
+}
