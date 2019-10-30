@@ -1,14 +1,18 @@
 .make_portfolio_page {
   display: flex;
   flex-direction: column;
-  background-image: url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+  background-image: url("https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   .mpp_container {
-    background-color: white;
-    margin: 60px 200px 5px;
+    background-image: url("http://getwallpapers.com/wallpaper/full/a/7/e/392886.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    margin: 90px 200px 40px;
 
     .mpp_projects_container {
       max-height: 700px;
@@ -42,6 +46,7 @@
         width: 110px;
         border-radius: 10px;
         color: white;
+        font-size: 14px;
         margin: 0px 10px;
       }
     }
