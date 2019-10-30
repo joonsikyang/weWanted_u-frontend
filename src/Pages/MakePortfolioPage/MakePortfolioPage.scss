@@ -20,5 +20,30 @@
         font-style: italic;
       }
     }
+
+    .btn_group {
+      display: flex;
+      justify-content: flex-end;
+      height: 50px;
+      margin: 20px 30px;
+      .add_btn {
+        background-color: rgb(57, 194, 159);
+      }
+      .save_btn {
+        background-color: rgb(61, 126, 255);
+      }
+      .preview_btn {
+        background-color: rgb(31, 54, 255);
+      }
+
+      .add_btn,
+      .save_btn,
+      .preview_btn {
+        width: 110px;
+        border-radius: 10px;
+        color: white;
+        margin: 0px 10px;
+      }
+    }
   }
 }
