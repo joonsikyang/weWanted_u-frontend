@@ -14,12 +14,12 @@ export class CompanyItem extends Component {
           <div className="position">{this.props.positionName}</div>
           <div className="company_name">{this.props.companyName}</div>
           <div className="company_place">
-            <span className="company_city">{this.props.city}</span>
+            <span className="company_city">Location: {this.props.city}</span>
             <span>•</span>
             <span className="company_country">{this.props.country}</span>
           </div>
           <div className="company_deadline">
-            <span>{this.props.deadLine}</span>
+            <span>Deadline: {this.props.deadLine}</span>
           </div>
         </div>
       </li>

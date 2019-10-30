@@ -11,8 +11,10 @@ export class CompanyListPage extends Component {
     return (
       <div className="company_list_page">
         <div className="nav">weWantedU</div>
-        <ClpCategory />
-        <ClpSkills />
+        <div className="filterArea">
+          <ClpCategory />
+          <ClpSkills />
+        </div>
         <div className="filter_companyList_container">
           <ClpFilter />
           <ClpCompany />
