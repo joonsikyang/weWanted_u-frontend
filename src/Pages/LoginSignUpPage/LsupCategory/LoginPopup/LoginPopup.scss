@@ -1,0 +1,110 @@
+.login-popup {
+  // fixed position >> center of screen
+  position: fixed;
+  top: calc(50% - 250px);
+  left: calc(50% - 200px);
+  z-index: 5;
+  width: 400px;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+  .popup-header-container {
+    border-bottom: 1px solid #efefef;
+    height: 54px;
+    padding: 17px 20px 15px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    .popup-header {
+      width: 100%;
+      color: #333;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      word-wrap: break-word;
+    }
+  }
+  .popup-contents-container {
+    padding: 10px;
+    .title-container {
+      text-align: center;
+      word-break: break-word;
+      margin-bottom: 40px;
+      .popup-title {
+        line-height: 1.4;
+        margin: 20px 0 10px;
+        font-weight: 600;
+        font-size: 26px;
+        color: #333;
+        text-align: center;
+      }
+      .popup-subTitle {
+        font-size: 18px;
+        color: #777;
+        line-height: 1.4;
+        margin: 20px 0 10px;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+    .input-area {
+      width: 100%;
+      .email-input,
+      .pw-input {
+        outline: none;
+        box-sizing: border-box;
+        resize: none;
+        color: #333;
+        font-size: 16px;
+        margin: 0px auto 10px auto;
+        padding: 13px 15px;
+        border-radius: 3px;
+        border: 1px solid #dbdbdb;
+        width: 100%;
+      }
+    }
+
+    .btn-area {
+      padding-top: 20px;
+      .login-btn-container,
+      .signup-btn-container {
+        background-color: #3a68f9;
+        display: flex;
+        align-items: center;
+        border-radius: 45px;
+        padding: 13px 0px;
+        margin: 10px auto;
+        width: 80%;
+        .login {
+          color: #fff;
+          width: 100%;
+          font-size: 16px;
+          font-weight: 600;
+          text-align: center;
+        }
+      }
+      .line-between {
+        width: 50%;
+        height: 1px;
+        margin: 0 auto;
+        background-color: #dbdbdb;
+      }
+      .signup-btn-container {
+        background-color: #3a68f9;
+        display: flex;
+        align-items: center;
+        border-radius: 45px;
+        padding: 13px 0px;
+        margin: 10px auto;
+        width: 80%;
+        .signup {
+          color: #fff;
+          width: 100%;
+          font-size: 16px;
+          font-weight: 600;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

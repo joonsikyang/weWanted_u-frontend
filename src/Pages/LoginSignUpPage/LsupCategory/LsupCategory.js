@@ -1,6 +1,23 @@
 import React, { Component } from "react";
 import "./LsupCategory.scss";
+import LoginPopup from "./LoginPopup/LoginPopup";
+import Deam from "../../../Components/Deam/Deam";
+
 export class LsupCategory extends Component {
+  constructor() {
+    super();
+    this.state = {
+      display: "block"
+    };
+  }
+
+  handlePopUp = e => {
+    this.setState({
+      display: "block"
+    });
+    console.log("Good");
+  };
+
   render() {
     return (
       <div className="lsup-category">
@@ -17,8 +34,12 @@ export class LsupCategory extends Component {
             <button className="full_stack_btn">FullStack</button>
           </div>
           <div className="start-button">
-            <div className="button-text">지금 시작하기</div>
+            <div className="button-text" onClick={this.handlePopUp}>
+              지금 시작하기
+            </div>
           </div>
+          <LoginPopup display={this.state.display} />
+          <Deam display={this.state.display} />
         </div>
       </div>
     );
