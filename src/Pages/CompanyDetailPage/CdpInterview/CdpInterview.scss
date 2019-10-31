@@ -1,0 +1,18 @@
+@import "Styles/Reset.scss";
+
+.interview_container {
+  height: 50px;
+  h6 {
+    font-weight: 600;
+  }
+  .interview_box_container {
+    display: flex;
+    border: $border-line;
+    .interview_box {
+      margin: 10px;
+      width: 50%;
+      height: 172px;
+      font-weight: 600;
+    }
+  }
+}

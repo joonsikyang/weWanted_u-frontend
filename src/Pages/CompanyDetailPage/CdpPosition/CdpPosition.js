@@ -1,13 +1,25 @@
 import React, { Component } from "react";
 import "./CdpPosition.scss";
+import { CdpPositionData, CdpCompanyInfoData } from "../CdpPositionData";
 
 class CdpPosition extends Component {
+  constructor() {
+    super();
+    this.state = {
+      positionData: CdpPositionData,
+      companyData: CdpCompanyInfoData
+    };
+  }
+
   render() {
+    const { positionData, companyData } = this.state;
     return (
       <div className="cdp_position">
-        <h4>Application Product Manager 어플 매니저</h4>
-        <h5>채용보상금 1,000,000원</h5>
-        <p>2020.01.24 까지</p>
+        <h4>{positionData.position_name}</h4>
+        <h5>
+          {companyData.location} - {companyData.country}
+        </h5>
+        <p>마감일: {positionData.dead_line}</p>
       </div>
     );
   }
