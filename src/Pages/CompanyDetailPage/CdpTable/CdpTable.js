@@ -7,6 +7,7 @@ export class CdpTable extends Component {
       <table className="cdp_table">
         <tbody>
           <tr>
+            <th>gd</th>
             <th>긍정적</th>
             <td>38%</td>
           </tr>

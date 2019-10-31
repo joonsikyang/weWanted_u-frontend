@@ -2,9 +2,7 @@
 
 .interview_container {
   height: 50px;
-  h6 {
-    font-weight: 600;
-  }
+  margin-top: 40px;
   .interview_box_container {
     display: flex;
     border: $border-line;
@@ -12,7 +10,7 @@
       margin: 10px;
       width: 50%;
       height: 172px;
-      font-weight: 600;
+      padding: 10px;
     }
   }
 }
