@@ -1,54 +1,58 @@
+$border: 1px solid #bebdbd;
+
 .make_portfolio_page {
   display: flex;
-  flex-direction: column;
-  background-image: url("https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  justify-content: center;
 
   .mpp_container {
-    background-image: url("http://getwallpapers.com/wallpaper/full/a/7/e/392886.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    padding: 10px 40px 20px;
+    margin-top: 70px;
     border-radius: 10px;
-    margin: 90px 200px 40px;
+
+    .projects_title_bar {
+      display: flex;
+      width: 100%;
+
+      .projects_title {
+        font-size: 2em;
+        font-style: italic;
+        margin: 10px 0px;
+      }
+      .add_btn {
+        font-size: 14px;
+        color: rgb(85, 85, 85);
+        margin-left: 10px;
+      }
+    }
 
     .mpp_projects_container {
       max-height: 700px;
-      height: 100%;
       overflow: scroll;
-      .projects_title {
-        font-size: 2em;
-        padding: 0px 30px;
-        font-style: italic;
-      }
     }
 
     .btn_group {
       display: flex;
       justify-content: flex-end;
-      height: 50px;
-      margin: 20px 30px;
-      .add_btn {
-        background-color: rgb(57, 194, 159);
-      }
+      height: 40px;
+      margin-top: 20px;
+
       .save_btn {
-        background-color: rgb(61, 126, 255);
+        background-color: rgb(170, 66, 244);
       }
       .preview_btn {
-        background-color: rgb(31, 54, 255);
+        background-color: rgb(8, 8, 193);
       }
 
-      .add_btn,
       .save_btn,
       .preview_btn {
-        width: 110px;
+        width: 100px;
         border-radius: 10px;
-        color: white;
-        font-size: 14px;
-        margin: 0px 10px;
+        font-size: 0.9em;
+        margin-left: 10px;
       }
     }
+  }
+  .mpp_container:hover {
+    background-color: #f8f8f8;
   }
 }
