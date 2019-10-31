@@ -75,7 +75,6 @@
     .logo_and_name {
       display: flex;
       align-items: center;
-      padding: 10px;
       height: 70px;
       .logo {
         width: 50px;
@@ -85,6 +84,7 @@
       }
       .company_name {
         font-weight: 600;
+        margin-left: 10px;
       }
     }
     .like_container {

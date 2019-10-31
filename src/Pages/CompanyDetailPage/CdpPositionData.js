@@ -13,7 +13,7 @@ export const CdpPositionData = {
   id: 1,
   company_name: "브레이브모바일(숨고, Soomgo)",
   position_name: "프론트엔드 Engineer(JavaScript)",
-  dead_line: "2019.11.01",
+  dead_line: "2019.12.01",
   follow_count: 14,
   /* eslint-disable */
   intro: 
