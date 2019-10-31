@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./CompanyDetailPage.scss";
 import "../../Styles/Reset.scss";
-import CdpSkillTag from "./CdpSkillTag";
+import CdpSkillTag from "../../Components/SkillTag";
 import { Skills_DATA } from "./CdpPositionData";
 import { CdpPositionData } from "./CdpPositionData";
 
