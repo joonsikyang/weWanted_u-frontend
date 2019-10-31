@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import "./CompanyDetailPage.scss";
-import "../../Styles/Reset.scss";
-import CdpSkillTag from "./CdpSkillTag";
+import "Styles/Reset.scss";
+import SkillTag from "Components/SkillTag";
 import { Skills_DATA } from "./CdpPositionData";
 import { CdpPositionData } from "./CdpPositionData";
 import NavBar from "Components/NavBar/NavBar";
 import { CdpCompanyInfoData } from "./CdpPositionData";
 import { detailImgData } from "./CdpPositionData";
 import CdpPosition from "./CdpPosition/CdpPosition";
+import MapContainer from "../../Components/MapContainer";
 
 export class CompanyDetailPage extends Component {
   constructor() {
@@ -35,7 +36,7 @@ export class CompanyDetailPage extends Component {
               </div>
               <ul>
                 {Skills_DATA.map(e => (
-                  <CdpSkillTag skill={e.skill} />
+                  <SkillTag skill={e.skill} />
                 ))}
               </ul>
               <p>
@@ -63,6 +64,7 @@ export class CompanyDetailPage extends Component {
             </div>
             <CdpPosition />
             <button>팔로우하기</button>
+            <MapContainer />
           </aside>
         </main>
       </div>

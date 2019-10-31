@@ -1,4 +1,4 @@
-@import "../../Styles/Reset.scss";
+@import "Styles/Reset.scss";
 
 .cdp_main {
   width: 80%;
@@ -73,9 +73,9 @@
     top: 70px;
     right: 10%;
     .logo_and_name {
-      border: $border-line;
       display: flex;
       align-items: center;
+      padding: 10px;
       height: 70px;
       .logo {
         width: 50px;

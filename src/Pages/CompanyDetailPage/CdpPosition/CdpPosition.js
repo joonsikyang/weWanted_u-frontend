@@ -16,7 +16,7 @@ class CdpPosition extends Component {
       <div className="cdp_position">
         <h4>{data.position_name}</h4>
         <h5>{data.follow_count}</h5>
-        <p>{data.dead_line}</p>
+        <p>마감일 {data.dead_line}</p>
       </div>
     );
   }

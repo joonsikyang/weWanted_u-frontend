@@ -5,7 +5,9 @@ export const CdpCompanyInfoData = {
   country: "한국",
   location: "서울",
   full_location: "서울시 강남구 테헤란로 431, 저스트코 타워점",
-  geo_location: ""
+  geo_location: "",
+  latitude: 37.5064485,
+  longitude: 127.054259
 };
 export const CdpPositionData = {
   id: 1,
