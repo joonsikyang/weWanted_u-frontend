@@ -29,10 +29,12 @@ export class CompanyDetailPage extends Component {
           <div className="main_left">
             <div className="detail_image"></div>
             <div className="name_container">
-              <h2>프론트엔드 Engineer(JavaScript)</h2>
+              <h2>{positionData.position_name}</h2>
               <div className="name_and_location">
-                <h3>브레이브모바일(숨고,Soomgo)</h3>
-                <span className="location">서울 - 한국</span>
+                <h3>{companyData.name}</h3>
+                <span className="location">
+                  {companyData.location} - {companyData.country}
+                </span>
               </div>
               <ul>
                 {Skills_DATA.map(e => (
