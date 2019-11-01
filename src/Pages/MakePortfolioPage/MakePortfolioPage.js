@@ -56,6 +56,18 @@ class MakePortfolioPage extends React.Component {
     this.setState({ projects: copyProjectsState });
   };
 
+  onClickSaveProject = event => {
+    if (event.target.name === "save") {
+      this.setState({ completed: "false" });
+    }
+  };
+
+  onClickCompletedProject = event => {
+    if (event.target.name === "completed") {
+      this.setState({ completed: "true" });
+    }
+  };
+
   render() {
     console.log(this.state);
     const myProjectList = this.state.projects.map((project, i) => (
@@ -95,8 +107,20 @@ class MakePortfolioPage extends React.Component {
               <ul className="projects_list_container">{myProjectList}</ul>
             </div>
             <div className="btn_group">
-              <button className="completed_btn">Completed</button>
-              <button className="save_btn">Save</button>
+              <button
+                onClick={this.onClickCompletedProject}
+                name="completed"
+                className="completed_btn"
+              >
+                Completed
+              </button>
+              <button
+                onClick={this.onClickSaveProject}
+                name="save"
+                className="save_btn"
+              >
+                Save
+              </button>
               <button className="preview_btn">Preview</button>
             </div>
           </div>
