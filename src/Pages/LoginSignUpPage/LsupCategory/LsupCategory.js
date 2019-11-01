@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./LsupCategory.scss";
-import LoginModal from "./LoginModal";
+import LoginModal from "../../../Components/Modal/LoginModal";
 
 export class LsupCategory extends Component {
   constructor() {

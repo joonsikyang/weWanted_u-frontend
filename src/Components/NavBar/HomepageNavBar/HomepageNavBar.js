@@ -1,24 +1,38 @@
 import React, { Component } from "react";
 import "./HomepageNavBar.scss";
-import SearchModal from "../../../Pages/LoginSignUpPage/LsupCategory/SearchModal";
+import LoginModal from "../../Modal/LoginModal";
+import { SearchModal } from "../../Modal/SearchModal/SearchModal";
 
 export class HomepageNavBar extends Component {
   constructor() {
     super();
     this.state = {
-      SearchModalOpen: false
+      showModal: false,
+      showSearchModal: false
     };
   }
 
-  openSearchModal = e => {
+  handleOpenModal = e => {
     this.setState({
-      SearchModalOpen: true
+      showModal: true
     });
   };
 
-  closeSearchModal = e => {
+  handleCloseModal = e => {
     this.setState({
-      SearchModalOpen: false
+      showModal: false
+    });
+  };
+
+  handleSearchOpenModal = e => {
+    this.setState({
+      showSearchModal: true
+    });
+  };
+
+  handleSearchCloseModal = e => {
+    this.setState({
+      showSearchModal: false
     });
   };
 
@@ -30,17 +44,23 @@ export class HomepageNavBar extends Component {
             <div className="logo_btn">WeWanted</div>
           </div>
           <div className="right">
-            <div className="search-button" onClick={this.openSearchModal}>
+            <div className="search-button" onClick={this.handleSearchOpenModal}>
               Search
             </div>
             <SearchModal
-              open={this.state.SearchModalOpen}
-              close={this.closeSearchModal}
+              isOpen={this.state.showSearchModal}
+              onClick={this.handleSearchCloseModal}
             />
             <div className="vertical-line"></div>
-            <div className="my_account_btn">My Account</div>
-            <div className="make_portfolio_btn">Make Porfolio</div>
-            <div className="log_out_btn">Logout</div>
+            {/* <div className="my-account">My Account</div>
+            <div className="make-portfolio">Make Porfolio</div> */}
+            <div className="login-signup" onClick={this.handleOpenModal}>
+              Login/Signup
+            </div>
+            <LoginModal
+              isOpen={this.state.showModal}
+              onClick={this.handleCloseModal}
+            />
           </div>
         </div>
       </div>
