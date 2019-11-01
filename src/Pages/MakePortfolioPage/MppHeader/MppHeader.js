@@ -6,7 +6,7 @@ const MppHeader = props => {
       <div className="title">
         <textarea
           value={props.title}
-          onChange={props.handleOnChange}
+          onChange={props.handleHeaderOnChange}
           type="text"
           name="title"
           className="title_input"
@@ -20,7 +20,7 @@ const MppHeader = props => {
         </div>
         <input
           value={props.phone}
-          onChange={props.handleOnChange}
+          onChange={props.handleHeaderOnChange}
           type="tel"
           name="phone"
           className="phone_input"
@@ -30,7 +30,7 @@ const MppHeader = props => {
         />
         <input
           value={props.email}
-          onChange={props.handleOnChange}
+          onChange={props.handleHeaderOnChange}
           type="email"
           name="email"
           className="email_input"
@@ -44,7 +44,7 @@ const MppHeader = props => {
         </div>
         <input
           value={props.blog}
-          onChange={props.handleOnChange}
+          onChange={props.handleHeaderOnChange}
           type="url"
           name="blog"
           className="blog_link_input"
@@ -57,10 +57,10 @@ const MppHeader = props => {
           About Me<span className="period">.</span>
         </div>
         <textarea
-          value={props.aboutMe}
-          onChange={props.handleOnChange}
+          value={props.about_me}
+          onChange={props.handleHeaderOnChange}
           className="about_me_input"
-          name="aboutMe"
+          name="about_me"
           maxLength="2000"
           placeholder="Max Character 2000"
         />

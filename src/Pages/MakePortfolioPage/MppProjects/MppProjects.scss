@@ -1,8 +1,9 @@
+$border: 1px solid #bebdbd;
+
 .mpp_projects {
   display: flex;
+  margin-top: 15px;
   justify-content: flex-start;
-  padding: 20px 70px;
-  height: 400px;
 
   .my_projects_container {
     display: flex;
@@ -11,11 +12,9 @@
     .project_title_input,
     .links_input {
       border: none;
-      border-bottom: 1px solid black;
-      background: transparent;
       font-size: 1.8em;
-      width: 270px;
-      margin-top: 40px;
+      margin: 20px 0px;
+      background-color: transparent;
     }
 
     .links_input {
@@ -23,7 +22,11 @@
     }
 
     .remove_btn {
-      margin-top: 20px;
+      background-image: url("https://icons-for-free.com/iconfiles/png/512/delete+remove+trash+trash+bin+trash+can+icon-1320073117929397588.png");
+      width: 25px;
+      height: 25px;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
   }
 
@@ -39,7 +42,7 @@
     .what_did_i_do_input,
     .tech_stack_input {
       border: none;
-      border-bottom: 1px solid black;
+      border-bottom: $border;
       background: transparent;
       width: 500px;
       height: 50px;
@@ -47,17 +50,17 @@
     }
     .project_description_title {
       .period {
-        color: rgb(57, 194, 159);
+        color: rgb(170, 66, 244);
       }
     }
     .what_did_i_do_title {
       .period {
-        color: rgb(61, 126, 255);
+        color: rgb(115, 211, 211);
       }
     }
     .tech_stack_title {
       .period {
-        color: rgb(31, 54, 255);
+        color: rgb(8, 8, 193);
       }
     }
   }

@@ -1,25 +1,24 @@
+$border: 1px solid #bebdbd;
+
 .header {
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-  height: 450px;
-  padding: 0px 30px;
+  height: 500px;
 
   .title {
     display: flex;
     justify-content: center;
+    height: 60px;
 
     .title_input {
       border: none;
-      border-bottom: 1px solid black;
-      background: transparent;
       font-size: 3em;
       font-weight: 600;
       font-style: italic;
       width: 650px;
       text-align: center;
-      margin-top: 40px;
-      height: 50px;
+      background-color: transparent;
 
       .title_input::placeholder {
         color: grey;
@@ -30,18 +29,16 @@
   .contact_info_title {
     font-size: 1.8em;
     .period {
-      color: rgb(57, 194, 159);
+      color: rgb(170, 66, 244);
     }
   }
   .phone_input,
   .email_input {
     border: none;
-    border-bottom: 1px solid black;
-    background: transparent;
-    margin-right: 15px;
     margin-top: 10px;
-    width: 250px;
+    width: 240px;
     font-size: 1em;
+    background-color: transparent;
   }
   .phone_input::placeholder,
   .email_input::placeholder {
@@ -50,15 +47,15 @@
   .blog_link_title {
     font-size: 1.8em;
     .period {
-      color: rgb(61, 126, 255);
+      color: rgb(115, 211, 211);
     }
   }
   .blog_link_input {
     border: none;
-    border-bottom: 1px solid black;
-    background: transparent;
+    margin-top: 10px;
     width: 550px;
     font-size: 1em;
+    background-color: transparent;
   }
   .blog_link_input::placeholder {
     color: grey;
@@ -67,25 +64,19 @@
   .about_me_title {
     font-size: 1.8em;
     .period {
-      color: rgb(31, 54, 255);
+      color: rgb(8, 8, 193);
     }
   }
   .about_me_input {
     border: none;
-    border-bottom: 1px solid black;
-    background: transparent;
+    border-bottom: $border;
     width: 600px;
     height: 90px;
     font-size: 1em;
+    background-color: transparent;
   }
 }
 
 .period {
   font-size: 60px;
-}
-
-.header_border {
-  border-bottom: 1px solid black;
-  margin: 20px 0px;
-  width: 100%;
 }

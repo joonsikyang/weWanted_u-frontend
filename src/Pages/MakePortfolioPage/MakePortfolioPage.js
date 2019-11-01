@@ -10,74 +10,65 @@ class MakePortfolioPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      portfolio: [
+      title: "",
+      phone: "",
+      email: "",
+      blog: "",
+      about_me: "",
+      projects: [
         {
-          title: "",
-          phone: "",
-          email: "",
-          blog: "",
-          aboutMe: "",
-          projects: [
-            {
-              projectTitle: "",
-              github: "",
-              description: "",
-              whatDidIDo: "",
-              techStack: ""
-            }
-          ]
+          project_title: "",
+          github: "",
+          description: "",
+          what_did_i_do: "",
+          tech_stack: ""
         }
       ]
     };
   }
 
-  handleOnChange = event => {
-    let copyState = [...this.state.portfolio];
-    if (
-      [
-        "projectTitle",
-        "github",
-        "description",
-        "whatDidIDo",
-        "techStack"
-      ].includes(event.target.name)
-    ) {
-      copyState[0].projects[parseInt(event.target.id)][event.target.name] =
-        event.target.value;
-      this.setState({ copyState });
-    } else {
-      copyState[0][event.target.name] = event.target.value;
-      this.setState({
-        copyState
-      });
-    }
+  handleProjectsOnChange = (event, index) => {
+    let copyProjectsState = [...this.state.projects];
+    copyProjectsState[index][event.target.name] = event.target.value;
+    this.setState({ projects: copyProjectsState });
+  };
+
+  handleHeaderOnChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   onClickAddProject = () => {
-    let copyState = this.state.portfolio.slice();
-    copyState[0].projects.push({
-      projectTitle: "",
+    let copyProjectsState = [...this.state.projects];
+    copyProjectsState.push({
+      project_title: "",
       github: "",
       description: "",
-      whatDidIDo: "",
-      techStack: ""
+      what_did_i_do: "",
+      tech_stack: ""
     });
 
-    this.setState({ portfolio: copyState });
+    this.setState({ projects: copyProjectsState });
+  };
+
+  onClickRemoveProject = index => {
+    let copyProjectsState = [...this.state.projects];
+    copyProjectsState.splice(index, 1);
+    this.setState({ projects: copyProjectsState });
   };
 
   render() {
-    console.log(this.state.portfolio);
-    const myProjectList = this.state.portfolio[0].projects.map((project, i) => (
+    console.log(this.state);
+    const myProjectList = this.state.projects.map((project, i) => (
       <MppProjects
         key={i}
         id={i}
-        handleOnChange={this.handleOnChange}
-        projectTitle={project.projectTitle}
+        handleProjectsOnChange={this.handleProjectsOnChange}
+        project_title={project.project_title}
         github={project.github}
         description={project.description}
-        whatDidIDo={project.whatDidIDo}
-        techStack={project.techStack}
+        what_did_i_do={project.what_did_i_do}
+        tech_stack={project.tech_stack}
+        onClickRemoveProject={this.onClickRemoveProject}
       />
     ));
     return (
@@ -86,23 +77,26 @@ class MakePortfolioPage extends React.Component {
           <NavBar />
           <div className="mpp_container">
             <MppHeader
-              handleOnChange={this.handleOnChange}
+              handleHeaderOnChange={this.handleHeaderOnChange}
               title={this.state.title}
               phone={this.state.phone}
               email={this.state.email}
               blog={this.state.blog}
-              aboutMe={this.state.aboutMe}
+              about_me={this.state.about_me}
             />
-            <div className="mpp_projects_container">
+
+            <div className="projects_title_bar">
               <div className="projects_title">Projects</div>
+              <button onClick={this.onClickAddProject} className="add_btn">
+                + Project
+              </button>
+            </div>
+            <div className="mpp_projects_container">
               <ul className="projects_list_container">{myProjectList}</ul>
             </div>
             <div className="btn_group">
-              <button onClick={this.onClickAddProject} className="add_btn">
-                Add Project
-              </button>
-              <button className="save_btn">Save Portfolio</button>
-              <button className="preview_btn">Preview Portfolio</button>
+              <button className="save_btn">Save</button>
+              <button className="preview_btn">Preview</button>
             </div>
           </div>
         </div>

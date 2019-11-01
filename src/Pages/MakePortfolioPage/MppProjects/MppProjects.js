@@ -3,27 +3,32 @@ import "./MppProjects.scss";
 
 const MppProjects = props => {
   return (
-    <li className="mpp_projects">
+    <li className="mpp_projects" id={props.id}>
       <div className="my_projects_container">
         <input
-          value={props.projectTitle}
-          id={props.id}
-          onChange={props.handleOnChange}
+          value={props.project_title}
+          onChange={event => {
+            props.handleProjectsOnChange(event, props.id);
+          }}
           type="text"
           className="project_title_input"
-          name="projectTitle"
+          name="project_title"
           placeholder="Project Title"
         />
         <input
           value={props.github}
-          id={props.id}
-          onChange={props.handleOnChange}
+          onChange={event => {
+            props.handleProjectsOnChange(event, props.id);
+          }}
           type="url"
           name="github"
           className="links_input"
           placeholder="Github/Source Url"
         />
-        <button className="remove_btn">Remove Project</button>
+        <button
+          onClick={() => props.onClickRemoveProject(props.id)}
+          className="remove_btn"
+        ></button>
       </div>
 
       <div className="description_container">
@@ -32,8 +37,9 @@ const MppProjects = props => {
         </div>
         <textarea
           value={props.description}
-          id={props.id}
-          onChange={props.handleOnChange}
+          onChange={event => {
+            props.handleProjectsOnChange(event, props.id);
+          }}
           className="project_description_input"
           name="description"
           maxLength="2000"
@@ -44,11 +50,12 @@ const MppProjects = props => {
           What Did I Do<span className="period">.</span>
         </div>
         <textarea
-          value={props.whatDidIDo}
-          id={props.id}
-          onChange={props.handleOnChange}
+          value={props.what_did_i_do}
+          onChange={event => {
+            props.handleProjectsOnChange(event, props.id);
+          }}
           className="what_did_i_do_input"
-          name="whatDidIDo"
+          name="what_did_i_do"
           maxLength="2000"
           placeholder="Max Character 2000"
         />
@@ -57,11 +64,12 @@ const MppProjects = props => {
           Tech Stack<span className="period">.</span>
         </div>
         <textarea
-          value={props.techStack}
-          id={props.id}
-          onChange={props.handleOnChange}
+          value={props.tech_stack}
+          onChange={event => {
+            props.handleProjectsOnChange(event, props.id);
+          }}
           className="tech_stack_input"
-          name="techStack"
+          name="tech_stack"
           maxLength="2000"
           placeholder="Max Character 2000"
         />
