@@ -1,28 +1,31 @@
-import React, { Component } from "react";
+import React from "react";
 import "./CdpTable.scss";
+import { Doughnut } from "react-chartjs-2";
 
-export class CdpTable extends Component {
-  render() {
-    return (
-      <table className="cdp_table">
-        <tbody>
-          <tr>
-            <th>gd</th>
-            <th>긍정적</th>
-            <td>38%</td>
-          </tr>
-          <tr>
-            <th>부정적</th>
-            <td>37%</td>
-          </tr>
-          <tr>
-            <th>보통</th>
-            <td>25%</td>
-          </tr>
-        </tbody>
-      </table>
-    );
-  }
-}
+const CdpTable = props => {
+  return (
+    <table className="cdp_table">
+      <tbody>
+        {/*  <tr>
+          <th className="circle"></th>
+          <th>{props.top}</th>
+          <td>{props.topData}%</td>
+        </tr>
+        <tr>
+          <th className="circle"></th>
+          <th>{props.middle}</th>
+          <td>{props.middleData}%</td>
+        </tr>
+        <tr>
+          <th className="circle"></th>
+          <th>{props.bottom}</th>
+          <td>{props.bottomData}%</td> */}
+
+        <Doughnut data={props.chartData} width={100} height={50} />
+        {/* </tr> */}
+      </tbody>
+    </table>
+  );
+};
 
 export default CdpTable;

@@ -18,40 +18,46 @@ export class CompanyDetailPage extends Component {
       positionData: CdpPositionData,
       companyData: CdpCompanyInfoData,
       detailData: detailImgData,
-      detailIntro: true,
-      interview: false
+      detailSwitch: true
     };
     console.log(props);
   }
 
   detailHandler = () => {
     this.setState({
-      detailIntro: "block",
-      interview: "none"
+      detailSwitch: true
     });
   };
 
   interviewHandler = () => {
     this.setState({
-      detailIntro: "none",
-      interview: "block"
+      detailSwitch: false
     });
   };
 
   render() {
-    const { positionData, companyData, detailData } = this.state;
+    const { companyData, detailSwitch } = this.state;
     return (
       <div>
         <NavBar />
         <main className="cdp_main">
           <div className="main_left">
             <div className="detail_image"></div>
-            <div className="choice">
-              <div onClick={this.detailHandler}>회사 소개</div>
-              <div onClick={this.interviewHandler}>면접 후기</div>
+            <div className="choice_box">
+              <div
+                className={`choice${detailSwitch ? "" : "_false"}`}
+                onClick={this.detailHandler}
+              >
+                회사 소개
+              </div>
+              <div
+                className={`choice${detailSwitch ? "_false" : ""}`}
+                onClick={this.interviewHandler}
+              >
+                면접 후기
+              </div>
             </div>
-            <CdpDetailIntro display={this.state.detailIntro} />
-            <CdpInterview display={this.state.interview} />
+            {detailSwitch ? <CdpDetailIntro /> : <CdpInterview />}
           </div>
           <aside className="main_right">
             <div className="logo_and_name">
