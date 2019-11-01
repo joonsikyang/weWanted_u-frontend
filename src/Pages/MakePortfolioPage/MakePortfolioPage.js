@@ -10,6 +10,7 @@ class MakePortfolioPage extends React.Component {
   constructor() {
     super();
     this.state = {
+      completed: "",
       title: "",
       phone: "",
       email: "",
@@ -46,7 +47,6 @@ class MakePortfolioPage extends React.Component {
       what_did_i_do: "",
       tech_stack: ""
     });
-
     this.setState({ projects: copyProjectsState });
   };
 
@@ -95,6 +95,7 @@ class MakePortfolioPage extends React.Component {
               <ul className="projects_list_container">{myProjectList}</ul>
             </div>
             <div className="btn_group">
+              <button className="completed_btn">Completed</button>
               <button className="save_btn">Save</button>
               <button className="preview_btn">Preview</button>
             </div>
