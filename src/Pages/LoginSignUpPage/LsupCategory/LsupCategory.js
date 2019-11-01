@@ -1,21 +1,25 @@
 import React, { Component } from "react";
 import "./LsupCategory.scss";
-import LoginPopup from "./LoginPopup/LoginPopup";
-import Deam from "../../../Components/Deam/Deam";
+import LoginModal from "./LoginModal";
 
 export class LsupCategory extends Component {
   constructor() {
     super();
     this.state = {
-      display: "block"
+      isModalOpen: false
     };
   }
 
-  handlePopUp = e => {
+  openModal = e => {
     this.setState({
-      display: "block"
+      isModalOpen: true
     });
-    console.log("Good");
+  };
+
+  closeModal = e => {
+    this.setState({
+      isModalOpen: false
+    });
   };
 
   render() {
@@ -34,12 +38,11 @@ export class LsupCategory extends Component {
             <button className="full_stack_btn">FullStack</button>
           </div>
           <div className="start-button">
-            <div className="button-text" onClick={this.handlePopUp}>
+            <div className="button-text" onClick={this.openModal}>
               지금 시작하기
             </div>
           </div>
-          <LoginPopup display={this.state.display} />
-          <Deam display={this.state.display} />
+          <LoginModal isOpen={this.state.isModalOpen} close={this.closeModal} />
         </div>
       </div>
     );

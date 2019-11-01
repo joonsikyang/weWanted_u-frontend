@@ -1,21 +1,29 @@
-.login-popup {
-  // fixed position >> center of screen
+.loginModal-overlay {
   position: fixed;
-  top: calc(50% - 250px);
-  left: calc(50% - 200px);
-  z-index: 5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.loginModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 400px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #fff;
-  overflow: hidden;
-  .popup-header-container {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
+  .header-container {
     border-bottom: 1px solid #efefef;
     height: 54px;
     padding: 17px 20px 15px 20px;
     position: relative;
     display: flex;
     align-items: center;
-    .popup-header {
+    .login-header {
       width: 100%;
       color: #333;
       text-align: center;
@@ -23,14 +31,23 @@
       font-weight: 600;
       word-wrap: break-word;
     }
+    .close-btn {
+      position: absolute;
+      top: 21px;
+      right: 20px;
+      font-size: 12px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
-  .popup-contents-container {
+  .contents-container {
     padding: 10px;
     .title-container {
       text-align: center;
       word-break: break-word;
       margin-bottom: 40px;
-      .popup-title {
+      .title {
         line-height: 1.4;
         margin: 20px 0 10px;
         font-weight: 600;
@@ -38,7 +55,7 @@
         color: #333;
         text-align: center;
       }
-      .popup-subTitle {
+      .subtitle {
         font-size: 18px;
         color: #777;
         line-height: 1.4;
@@ -66,8 +83,7 @@
 
     .btn-area {
       padding-top: 20px;
-      .login-btn-container,
-      .signup-btn-container {
+      .login-btn-container {
         background-color: #3a68f9;
         display: flex;
         align-items: center;
