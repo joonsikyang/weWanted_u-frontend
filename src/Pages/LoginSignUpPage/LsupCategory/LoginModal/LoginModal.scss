@@ -1,21 +1,12 @@
-.loginModal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
 .loginModal {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+  width: 380px;
   border-radius: 10px;
   background-color: #fff;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
+  // box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
   .header-container {
     border-bottom: 1px solid #efefef;
     height: 54px;
@@ -46,7 +37,7 @@
     .title-container {
       text-align: center;
       word-break: break-word;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       .title {
         line-height: 1.4;
         margin: 20px 0 10px;
@@ -64,7 +55,7 @@
         text-align: center;
       }
     }
-    .input-area {
+    .login-area {
       width: 100%;
       .email-input,
       .pw-input {
@@ -79,17 +70,13 @@
         border: 1px solid #dbdbdb;
         width: 100%;
       }
-    }
-
-    .btn-area {
-      padding-top: 20px;
       .login-btn-container {
         background-color: #3a68f9;
         display: flex;
         align-items: center;
         border-radius: 45px;
         padding: 13px 0px;
-        margin: 10px auto;
+        margin: 0 auto 10px auto;
         width: 80%;
         .login {
           color: #fff;
@@ -97,14 +84,34 @@
           font-size: 16px;
           font-weight: 600;
           text-align: center;
+          &:hover {
+            cursor: pointer;
+            font-weight: 800;
+          }
         }
       }
+    }
+    .or-container {
+      display: flex;
+      align-items: center;
+      width: 80%;
+      margin: 0px auto;
       .line-between {
-        width: 50%;
+        width: 40%;
         height: 1px;
-        margin: 0 auto;
+        margin: 0px auto;
         background-color: #dbdbdb;
       }
+      .or {
+        width: 20%;
+        text-align: center;
+        font-size: 14px;
+        color: #8a8888;
+      }
+    }
+
+    .signup-area {
+      margin-bottom: 20px;
       .signup-btn-container {
         background-color: #3a68f9;
         display: flex;
@@ -119,6 +126,10 @@
           font-size: 16px;
           font-weight: 600;
           text-align: center;
+          &:hover {
+            cursor: pointer;
+            font-weight: 900;
+          }
         }
       }
     }

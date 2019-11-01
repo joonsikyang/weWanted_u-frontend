@@ -12,8 +12,6 @@ export class LoginSignUpPage extends Component {
         <NavBar />
         <LsupWelcome />
         <LsupCategory />
-        {/* <LsupFeature /> */}
-        {/* <LsupLoginSignup /> */}
         <Footer />
       </div>
     );

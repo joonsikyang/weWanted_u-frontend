@@ -6,19 +6,19 @@ export class LsupCategory extends Component {
   constructor() {
     super();
     this.state = {
-      isModalOpen: false
+      showModal: false
     };
   }
 
-  openModal = e => {
+  handleOpenModal = e => {
     this.setState({
-      isModalOpen: true
+      showModal: true
     });
   };
 
-  closeModal = e => {
+  handleCloseModal = e => {
     this.setState({
-      isModalOpen: false
+      showModal: false
     });
   };
 
@@ -38,11 +38,14 @@ export class LsupCategory extends Component {
             <button className="full_stack_btn">FullStack</button>
           </div>
           <div className="start-button">
-            <div className="button-text" onClick={this.openModal}>
+            <div className="button-text" onClick={this.handleOpenModal}>
               지금 시작하기
             </div>
           </div>
-          <LoginModal isOpen={this.state.isModalOpen} close={this.closeModal} />
+          <LoginModal
+            isOpen={this.state.showModal}
+            onClick={this.handleCloseModal}
+          />
         </div>
       </div>
     );

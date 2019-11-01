@@ -1,12 +1,13 @@
 .welcome-container {
   margin-top: 50px;
-  background-image: url(../../../Images/5.jpeg);
+  background-image: url(../../../Images/1.jpeg);
   background-size: 100%;
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 240px 0 360px 0;
-
+  padding: 300px 0 300px 0;
+  // display: flex;
+  align-items: center;
   .title-container {
     margin: 0 auto;
   }
