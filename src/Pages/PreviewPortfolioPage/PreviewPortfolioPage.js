@@ -29,7 +29,7 @@ class PreviewPortfolioPage extends React.Component {
 -React기반 컴포넌트 계층 구조 디자인
 -스토리북을 이용한 컴포넌트 기반 개발 도입
 -Jest 기반의 테스트 작성`,
-          tech_stack: "TypeScript, React, MobX, Sass, Jest, Next.js"
+          tech_stack: "TypeScript, React, MobX, Sass, Jest, Next.js, Native"
         },
         {
           project_title: "스튜디오씨드 코리아",
