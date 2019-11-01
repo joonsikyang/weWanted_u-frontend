@@ -1,0 +1,58 @@
+button {
+  border: none;
+}
+
+.homepage-navBar {
+  display: flex;
+  align-items: center;
+  background-color: rgb(19, 18, 18);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  .btn-container {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    height: 50px;
+    max-width: 1060px;
+    .left {
+      margin-right: auto;
+      .logo_btn {
+        color: #efefef;
+        font-size: 1.2em;
+        font-weight: 600;
+        font-family: "icomoon", Helvetica, Arial, "hiragino kaku gothic pro",
+          "meiryo", "Microsoft YaHei", "ms pgothic", "Apple SD Gothic Neo",
+          "Nanum Gothic", "Malgun Gothic", sans-serif;
+      }
+    }
+    .right {
+      margin-right: left;
+      display: flex;
+      align-items: center;
+      .vertical-line {
+        width: 2px;
+        background-color: #efefef;
+        height: 14px;
+        margin: 0px 13px;
+      }
+      .search-button,
+      .my_account_btn,
+      .make_portfolio_btn,
+      .log_out_btn {
+        color: #efefef;
+        vertical-align: middle;
+        font-size: 14px;
+        line-height: 1;
+        font-weight: 600;
+        padding: 17px 13px;
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import NavBar from "../../Components/NavBar/NavBar";
+import NavBar from "../../Components/NavBar/HomepageNavBar";
 import LsupWelcome from "./LsupWelcome";
 import LsupCategory from "./LsupCategory";
-// import LsupLoginSignup from "./LsupLoginSignup";
-// import LsupFeature from "./LsupFeature";
 import Footer from "../../Components/Footer";
 import "./LoginSignUpPage.scss";
 
