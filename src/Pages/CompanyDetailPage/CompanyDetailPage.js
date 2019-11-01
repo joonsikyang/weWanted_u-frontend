@@ -54,7 +54,7 @@ export class CompanyDetailPage extends Component {
                 className={`choice${detailSwitch ? "_false" : ""}`}
                 onClick={this.interviewHandler}
               >
-                면접 후기
+                면접 정보
               </div>
             </div>
             {detailSwitch ? <CdpDetailIntro /> : <CdpInterview />}

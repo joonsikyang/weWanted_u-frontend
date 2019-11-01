@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./CdpInterview.scss";
-import CdpTable from "../CdpTable";
 import { TableData, expData, resultData } from "../CdpTable/CdpTableData";
-import { Doughnut } from "react-chartjs-2";
+import CdpInterviewBox from "../CdpInterviewBox";
+import CdpReviewBox from "../CdpReviewBox";
 
 export class CdpInterview extends Component {
   constructor() {
@@ -16,10 +16,7 @@ export class CdpInterview extends Component {
   render() {
     const { expData, resultData } = this.state;
     return (
-      <div
-        style={{ display: this.props.display }}
-        className="interview_container"
-      >
+      <div className="interview_container">
         <div className="interview_box_container">
           <div className="interview_box">
             <h6>면접 난이도</h6>
@@ -29,33 +26,14 @@ export class CdpInterview extends Component {
           </div>
         </div>
         <div className="interview_box_container">
-          <div className="interview_box">
-            <h6>면접 경험</h6>
-            <Doughnut
-              options={{
-                legend: {
-                  display: true,
-                  position: "right"
-                }
-              }}
-              data={expData}
-              height={120}
-            />
-          </div>
-          <div className="interview_box">
-            <h6>면접 결과</h6>
-            <Doughnut
-              options={{
-                legend: {
-                  display: true,
-                  position: "right"
-                }
-              }}
-              data={resultData}
-              height={120}
-            />
-          </div>
+          <CdpInterviewBox data={expData} />
+          <CdpInterviewBox data={resultData} />
         </div>
+        <div className="review_container">
+          <div className="review">면접 후기</div>
+          <div className="writing">후기 작성</div>
+        </div>
+        <CdpReviewBox />
       </div>
     );
   }
