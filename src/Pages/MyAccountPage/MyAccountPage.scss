@@ -1,0 +1,54 @@
+.my_account_page {
+  display: flex;
+
+  .account_page_container {
+    width: 100%;
+
+    padding: 20px 200px;
+
+    .wecode_advertisement {
+      word-spacing: 2px;
+      display: flex;
+      align-items: center;
+      height: 50px;
+      margin: 0 0 24px 0;
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+      white-space: normal;
+      border-radius: 5px;
+      background: #373d43
+        url(https://static.wanted.co.kr/images/resume/resume_banner_pc.png)
+        no-repeat 85% 0;
+      padding: 0px 30px;
+      text-decoration: none;
+    }
+
+    .my_job_list {
+      border-bottom: 1px solid #efefef;
+      width: 100%;
+    }
+
+    .my_portfolio_list {
+      display: flex;
+      flex-direction: column;
+      .portfolio_list_title {
+        border-bottom: 1px solid #efefef;
+      }
+      .create_new_portfolio_btn {
+        font-size: 10px;
+        color: white;
+        background-color: rgba(36, 65, 230, 0.7);
+        display: inline-block;
+        margin: 10px;
+        height: 20px;
+        width: 10%;
+      }
+      .portfolio_list_container {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
