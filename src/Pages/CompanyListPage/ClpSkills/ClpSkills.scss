@@ -1,21 +1,50 @@
+// .slick-slider {
+//   max-width: 1060px;
+//   margin: 0px auto;
+//   .slick-prev {
+//     left: 0px;
+//   }
+//   .slick-list {
+//     width: 90%;
+//     margin: 0 auto;
+//     .slick-slide,
+//     .slick-active {
+//       display: flex;
+//       align-items: center;
+//     }
+//     // display: flex;
+//     // align-items: center;
+//   }
+//   .slick-next {
+//     right: 0px;
+//   }
+//   .slick-prev:before,
+//   .slick-next:before {
+//     color: grey;
+//   }
+//   .slick-slide {
+//     margin-right: 10px;
+//     text-align: center;
+//   }
+// }
+
+// my setting
 .skills_container {
-  // height: 10vh;
-  overflow: auto;
   white-space: nowrap;
   max-width: 1060px;
   margin: 0 auto 15px auto;
   .skills_item {
-    width: 120px;
+    width: 100px;
     margin-right: 9px;
     border-radius: 3px;
     display: inline-table;
     padding: 22.5px;
     text-align: center;
-    background-color: #3f3e3e;
+    background-color: #252525;
     opacity: 0.7;
     &:hover {
       cursor: pointer;
-      background-color: #222121;
+      background-color: #0e0d0d;
     }
     .skills_item_title {
       color: #ffffff;
@@ -24,4 +53,26 @@
       font-weight: 600;
     }
   }
+}
+
+.slick-slide {
+  margin-right: 10px;
+}
+
+.slick-list {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slick-prev {
+  left: 0px;
+}
+
+.slick-next {
+  right: 0px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: grey;
 }
