@@ -5,12 +5,13 @@ import ClpCategory from "./ClpCategory";
 import ClpSkills from "./ClpSkills";
 import ClpFilter from "./ClpFilter";
 import ClpCompany from "./ClpCompany";
+import CompanyListPageNavBar from "./CompanyListPageNavBar/CompanyListPageNavBar";
 
 export class CompanyListPage extends Component {
   render() {
     return (
       <div className="company_list_page">
-        <div className="nav">weWantedU</div>
+        <CompanyListPageNavBar />
         <div className="filterArea">
           <ClpCategory />
           <ClpSkills />

@@ -1,9 +1,7 @@
 @import "../../Styles/Reset.scss";
 .company_list_page {
-  .nav {
-    height: 5vh;
-  }
   .filterArea {
+    margin-top: 50px;
     border-bottom: 1px solid #efefef;
   }
   .filter_companyList_container {
