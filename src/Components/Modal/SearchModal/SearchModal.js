@@ -18,11 +18,27 @@ export class SearchModal extends Component {
       >
         <div className="input-area">
           <div className="input-container">
-            <input className="input" placeholder="search"></input>
+            {/* <img
+              className="search"
+              alt="search"
+              src="https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwic6cLXysvlAhXJaN4KHTt0BdwQjRx6BAgBEAQ&url=https%3A%2F%2Fgautengrefinery.co.za%2Fwelcome%2F32-322083_magnifying-glass-clipart-transparent-background-magnifying-glass-icon%2F&psig=AOvVaw3gYranYBijgufK02tPDuAB&ust=1572784864349088"
+            ></img> */}
+            <input
+              className="input"
+              placeholder="#태그, 회사, 포지션 검색"
+            ></input>
+          </div>
+          <div className="close-btn" onClick={this.props.onClick}>
+            Close
           </div>
         </div>
-        <div className="close-btn" onClick={this.props.onClick}>
-          Close
+        <div className="search-bottom">
+          <div className="recommend-tag">추천태그로 검색해보세요</div>
+          <ul className="tag-container">
+            <li className="tag">#HTML</li>
+            <li className="tag">#CSS</li>
+            <li className="tag">#JavaScript</li>
+          </ul>
         </div>
       </ReactModal>
     );
