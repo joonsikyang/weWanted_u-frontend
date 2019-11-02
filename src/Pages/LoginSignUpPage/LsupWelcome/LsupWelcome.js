@@ -5,9 +5,26 @@ export class LsupWelcome extends Component {
   constructor() {
     super();
     this.state = {
-      height: window.innerHeight - 50
+      width: 0,
+      height: 0
     };
   }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions = e => {
+    this.setState({
+      width: window.innerWidth,
+      height: window.innerHeight - 50
+    });
+  };
 
   render() {
     return (
