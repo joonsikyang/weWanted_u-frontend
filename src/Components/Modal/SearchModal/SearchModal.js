@@ -11,7 +11,9 @@ export class SearchModal extends Component {
         contentLabel="search"
         style={{
           overlay: { backgroundColor: "rgba(0, 0, 0, 0.4)" },
-          content: { boxShadow: "none" }
+          content: {
+            outline: "none"
+          }
         }}
       >
         <div className="input-area">

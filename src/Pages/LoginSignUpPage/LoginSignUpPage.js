@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import NavBar from "../../Components/NavBar/HomepageNavBar";
 import LsupWelcome from "./LsupWelcome";
 import LsupCategory from "./LsupCategory";
-import Footer from "../../Components/Footer";
 import "./LoginSignUpPage.scss";
+import HomePageFooter from "../../Components/Footer/HomePageFooter/HomePageFooter";
 
 export class LoginSignUpPage extends Component {
   render() {
@@ -12,7 +12,7 @@ export class LoginSignUpPage extends Component {
         <NavBar />
         <LsupWelcome />
         <LsupCategory />
-        <Footer />
+        <HomePageFooter />
       </div>
     );
   }

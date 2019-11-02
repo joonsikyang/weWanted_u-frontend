@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./HomepageNavBar.scss";
 import LoginModal from "../../Modal/LoginModal";
 import { SearchModal } from "../../Modal/SearchModal/SearchModal";
+import NavBarLogo from "../../Logo/NavBarLogo";
 
 export class HomepageNavBar extends Component {
   constructor() {
@@ -41,6 +42,7 @@ export class HomepageNavBar extends Component {
       <div className="homepage-navBar">
         <div className="btn-container">
           <div className="left">
+            <NavBarLogo />
             <div className="logo_btn">WeWanted</div>
           </div>
           <div className="right">

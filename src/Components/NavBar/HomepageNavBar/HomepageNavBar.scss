@@ -5,7 +5,8 @@ button {
 .homepage-navBar {
   display: flex;
   align-items: center;
-  background-color: rgb(19, 18, 18);
+  // background-color: rgb(19, 18, 18);
+  background-color: #fff;
   position: fixed;
   width: 100%;
   top: 0;
@@ -18,10 +19,14 @@ button {
     height: 50px;
     max-width: 1060px;
     .left {
+      display: flex;
+      align-items: center;
       margin-right: auto;
       .logo_btn {
-        color: #efefef;
-        font-size: 1.2em;
+        // color: #efefef;
+        padding-top: 2.5px;
+        color: #333;
+        font-size: 1em;
         font-weight: 600;
         font-family: "icomoon", Helvetica, Arial, "hiragino kaku gothic pro",
           "meiryo", "Microsoft YaHei", "ms pgothic", "Apple SD Gothic Neo",
@@ -34,7 +39,8 @@ button {
       align-items: center;
       .vertical-line {
         width: 2px;
-        background-color: #efefef;
+        // background-color: #efefef;
+        background-color: #333;
         height: 14px;
         margin: 0px 13px;
       }
@@ -43,7 +49,8 @@ button {
       .make-portfolio,
       .login-signup,
       .logout {
-        color: #efefef;
+        // color: #efefef;
+        color: #333;
         vertical-align: middle;
         font-size: 14px;
         line-height: 1;

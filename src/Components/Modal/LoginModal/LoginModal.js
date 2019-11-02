@@ -1,8 +1,35 @@
 import React, { Component } from "react";
 import ReactModal from "react-modal";
 import "./LoginModal.scss";
+import { withRouter } from "react-router-dom";
 
 export class LoginModal extends Component {
+  constructor() {
+    super();
+    this.state = {
+      id: "",
+      pw: "",
+      opacity: 0.3
+    };
+  }
+
+  handleBtnColor = e => {
+    this.setState(
+      {
+        [e.target.name]: e.target.value
+      },
+      this.setState({
+        opacity: this.state.id && this.state.pw ? 1 : 0.3
+      })
+    );
+  };
+
+  handleLogin = e => {
+    if (this.state.id && this.state.pw) {
+      this.props.history.push("/company_list");
+    }
+  };
+
   render() {
     return (
       <ReactModal
@@ -12,11 +39,14 @@ export class LoginModal extends Component {
         style={{
           overlay: {
             backgroundColor: "rgba(0, 0, 0, 0.4)"
+          },
+          content: {
+            outline: "none"
           }
         }}
       >
         <div className="header-container">
-          <div className="login-header">> WeWanted</div>
+          <div className="login-header">WeWanted</div>
           <div className="close-btn" onClick={this.props.onClick}>
             Close
           </div>
@@ -35,13 +65,23 @@ export class LoginModal extends Component {
               className="email-input"
               type="text"
               placeholder="이메일을 입력해주세요"
+              name="id"
+              value={this.state.id}
+              onChange={this.handleBtnColor}
             ></input>
             <input
               className="pw-input"
               type="password"
               placeholder="비밀번호를 입력해주세요"
+              name="pw"
+              value={this.state.pw}
+              onChange={this.handleBtnColor}
             ></input>
-            <div className="login-btn-container">
+            <div
+              className="login-btn-container"
+              onClick={this.handleLogin}
+              style={{ opacity: this.state.opacity }}
+            >
               <div className="login">Login</div>
             </div>
           </div>
@@ -60,4 +100,4 @@ export class LoginModal extends Component {
     );
   }
 }
-export default LoginModal;
+export default withRouter(LoginModal);

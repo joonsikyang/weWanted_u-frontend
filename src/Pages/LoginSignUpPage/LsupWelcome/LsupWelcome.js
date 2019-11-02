@@ -13,7 +13,7 @@ export class LsupWelcome extends Component {
     return (
       <div className="welcome-container" style={{ height: this.state.height }}>
         <div className="title-container">
-          <div className="title">> WeWanted</div>
+          <div className="title">WeWanted</div>
           <div className="subtitle">요즘 개발자, 원티드</div>
         </div>
       </div>
