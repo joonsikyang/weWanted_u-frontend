@@ -20,11 +20,9 @@ export class SignupMode extends Component {
       },
       this.setState({
         opacity:
-          this.state.id &&
-          this.state.pw &&
-          this.state.pwCheck &&
-          this.state.pw === this.state.pwCheck
-            ? 1
+          this.state.id && this.state.pw && this.state.pwCheck
+            ? //   this.state.pw === this.state.pwCheck
+              1
             : 0.3
       })
     );
