@@ -2,35 +2,50 @@ import React, { Component } from "react";
 import ReactModal from "react-modal";
 import "./LoginModal.scss";
 import { withRouter } from "react-router-dom";
+import LoginMode from "./LoginMode";
+import SignupMode from "./SignupMode";
 
 export class LoginModal extends Component {
   constructor() {
     super();
     this.state = {
-      id: "",
-      pw: "",
-      opacity: 0.3
+      loginMode: true,
+      backBtnDisplay: "none",
+      signUpBtn: "block"
     };
   }
 
-  handleBtnColor = e => {
-    this.setState(
-      {
-        [e.target.name]: e.target.value
-      },
+  handleSignupMode = e => {
+    if (this.state.loginMode === true) {
       this.setState({
-        opacity: this.state.id && this.state.pw ? 1 : 0.3
-      })
-    );
-  };
-
-  handleLogin = e => {
-    if (this.state.id && this.state.pw) {
-      this.props.history.push("/company_list");
+        loginMode: false,
+        backBtnDisplay: "block",
+        signUpBtn: "none"
+      });
+    } else if (this.state.loginMode === false) {
+      this.setState({
+        loginMode: true,
+        backBtnDisplay: "none",
+        signUpBtn: "block"
+      });
     }
   };
 
+  handleBackBtn = e => {
+    this.setState({
+      loginMode: true,
+      backBtnDisplay: "none",
+      signUpBtn: "block"
+    });
+  };
+
   render() {
+    let mode;
+    if (this.state.loginMode === true) {
+      mode = <LoginMode />;
+    } else if (this.state.loginMode === false) {
+      mode = <SignupMode />;
+    }
     return (
       <ReactModal
         className="loginModal"
@@ -46,6 +61,13 @@ export class LoginModal extends Component {
         }}
       >
         <div className="header-container">
+          <div
+            className="back-btn"
+            style={{ display: this.state.backBtnDisplay }}
+            onClick={this.handleBackBtn}
+          >
+            Back
+          </div>
           <div className="login-header">WeWanted</div>
           <div className="close-btn" onClick={this.props.onClick}>
             Close
@@ -60,39 +82,17 @@ export class LoginModal extends Component {
               위원티드에서 찾아보세요
             </h2>
           </div>
-          <div className="login-area">
-            <input
-              className="email-input"
-              type="text"
-              placeholder="이메일을 입력해주세요"
-              name="id"
-              value={this.state.id}
-              onChange={this.handleBtnColor}
-            ></input>
-            <input
-              className="pw-input"
-              type="password"
-              placeholder="비밀번호를 입력해주세요"
-              name="pw"
-              value={this.state.pw}
-              onChange={this.handleBtnColor}
-            ></input>
-            <div
-              className="login-btn-container"
-              onClick={this.handleLogin}
-              style={{ opacity: this.state.opacity }}
-            >
-              <div className="login">Login</div>
-            </div>
-          </div>
-          <div className="or-container">
-            <div className="line-between"></div>
-            <div className="or">or</div>
-            <div className="line-between"></div>
-          </div>
+          {/* 바뀌는 부분 */}
+          <>{mode}</>
+          {/* 바뀌는 부분 */}
           <div className="signup-area">
-            <div className="signup-btn-container">
-              <div className="signup">Signup</div>
+            <div
+              className="signup-btn-container"
+              style={{ display: this.state.signUpBtn }}
+            >
+              <div className="signup" onClick={this.handleSignupMode}>
+                아직 회원이 아니신가요?
+              </div>
             </div>
           </div>
         </div>

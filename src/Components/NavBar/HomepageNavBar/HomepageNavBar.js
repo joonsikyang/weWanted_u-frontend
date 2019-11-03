@@ -54,8 +54,6 @@ export class HomepageNavBar extends Component {
               onClick={this.handleSearchCloseModal}
             />
             <div className="vertical-line"></div>
-            {/* <div className="my-account">My Account</div>
-            <div className="make-portfolio">Make Porfolio</div> */}
             <div className="login-signup" onClick={this.handleOpenModal}>
               Login/Signup
             </div>

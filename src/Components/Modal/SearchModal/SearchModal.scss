@@ -35,26 +35,16 @@
         text-overflow: ellipsis;
         white-space: nowrap;
       }
-      // .search {
-      //   width: 30px;
-      //   height: 30px;
-      //   z-index: 5;
-      //   // background-color: blue;
-      //   background-image: "../../../Images/search-icon.jpg";
-      //   background-size: 100%;
-      // }
     }
-  }
-  .close-btn {
-    // position: absolute;
-    // top: 16px;
-    margin-left: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    color: rgb(122, 120, 120);
-    &:hover {
-      cursor: pointer;
-      text-decoration: underline;
+    .close-btn {
+      margin-left: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgb(122, 120, 120);
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
     }
   }
   .search-bottom {
