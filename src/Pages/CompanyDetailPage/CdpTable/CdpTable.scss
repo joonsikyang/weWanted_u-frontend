@@ -4,13 +4,14 @@
     tr {
       margin: 10px 0;
       th {
-        padding: 10px;
+        padding: 20px;
       }
       td {
-        padding: 10px;
+        padding: 20px;
         .select_container {
-          width: 400px;
           select {
+            width: 100px;
+            cursor: pointer;
           }
         }
       }

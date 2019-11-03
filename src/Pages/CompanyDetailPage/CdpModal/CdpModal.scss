@@ -34,21 +34,26 @@
     }
   }
   .modal_main {
-    .modal_left {
+    .modal_top {
       border: $border-line;
+      padding: 0 50px;
     }
-    .modal_right {
+    .modal_middle {
       border: $border-line;
       .question,
       .answer {
+        padding: 20px;
         span {
           font-weight: 600;
-          margin: 5px 0;
           display: inline-block;
         }
         textarea {
+          margin-top: 20px;
           width: 95%;
           height: 50px;
+          font-size: 15px;
+          border: 1px solid #dbd9d9;
+          border-radius: 3px;
         }
       }
 

@@ -11,19 +11,35 @@ export class CdpDetailIntro extends Component {
   constructor() {
     super();
     this.state = {
-      positionData: CdpPositionData,
-      companyData: CdpCompanyInfoData
+      positionData: {},
+      companyData: {},
+      data: []
     };
   }
+
+  componentDidMount() {
+    fetch("http://10.58.5.27:8000/job/detail/1")
+      .then(res => res.json())
+      .then(res => {
+        this.setState(
+          {
+            positionData: res.job,
+            companyData: res.company
+          },
+          console.log(res.job)
+        );
+      });
+  }
+
   render() {
     const { positionData, companyData } = this.state;
     return (
       <div style={{ display: this.props.display }} className="name_container">
-        <h2>{positionData.position_name}</h2>
+        <h2>{positionData.position}</h2>
         <div className="name_and_location">
-          <h3>{companyData.name}</h3>
+          <h3>{companyData.company_name}</h3>
           <span className="location">
-            {companyData.location} - {companyData.country}
+            {companyData.city} - {companyData.country}
           </span>
         </div>
         <ul>
@@ -33,13 +49,13 @@ export class CdpDetailIntro extends Component {
         </ul>
         <p>
           <span>{positionData.intro}</span>
-          <h6>주요 업무</h6>
+          <div>주요 업무</div>
           <span>{positionData.main_tasks}</span>
-          <h6>자격 요건</h6>
+          <div>자격 요건</div>
           <span>{positionData.requirements}</span>
-          <h6>우대 사항</h6>
+          <div>우대 사항</div>
           <span>{positionData.preferred_points}</span>
-          <h6>혜택 및 복지</h6>
+          <div>혜택 및 복지</div>
           <span>{positionData.benefits}</span>
         </p>
       </div>

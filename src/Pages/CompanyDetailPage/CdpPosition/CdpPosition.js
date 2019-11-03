@@ -6,18 +6,32 @@ class CdpPosition extends Component {
   constructor() {
     super();
     this.state = {
-      positionData: CdpPositionData,
-      companyData: CdpCompanyInfoData
+      positionData: {},
+      companyData: {}
     };
+  }
+
+  componentDidMount() {
+    fetch("http://10.58.5.27:8000/job/detail/1")
+      .then(res => res.json())
+      .then(res => {
+        this.setState(
+          {
+            positionData: res.job,
+            companyData: res.company
+          },
+          console.log(res.job)
+        );
+      });
   }
 
   render() {
     const { positionData, companyData } = this.state;
     return (
       <div className="cdp_position">
-        <h4>{positionData.position_name}</h4>
+        <h4>{positionData.position}</h4>
         <h5>
-          {companyData.location} - {companyData.country}
+          {companyData.city} - {companyData.country}
         </h5>
         <p>마감일: {positionData.dead_line}</p>
       </div>

@@ -15,12 +15,11 @@ export class CompanyDetailPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      positionData: CdpPositionData,
-      companyData: CdpCompanyInfoData,
+      positionData: {},
+      companyData: {},
       detailData: detailImgData,
       detailSwitch: true
     };
-    console.log(props);
   }
 
   detailHandler = () => {
@@ -35,6 +34,17 @@ export class CompanyDetailPage extends Component {
     });
   };
 
+  componentDidMount() {
+    fetch("http://10.58.5.27:8000/job/detail/1")
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          positionData: res.job,
+          companyData: res.company
+        });
+      });
+  }
+
   render() {
     const { companyData, detailSwitch } = this.state;
     return (
@@ -42,7 +52,10 @@ export class CompanyDetailPage extends Component {
         <NavBar />
         <main className="cdp_main">
           <div className="main_left">
-            <div className="detail_image"></div>
+            <div
+              style={{ backgroundImage: `url(${companyData.main_image})` }}
+              className="main_image"
+            ></div>
             <div className="choice_box">
               <div
                 className={`choice${detailSwitch ? "" : "_false"}`}
@@ -63,11 +76,11 @@ export class CompanyDetailPage extends Component {
             <div className="logo_and_name">
               <div
                 style={{
-                  backgroundImage: companyData.logo_img
+                  backgroundImage: `url(${companyData.logo_image})`
                 }}
                 className="logo"
               ></div>
-              <div className="company_name">{companyData.name}</div>
+              <div className="company_name">{companyData.company_name}</div>
             </div>
             <CdpPosition />
             <button>팔로우하기</button>

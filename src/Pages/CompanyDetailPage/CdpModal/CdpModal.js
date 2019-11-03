@@ -18,10 +18,10 @@ const CdpModal = props => {
           <h3>면접후기 작성</h3>
         </header>
         <div className="modal_main">
-          <div className="modal_left">
+          <div className="modal_top">
             <CdpTable />
           </div>
-          <div className="modal_right">
+          <div className="modal_middle">
             <div className="question">
               <span>면접 질문</span>
               <textarea placeholder="최대한 자세하게 작성해주세요."></textarea>
