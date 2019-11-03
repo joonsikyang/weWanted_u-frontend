@@ -1,6 +1,19 @@
 .cdp_table {
   tbody {
+    margin: 10px 0;
     tr {
+      margin: 10px 0;
+      th {
+        padding: 10px;
+      }
+      td {
+        padding: 10px;
+        .select_container {
+          width: 400px;
+          select {
+          }
+        }
+      }
     }
   }
 }

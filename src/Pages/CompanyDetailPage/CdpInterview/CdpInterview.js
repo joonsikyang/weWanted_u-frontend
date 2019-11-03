@@ -3,6 +3,7 @@ import "./CdpInterview.scss";
 import { TableData, expData, resultData } from "../CdpTable/CdpTableData";
 import CdpInterviewBox from "../CdpInterviewBox";
 import CdpReviewBox from "../CdpReviewBox";
+import CdpModal from "../CdpModal/CdpModal";
 
 export class CdpInterview extends Component {
   constructor() {
@@ -10,11 +11,25 @@ export class CdpInterview extends Component {
     this.state = {
       data: TableData,
       expData,
-      resultData
+      resultData,
+      showModal: false
     };
   }
+
+  handleOpenModal = () => {
+    this.setState({
+      showModal: true
+    });
+  };
+
+  handleCloseModal = () => {
+    this.setState({
+      showModal: false
+    });
+  };
+
   render() {
-    const { expData, resultData } = this.state;
+    const { expData, resultData, showModal } = this.state;
     return (
       <div className="interview_container">
         <div className="interview_box_container">
@@ -31,7 +46,14 @@ export class CdpInterview extends Component {
         </div>
         <div className="review_container">
           <div className="review">면접 후기</div>
-          <div className="writing">후기 작성</div>
+          <div className="writing" onClick={this.handleOpenModal}>
+            후기 작성
+          </div>
+          <CdpModal
+            isOpen={showModal}
+            handleCloseModal={this.handleCloseModal}
+            handleOpenModal={this.handleOpenModal}
+          />
         </div>
         <CdpReviewBox />
       </div>
