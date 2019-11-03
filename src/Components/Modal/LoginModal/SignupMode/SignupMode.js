@@ -18,13 +18,17 @@ export class SignupMode extends Component {
       {
         [e.target.name]: e.target.value
       },
-      this.setState({
-        opacity:
-          this.state.id && this.state.pw && this.state.pwCheck
-            ? //   this.state.pw === this.state.pwCheck
-              1
-            : 0.3
-      })
+      () => {
+        this.setState({
+          opacity:
+            this.state.id &&
+            this.state.pw &&
+            this.state.pwCheck &&
+            this.state.pw === this.state.pwCheck
+              ? 1
+              : 0.3
+        });
+      }
     );
   };
 
