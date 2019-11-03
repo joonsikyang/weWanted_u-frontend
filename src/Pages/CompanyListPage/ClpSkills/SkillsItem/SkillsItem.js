@@ -1,7 +1,7 @@
-import React from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+// import React from "react";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+// import Slider from "react-slick";
 
 // class CustomSlide extends Component {
 //   render() {
@@ -73,37 +73,37 @@ import Slider from "react-slick";
 // import React from "react";
 // import Slider from "react-slick";
 
-class SkillsItem extends React.Component {
-  render() {
-    var settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 5,
-      slidesToScroll: 2
-    };
-    return (
-      <Slider {...settings} className="skills_container">
-        <div className="skills_item">
-          <h3 className="skills_item_title">1</h3>
-        </div>
-        <div className="skills_item">
-          <h3 className="skills_item_title">2</h3>
-        </div>
-        <div className="skills_item">
-          <h3 className="skills_item_title">3</h3>
-        </div>
-        <div className="skills_item">
-          <h3 className="skills_item_title">4</h3>
-        </div>
-        <div className="skills_item">
-          <h3 className="skills_item_title">5</h3>
-        </div>
-        <div className="skills_item">
-          <h3 className="skills_item_title">6</h3>
-        </div>
-      </Slider>
-    );
-  }
-}
-export default SkillsItem;
+// class SkillsItem extends React.Component {
+//   render() {
+//     var settings = {
+//       dots: false,
+//       infinite: true,
+//       speed: 500,
+//       slidesToShow: 5,
+//       slidesToScroll: 2
+//     };
+//     return (
+//       <Slider {...settings} className="skills_container">
+//         <div className="skills_item">
+//           <h3 className="skills_item_title">1</h3>
+//         </div>
+//         <div className="skills_item">
+//           <h3 className="skills_item_title">2</h3>
+//         </div>
+//         <div className="skills_item">
+//           <h3 className="skills_item_title">3</h3>
+//         </div>
+//         <div className="skills_item">
+//           <h3 className="skills_item_title">4</h3>
+//         </div>
+//         <div className="skills_item">
+//           <h3 className="skills_item_title">5</h3>
+//         </div>
+//         <div className="skills_item">
+//           <h3 className="skills_item_title">6</h3>
+//         </div>
+//       </Slider>
+//     );
+//   }
+// }
+// export default SkillsItem;
