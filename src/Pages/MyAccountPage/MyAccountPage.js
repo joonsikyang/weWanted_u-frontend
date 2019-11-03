@@ -12,7 +12,7 @@ class MyAccountPage extends React.Component {
       portfolio: [
         { title: "asdfa", date_created: "2019/02/22", completed: "Completed" },
         {
-          title: "asdfa",
+          title: "반갑습니다 저는 김형목입니다 잘부탁드립니다",
           date_created: "2019/02/22",
           completed: "In Progress"
         },

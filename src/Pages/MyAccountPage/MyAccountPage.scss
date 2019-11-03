@@ -26,24 +26,37 @@
 
     .my_job_list {
       border-bottom: 1px solid #efefef;
-      width: 100%;
+      font-size: 20px;
+      font-weight: 400;
+      font-style: italic;
     }
 
     .my_portfolio_list {
       display: flex;
       flex-direction: column;
+
       .portfolio_list_title {
+        font-size: 20px;
+        font-weight: 400;
+        font-style: italic;
         border-bottom: 1px solid #efefef;
       }
       .create_new_portfolio_btn {
-        font-size: 10px;
-        color: white;
-        background-color: rgba(36, 65, 230, 0.7);
+        font-size: 16px;
+        font-weight: 300;
+        color: black;
+        border: 1px solid #efefef;
+        border-radius: 10px;
         display: inline-block;
-        margin: 10px;
-        height: 20px;
-        width: 10%;
+        margin-top: 10px;
+        height: 40px;
+        width: 120px;
       }
+      .create_new_portfolio_btn:hover {
+        background-color: black;
+        color: white;
+      }
+
       .portfolio_list_container {
         display: flex;
         justify-content: flex-start;
