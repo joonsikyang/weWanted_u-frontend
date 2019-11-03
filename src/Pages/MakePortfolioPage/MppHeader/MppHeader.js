@@ -1,35 +1,71 @@
 import React from "react";
 import "./MppHeader.scss";
-const MppHeader = () => {
+const MppHeader = props => {
   return (
     <div className="header">
-      <div className="name">
-        <span className="name_title">Name:</span>
-        <input className="name_input" />
+      <div className="title">
+        <textarea
+          value={props.title}
+          onChange={props.handleHeaderOnChange}
+          type="text"
+          name="title"
+          className="title_input"
+          placeholder="Title:"
+        />
       </div>
 
       <div className="contact_info">
-        <div className="contact_info_title">Contact Info</div>
-        <span className="phone_title">Phone:</span>
+        <div className="contact_info_title">
+          Contact<span className="period">.</span>
+        </div>
         <input
+          value={props.phone}
+          onChange={props.handleHeaderOnChange}
           type="tel"
+          name="phone"
           className="phone_input"
+          placeholder="010-0101-0101"
           pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
           required
         />
-        <span className="email_title">Email:</span>
-        <input type="email" className="email_input" />
-      </div>
-
-      <div className="about_me">
-        <span className="about_me_title">About Me:</span>
-        <textarea className="about_me_input" />
+        <input
+          value={props.email}
+          onChange={props.handleHeaderOnChange}
+          type="email"
+          name="email"
+          className="email_input"
+          placeholder="Email:"
+        />
       </div>
 
       <div className="blog_link">
-        <span className="blog_link_title">Blog:</span>
-        <input type="url" className="blog_link_input" />
+        <div className="blog_link_title">
+          Blog<span className="period">.</span>
+        </div>
+        <input
+          value={props.blog}
+          onChange={props.handleHeaderOnChange}
+          type="url"
+          name="blog"
+          className="blog_link_input"
+          placeholder="Blog Url"
+        />
       </div>
+
+      <div className="about_me">
+        <div className="about_me_title">
+          About Me<span className="period">.</span>
+        </div>
+        <textarea
+          value={props.about_me}
+          onChange={props.handleHeaderOnChange}
+          className="about_me_input"
+          name="about_me"
+          maxLength="2000"
+          placeholder="Max Character 2000"
+        />
+      </div>
+      <div className="header_border"></div>
     </div>
   );
 };

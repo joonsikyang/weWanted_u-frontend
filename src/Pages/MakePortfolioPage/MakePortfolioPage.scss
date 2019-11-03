@@ -1,11 +1,58 @@
+$border: 1px solid #bebdbd;
+
 .make_portfolio_page {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 
   .mpp_container {
-    border: 1px solid black;
-    height: 93vh;
-    overflow: scroll;
-    margin: 60px 200px 5px;
+    padding: 10px 40px 20px;
+    margin-top: 70px;
+    border-radius: 10px;
+
+    .projects_title_bar {
+      display: flex;
+      width: 100%;
+
+      .projects_title {
+        font-size: 2em;
+        font-style: italic;
+        margin: 10px 0px;
+      }
+      .add_btn {
+        font-size: 14px;
+        color: rgb(85, 85, 85);
+        margin-left: 10px;
+      }
+    }
+
+    .mpp_projects_container {
+      max-height: 700px;
+      overflow: scroll;
+    }
+
+    .btn_group {
+      display: flex;
+      justify-content: flex-end;
+      height: 40px;
+      margin-top: 20px;
+
+      .save_btn {
+        background-color: rgb(170, 66, 244);
+      }
+      .preview_btn {
+        background-color: rgb(8, 8, 193);
+      }
+
+      .save_btn,
+      .preview_btn {
+        width: 100px;
+        border-radius: 10px;
+        font-size: 0.9em;
+        margin-left: 10px;
+      }
+    }
+  }
+  .mpp_container:hover {
+    background-color: #f8f8f8;
   }
 }

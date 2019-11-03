@@ -84,6 +84,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
+  font: inherit;
   font-size: 100%;
   font-family: -apple-system, Helvetica, Arial, "hiragino kaku gothic pro",
     meiryo, "Microsoft YaHei", "ms pgothic", "Apple SD Gothic Neo",
@@ -133,10 +134,15 @@ button:hover {
   cursor: pointer;
 }
 
+textarea:focus,
 input:focus,
 input:active,
 button:focus {
   outline: none;
 }
 
-$border-line: 1.5px solid #efefef;
+textarea {
+  resize: none;
+}
+
+$border-line: 1px solid #efefef;

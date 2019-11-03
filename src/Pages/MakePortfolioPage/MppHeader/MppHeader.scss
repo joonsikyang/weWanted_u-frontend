@@ -1,23 +1,82 @@
+$border: 1px solid #bebdbd;
+
 .header {
-  border: 1px solid black;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-  text-align: center;
-  height: 300px;
+  height: 500px;
 
-  .name_title {
-    font-size: 3em;
-    color: rgb(57, 194, 159);
+  .title {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+
+    .title_input {
+      border: none;
+      font-size: 3em;
+      font-weight: 600;
+      font-style: italic;
+      width: 650px;
+      text-align: center;
+      background-color: transparent;
+
+      .title_input::placeholder {
+        color: grey;
+      }
+    }
   }
 
-  .name_input {
+  .contact_info_title {
+    font-size: 1.8em;
+    .period {
+      color: rgb(170, 66, 244);
+    }
+  }
+  .phone_input,
+  .email_input {
     border: none;
-    border-bottom: 1px solid black;
-    background: transparent;
-    font-size: 2em;
-    font-weight: 500;
-    width: 200px;
-    text-align: center;
+    margin-top: 10px;
+    width: 240px;
+    font-size: 1em;
+    background-color: transparent;
   }
+  .phone_input::placeholder,
+  .email_input::placeholder {
+    color: grey;
+  }
+  .blog_link_title {
+    font-size: 1.8em;
+    .period {
+      color: rgb(115, 211, 211);
+    }
+  }
+  .blog_link_input {
+    border: none;
+    margin-top: 10px;
+    width: 550px;
+    font-size: 1em;
+    background-color: transparent;
+  }
+  .blog_link_input::placeholder {
+    color: grey;
+  }
+
+  .about_me_title {
+    font-size: 1.8em;
+    .period {
+      color: rgb(8, 8, 193);
+    }
+  }
+  .about_me_input {
+    border: none;
+    border-bottom: $border;
+    width: 600px;
+    height: 90px;
+    font-size: 1em;
+    background-color: transparent;
+  }
+}
+
+.period {
+  font-size: 60px;
 }

@@ -1,0 +1,27 @@
+@import "Styles/Reset.scss";
+
+.cdp_position {
+  border: $border-line;
+  border-radius: 3px;
+  padding: 16px 20px;
+  h4 {
+    font-size: 18px;
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+  }
+  h5 {
+    color: #86939e;
+    font-size: 14px;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  p {
+    color: #666666;
+    font-weight: 800;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+}
