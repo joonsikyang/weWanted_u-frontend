@@ -8,7 +8,7 @@ export class CompanyItem extends Component {
           <div className="company_follow">likes</div>
         </div> */}
         <header>
-          <div style={{ backgroundImage: this.props.img }}></div>
+          <img alt="main" src={`url(${this.props.img})`} />
         </header>
         <div className="item_bottom">
           <div className="position">{this.props.positionName}</div>
@@ -18,9 +18,9 @@ export class CompanyItem extends Component {
             <span>•</span>
             <span className="company_country">{this.props.country}</span>
           </div>
-          <div className="company_deadline">
-            <span>Deadline: {this.props.deadLine}</span>
-          </div>
+          {/* <div className="company_deadline">
+            <span>{this.props.deadLine}</span>
+          </div> */}
         </div>
       </li>
     );
