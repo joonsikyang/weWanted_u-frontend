@@ -1,0 +1,24 @@
+.NavBarLogo {
+  padding: 0 3px;
+  display: flex;
+  justify-content: center;
+  background-size: 100%;
+  .front,
+  .back,
+  .full {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
+  .front {
+    margin-right: -3px;
+    background-color: rgba(170, 66, 244, 0.7);
+  }
+  .back {
+    background-color: rgba(115, 211, 211, 0.7);
+  }
+  .full {
+    margin-left: -3px;
+    background-color: rgba(8, 8, 193, 0.7);
+  }
+}

@@ -1,21 +1,21 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import NavBar from "../../Components/NavBar/HomepageNavBar";
+import LsupWelcome from "./LsupWelcome";
+import LsupCategory from "./LsupCategory";
 import "./LoginSignUpPage.scss";
+import HomePageFooter from "../../Components/Footer/HomePageFooter/HomePageFooter";
 
 export class LoginSignUpPage extends Component {
   render() {
     return (
-      <div>
-        <div className="LSUP_topLine">topLine</div>
-        <div className="LSUP_title">weWanted_U</div>
-        <div className="LSUP_loginSignUpContainer">
-          <div className="LSUP_login">Login</div>
-          <div className="LSUP_signUp">SignUp</div>
-        </div>
-        <div className="LSUP_bottomLine">bottomLine</div>
+      <div className="login-signup-page">
+        <NavBar />
+        <LsupWelcome />
+        <LsupCategory />
+        <HomePageFooter />
       </div>
     );
   }
 }
 
-export default withRouter(LoginSignUpPage);
+export default LoginSignUpPage;

@@ -1,15 +1,13 @@
 .footer {
   display: flex;
   justify-content: center;
-
+  background-color: #080808;
   .f_container {
     padding: 30px 190px;
-
     .logo_comp_name {
       display: flex;
       align-items: center;
       font-weight: 600;
-
       .logo {
         background-image: url("https://lh3.googleusercontent.com/Uq3WfEXRa86Ivgw5fA2iOj0X6HltHNvlgbG8ouMkfuAwxiZ-xMVValnL7mxNGFalcg=s180");
         height: 40px;
@@ -17,7 +15,6 @@
         background-size: contain;
       }
     }
-
     .info {
       font-size: 0.7em;
       word-break: break-word;
