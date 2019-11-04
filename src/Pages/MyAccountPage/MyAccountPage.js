@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import NavBar from "../../Components/NavBar";
+import CompanyListPageNavBar from "Components/NavBar/CompanyListPageNavBar";
 import "./MyAccountPage.scss";
 import "../../Styles/Reset.scss";
 import MapMyPortfolio from "./MapMyPortfolioList";
@@ -47,7 +47,7 @@ class MyAccountPage extends React.Component {
 
     return (
       <div className="my_account_page">
-        {/* <NavBar /> */}
+        <CompanyListPageNavBar />
         <div className="account_page_container">
           <a href="https://wecode.co.kr/" className="wecode_advertisement">
             <div className="wecode_ad_statement">

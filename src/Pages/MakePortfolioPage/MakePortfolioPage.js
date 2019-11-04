@@ -1,6 +1,5 @@
 import React from "react";
-import NavBar from "../../Components/NavBar";
-import Footer from "../../Components/Footer";
+import CompanyListPageNavBar from "Components/NavBar/CompanyListPageNavBar";
 import { withRouter } from "react-router-dom";
 import "./MakePortfolioPage.scss";
 import MppHeader from "./MppHeader";
@@ -86,7 +85,7 @@ class MakePortfolioPage extends React.Component {
     return (
       <>
         <div className="make_portfolio_page">
-          <NavBar />
+          <CompanyListPageNavBar />
           <div className="mpp_container">
             <MppHeader
               handleHeaderOnChange={this.handleHeaderOnChange}
@@ -125,7 +124,6 @@ class MakePortfolioPage extends React.Component {
             </div>
           </div>
         </div>
-        <Footer />
       </>
     );
   }
