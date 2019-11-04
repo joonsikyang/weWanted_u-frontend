@@ -4,7 +4,7 @@ import LoginSignUpPage from "Pages/LoginSignUpPage";
 import CompanyListPage from "Pages/CompanyListPage";
 import MainPage from "Pages/MainPage";
 import MakePortfolioPage from "Pages/MakePortfolioPage";
-import PreviewPortfolioPage from "./Pages/PreviewPortfolioPage/PreviewPortfolioPage";
+import PreviewPortfolioPage from "./Pages/PreviewPortfolioPage";
 
 class Routes extends React.Component {
   render() {
