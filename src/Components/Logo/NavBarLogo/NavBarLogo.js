@@ -5,9 +5,9 @@ export class NavBarLogo extends Component {
   render() {
     return (
       <div className="NavBarLogo">
-        <button className="front"></button>
-        <button className="back"></button>
-        <button className="full"></button>
+        <button className="front" />
+        <button className="back" />
+        <button className="full" />
       </div>
     );
   }

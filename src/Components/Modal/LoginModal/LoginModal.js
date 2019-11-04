@@ -40,12 +40,7 @@ export class LoginModal extends Component {
   };
 
   render() {
-    let mode;
-    if (this.state.loginMode === true) {
-      mode = <LoginMode />;
-    } else if (this.state.loginMode === false) {
-      mode = <SignupMode />;
-    }
+    const { loginMode } = this.state; // destructuring
     return (
       <ReactModal
         className="loginModal"
@@ -83,7 +78,7 @@ export class LoginModal extends Component {
             </h2>
           </div>
           {/* 바뀌는 부분 */}
-          <>{mode}</>
+          <>{loginMode ? <LoginMode /> : <SignupMode />}</>
           {/* 바뀌는 부분 */}
           <div className="signup-area">
             <div
