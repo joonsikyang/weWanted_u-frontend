@@ -53,7 +53,7 @@ const Skills_DATA = [
   },
   {
     id: 14,
-    skill: "Electron"
+    skill: "React Hooks"
   },
   {
     id: 15,
