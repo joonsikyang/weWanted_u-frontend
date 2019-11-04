@@ -2,14 +2,13 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import "./CompanyDetailPage.scss";
 import "Styles/Reset.scss";
-import { CdpPositionData } from "./CdpPositionData";
-import NavBar from "Components/NavBar/NavBar";
-import { CdpCompanyInfoData } from "./CdpPositionData";
+import CompanyListPageNavBar from "Components/NavBar/CompanyListPageNavBar";
 import { detailImgData } from "./CdpPositionData";
 import CdpPosition from "./CdpPosition/CdpPosition";
 import MapContainer from "../../Components/MapContainer";
 import CdpDetailIntro from "./CdpDetailIntro";
 import CdpInterview from "./CdpInterview";
+import HomePageFooter from "Components/Footer/HomePageFooter";
 
 export class CompanyDetailPage extends Component {
   constructor(props) {
@@ -49,7 +48,7 @@ export class CompanyDetailPage extends Component {
     const { companyData, detailSwitch } = this.state;
     return (
       <div>
-        <NavBar />
+        <CompanyListPageNavBar />
         <main className="cdp_main">
           <div className="main_left">
             <div
@@ -87,6 +86,7 @@ export class CompanyDetailPage extends Component {
             <MapContainer />
           </aside>
         </main>
+        <HomePageFooter />
       </div>
     );
   }
