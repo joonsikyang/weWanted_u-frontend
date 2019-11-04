@@ -2,17 +2,28 @@
 
 .interview_container {
   height: 50px;
-  h6 {
-    font-weight: 600;
-  }
+  margin-top: 40px;
   .interview_box_container {
     display: flex;
     border: $border-line;
-    .interview_box {
-      margin: 10px;
-      width: 50%;
-      height: 172px;
+  }
+  .review_container {
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    .review,
+    .writing {
+      margin-bottom: 20px;
+      font-size: 16px;
       font-weight: 600;
+    }
+    // .review {
+    //   float: left;
+    // }
+    .writing {
+      //   float: right;
+      cursor: pointer;
     }
   }
 }

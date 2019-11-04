@@ -1,18 +1,18 @@
 export const CdpCompanyInfoData = {
   id: 1,
-  name: "브레이브모바일(숨고, Soomgo)",
-  logo_img: `url("https://static.wanted.co.kr/images/wdes/0_5.2c8741d0.jpg")`,
+  company_name: "브레이브모바일(숨고, Soomgo)",
+  logo_image: "https://static.wanted.co.kr/images/wdes/0_5.2c8741d0.jpg",
+  main_image:
+    "https://static.wanted.co.kr/images/company/2902/lqtwk41cwzf6wlr4__1080_790.jpg",
   country: "한국",
-  location: "서울",
+  city: "서울",
   full_location: "서울시 강남구 테헤란로 431, 저스트코 타워점",
-  geo_location: "",
-  latitude: 37.5064485,
-  longitude: 127.054259
+  lat: 37.5064485,
+  lng: 127.054259
 };
 export const CdpPositionData = {
   id: 1,
-  company_name: "브레이브모바일(숨고, Soomgo)",
-  position_name: "프론트엔드 Engineer(JavaScript)",
+  position: "프론트엔드 Engineer(JavaScript)",
   dead_line: "2019.12.01",
   follow_count: 14,
   /* eslint-disable */
@@ -206,5 +206,29 @@ export const Skills_DATA = [
   {
     id: 15,
     skill: "Node.js"
+  },
+  {
+    id: 16,
+    skill: "python"
+  },
+  {
+    id: 17,
+    skill: "django"
+  },
+  {
+    id: 18,
+    skill: "MySQL"
+  },
+  {
+    id: 19,
+    skill: "sqllite"
+  },
+  {
+    id: 20,
+    skill: "AWS"
+  },
+  {
+    id: 21,
+    skill: "Docker"
   }
 ];

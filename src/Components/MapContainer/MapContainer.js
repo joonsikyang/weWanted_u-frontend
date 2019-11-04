@@ -6,9 +6,20 @@ class MapContainer extends Component {
   constructor() {
     super();
     this.state = {
-      data: CdpCompanyInfoData
+      data: {}
     };
   }
+
+  componentDidMount() {
+    fetch("http://10.58.5.27:8000/job/detail/1")
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          data: res.company
+        });
+      });
+  }
+
   render() {
     const mapStyles = {
       width: "100%",
@@ -22,14 +33,14 @@ class MapContainer extends Component {
         zoom={16}
         style={mapStyles}
         initialCenter={{
-          lat: data.latitude,
-          lng: data.longitude
+          lat: this.state.data.lat,
+          lng: this.state.data.lng
         }}
       >
         <Marker
           position={{
-            lat: data.latitude,
-            lng: data.longitude
+            lat: this.state.data.lat,
+            lng: this.state.data.lng
           }}
         />
       </Map>

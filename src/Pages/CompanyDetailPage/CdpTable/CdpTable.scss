@@ -1,2 +1,20 @@
 .cdp_table {
+  tbody {
+    margin: 10px 0;
+    tr {
+      margin: 10px 0;
+      th {
+        padding: 20px;
+      }
+      td {
+        padding: 20px;
+        .select_container {
+          select {
+            width: 100px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
 }

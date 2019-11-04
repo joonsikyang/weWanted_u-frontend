@@ -8,59 +8,52 @@
   .main_left {
     width: calc(100% - 360px);
     position: relative;
-    .detail_image {
-      background-image: url("https://static.wanted.co.kr/images/company/2902/lqtwk41cwzf6wlr4__1080_790.jpg");
+    .main_image {
       background-size: cover;
       height: 500px;
       width: 100%;
       background-repeat: no-repeat;
       margin-bottom: 20px;
     }
-    .name_container {
-      width: 100%;
-      margin-top: 40px;
-      h2 {
-        font-size: 22px;
-        font-weight: 700;
-        margin-bottom: 10px;
-        color: #333;
-      }
-      h3 {
-        font-size: 14px;
-        font-weight: 700;
-      }
-      .name_and_location {
-        display: flex;
-        .location {
-          border-left: 1px solid #d8d8d8;
-          margin-left: 10px;
-          padding-left: 10px;
-          color: #999999;
-          font-size: 14px;
-          font-weight: 700;
+    .choice_box {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+      height: 50px;
+      margin-bottom: -20px;
+      .choice {
+        width: 50%;
+        margin: 0 50px;
+        height: 100%;
+        padding: 20px 0;
+        font-weight: 600;
+        border-radius: 3px;
+        border-bottom: 3px solid #258bf7;
+        &:hover {
+          cursor: pointer;
+          border-bottom: 3px solid #258bf7;
+        }
+        &:active {
+          background-color: #258bf7;
+          color: white;
         }
       }
-      ul {
-        width: 100%;
-        margin-top: 20px;
-      }
-      p {
-        span {
-          width: 100%;
-          font-size: 16px;
-          color: #333;
-          font-weight: 500;
-          word-break: keep-all;
-          word-wrap: break-word;
-          white-space: pre-wrap;
-          line-height: 1.63;
+      .choice_false {
+        width: 50%;
+        margin: 0 50px;
+        height: 100%;
+        padding: 20px 0;
+        font-weight: 600;
+        border-radius: 3px;
+        &:hover {
+          cursor: pointer;
+          border-bottom: 3px solid #258bf7;
         }
-      }
-      h6 {
-        font-weight: 700;
-        font-size: 16px;
-        margin-top: 20px;
-        margin-bottom: -20px;
+        &:active {
+          background-color: #258bf7;
+          color: white;
+        }
       }
     }
   }

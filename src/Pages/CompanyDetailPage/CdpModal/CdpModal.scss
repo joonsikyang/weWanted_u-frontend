@@ -1,0 +1,64 @@
+@import "Styles/Reset.scss";
+.modal_content {
+  position: absolute;
+  top: 70px;
+  left: 400px;
+  right: 400px;
+  bottom: 70px;
+  border: 1px solid #efefef;
+  background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 4px;
+  outline: none;
+}
+
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal_box {
+  header {
+    height: 50px;
+    background-color: #258bf7;
+    display: flex;
+    text-align: center;
+    padding: 17px 13px;
+    h3 {
+      color: white;
+      font-weight: 600;
+    }
+  }
+  .modal_main {
+    .modal_top {
+      border: $border-line;
+      padding: 0 50px;
+    }
+    .modal_middle {
+      border: $border-line;
+      .question,
+      .answer {
+        padding: 20px;
+        span {
+          font-weight: 600;
+          display: inline-block;
+        }
+        textarea {
+          margin-top: 20px;
+          width: 95%;
+          height: 50px;
+          font-size: 15px;
+          border: 1px solid #dbd9d9;
+          border-radius: 3px;
+        }
+      }
+
+      .interview_review {
+      }
+    }
+  }
+}
