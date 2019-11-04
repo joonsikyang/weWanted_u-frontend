@@ -58,13 +58,13 @@ class MakePortfolioPage extends React.Component {
 
   onClickSaveProject = event => {
     if (event.target.name === "save") {
-      this.setState({ completed: "false" });
+      this.setState({ completed: "In Progress" });
     }
   };
 
   onClickCompletedProject = event => {
     if (event.target.name === "completed") {
-      this.setState({ completed: "true" });
+      this.setState({ completed: "Completed" });
     }
   };
 
