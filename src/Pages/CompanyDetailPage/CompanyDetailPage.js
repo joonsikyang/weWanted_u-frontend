@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import "./CompanyDetailPage.scss";
 import "Styles/Reset.scss";
 import CompanyListPageNavBar from "Components/NavBar/CompanyListPageNavBar";
-import { detailImgData } from "./CdpPositionData";
 import CdpPosition from "./CdpPosition/CdpPosition";
 import MapContainer from "../../Components/MapContainer";
 import CdpDetailIntro from "./CdpDetailIntro";
@@ -16,7 +15,8 @@ export class CompanyDetailPage extends Component {
     this.state = {
       positionData: {},
       companyData: {},
-      detailData: detailImgData,
+      tagData: [],
+      imageData: [],
       detailSwitch: true
     };
   }
@@ -34,18 +34,26 @@ export class CompanyDetailPage extends Component {
   };
 
   componentDidMount() {
-    fetch("http://10.58.5.27:8000/job/detail/1")
+    fetch("http://10.58.5.27:8000/job/detail/1/1")
       .then(res => res.json())
       .then(res => {
         this.setState({
           positionData: res.job,
-          companyData: res.company
+          companyData: res.company,
+          tagData: res.tags,
+          imageData: res.company_images
         });
       });
   }
 
   render() {
-    const { companyData, detailSwitch } = this.state;
+    const {
+      companyData,
+      positionData,
+      tagData,
+      imageData,
+      detailSwitch
+    } = this.state;
     return (
       <div>
         <CompanyListPageNavBar />
@@ -69,7 +77,19 @@ export class CompanyDetailPage extends Component {
                 면접 정보
               </div>
             </div>
-            {detailSwitch ? <CdpDetailIntro /> : <CdpInterview />}
+            {detailSwitch ? (
+              <CdpDetailIntro
+                companyData={companyData}
+                positionData={positionData}
+                tagData={tagData}
+              />
+            ) : (
+              <CdpInterview
+                companyData={companyData}
+                positionData={positionData}
+                tagData={tagData}
+              />
+            )}
           </div>
           <aside className="main_right">
             <div className="logo_and_name">
@@ -81,9 +101,12 @@ export class CompanyDetailPage extends Component {
               ></div>
               <div className="company_name">{companyData.company_name}</div>
             </div>
-            <CdpPosition />
+            <CdpPosition
+              companyData={companyData}
+              positionData={positionData}
+            />
             <button>팔로우하기</button>
-            <MapContainer />
+            <MapContainer companyData={companyData} />
           </aside>
         </main>
         <HomePageFooter />
