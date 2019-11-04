@@ -23,11 +23,26 @@ export class LoginMode extends Component {
     );
   };
 
-  handleLogin = e => {
-    if (this.state.id && this.state.pw) {
-      this.props.history.push("/company_list");
-    }
+  loginAccess = () => {
+    fetch("http://10.58.5.82:8000/login/signin", {
+      method: "post",
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw
+      })
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(res => {
+        // console.log(res)
+        if (res.JsonWebToken) {
+          localStorage.setItem("JsonWebToken", res.JsonWebToken);
+          this.props.history.push("/company_list");
+        }
+      });
   };
+
   render() {
     return (
       <>
@@ -50,7 +65,7 @@ export class LoginMode extends Component {
           ></input>
           <div
             className="login-btn-container"
-            onClick={this.handleLogin}
+            onClick={this.loginAccess}
             style={{ opacity: this.state.opacity }}
           >
             <div className="login">Login</div>
