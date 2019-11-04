@@ -8,6 +8,10 @@ import ClpCompany from "./ClpCompany";
 import CompanyListPageNavBar from "../../Components/NavBar/CompanyListPageNavBar/CompanyListPageNavBar";
 
 export class CompanyListPage extends Component {
+  goToDetail = () => {
+    this.props.history.push("/company_detail");
+  };
+
   render() {
     return (
       <div className="company_list_page">
@@ -18,7 +22,7 @@ export class CompanyListPage extends Component {
         </div>
         <div className="filter_companyList_container">
           <ClpFilter />
-          <ClpCompany />
+          <ClpCompany onClick={this.goToDetail} />
         </div>
       </div>
     );

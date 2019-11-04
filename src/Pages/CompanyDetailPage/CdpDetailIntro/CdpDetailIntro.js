@@ -34,7 +34,7 @@ export class CdpDetailIntro extends Component {
   render() {
     const { positionData, companyData } = this.state;
     return (
-      <div style={{ display: this.props.display }} className="name_container">
+      <div className="name_container">
         <h2>{positionData.position}</h2>
         <div className="name_and_location">
           <h3>{companyData.company_name}</h3>
