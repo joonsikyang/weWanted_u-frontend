@@ -10,6 +10,7 @@ class MakePortfolioPage extends React.Component {
   constructor() {
     super();
     this.state = {
+      completed: "",
       title: "",
       phone: "",
       email: "",
@@ -46,7 +47,6 @@ class MakePortfolioPage extends React.Component {
       what_did_i_do: "",
       tech_stack: ""
     });
-
     this.setState({ projects: copyProjectsState });
   };
 
@@ -54,6 +54,18 @@ class MakePortfolioPage extends React.Component {
     let copyProjectsState = [...this.state.projects];
     copyProjectsState.splice(index, 1);
     this.setState({ projects: copyProjectsState });
+  };
+
+  onClickSaveProject = event => {
+    if (event.target.name === "save") {
+      this.setState({ completed: "In Progress" });
+    }
+  };
+
+  onClickCompletedProject = event => {
+    if (event.target.name === "completed") {
+      this.setState({ completed: "Completed" });
+    }
   };
 
   render() {
@@ -95,7 +107,20 @@ class MakePortfolioPage extends React.Component {
               <ul className="projects_list_container">{myProjectList}</ul>
             </div>
             <div className="btn_group">
-              <button className="save_btn">Save</button>
+              <button
+                onClick={this.onClickCompletedProject}
+                name="completed"
+                className="completed_btn"
+              >
+                Completed
+              </button>
+              <button
+                onClick={this.onClickSaveProject}
+                name="save"
+                className="save_btn"
+              >
+                Save
+              </button>
               <button className="preview_btn">Preview</button>
             </div>
           </div>

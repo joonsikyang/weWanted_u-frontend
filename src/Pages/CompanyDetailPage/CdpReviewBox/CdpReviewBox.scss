@@ -1,0 +1,15 @@
+@import "Styles/Reset.scss";
+.review_box {
+  margin: 20px 0;
+  clear: right;
+  clear: left;
+  .user {
+    margin-left: 20px;
+    color: #86939e;
+  }
+  .content_box {
+    border: $border-line;
+    .left_box {
+    }
+  }
+}

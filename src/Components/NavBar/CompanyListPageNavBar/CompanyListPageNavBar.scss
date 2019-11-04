@@ -1,0 +1,59 @@
+.CLP-navBar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+  .btn-container {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    height: 50px;
+    max-width: 1060px;
+    .left {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+      .logo_btn {
+        padding-top: 2.5px;
+        color: #333;
+        font-size: 1em;
+        font-weight: 600;
+        font-family: "icomoon", Helvetica, Arial, "hiragino kaku gothic pro",
+          "meiryo", "Microsoft YaHei", "ms pgothic", "Apple SD Gothic Neo",
+          "Nanum Gothic", "Malgun Gothic", sans-serif;
+      }
+    }
+    .right {
+      margin-right: left;
+      display: flex;
+      align-items: center;
+      .vertical-line {
+        width: 2px;
+        background-color: #333;
+        height: 14px;
+        margin: 0px 13px;
+      }
+      .search-button,
+      .my-account,
+      .make-portfolio,
+      .login-signup,
+      .logout {
+        color: #333;
+        vertical-align: middle;
+        font-size: 14px;
+        line-height: 1;
+        font-weight: 600;
+        padding: 17px 13px;
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

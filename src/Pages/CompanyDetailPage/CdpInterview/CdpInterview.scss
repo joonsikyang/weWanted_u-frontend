@@ -1,0 +1,29 @@
+@import "Styles/Reset.scss";
+
+.interview_container {
+  height: 50px;
+  margin-top: 40px;
+  .interview_box_container {
+    display: flex;
+    border: $border-line;
+  }
+  .review_container {
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    .review,
+    .writing {
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    // .review {
+    //   float: left;
+    // }
+    .writing {
+      //   float: right;
+      cursor: pointer;
+    }
+  }
+}
