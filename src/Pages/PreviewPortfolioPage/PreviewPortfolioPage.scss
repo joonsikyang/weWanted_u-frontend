@@ -1,0 +1,41 @@
+.ppp_top_bar {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(
+    90deg,
+    rgb(170, 66, 244),
+    rgb(115, 211, 211),
+    rgb(8, 8, 193)
+  );
+}
+.preview_portfolio_page {
+  display: flex;
+  justify-content: center;
+
+  .ppp_container {
+    padding: 10px 40px 20px;
+    margin: 70px 0px;
+    border-radius: 10px;
+    max-width: 65%;
+
+    .ppp_divider {
+      border-bottom: 1px solid #efefef;
+      margin: 30px 0px;
+    }
+
+    .ppp_projects_title_bar {
+      display: flex;
+      margin-top: 20px;
+
+      .ppp_projects_title {
+        font-size: 2em;
+        font-style: italic;
+        margin: 10px 0px;
+      }
+    }
+  }
+}
