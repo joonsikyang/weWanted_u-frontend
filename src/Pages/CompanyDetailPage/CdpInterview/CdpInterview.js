@@ -1,17 +1,30 @@
 import React, { Component } from "react";
 import "./CdpInterview.scss";
-import { TableData, expData, resultData } from "../CdpTable/CdpTableData";
+import { expData, resultData } from "../CdpTable/CdpTableData";
 import CdpInterviewBox from "../CdpInterviewBox";
 import CdpReviewBox from "../CdpReviewBox";
 import CdpModal from "../CdpModal/CdpModal";
+import {
+  category,
+  career_year,
+  interview_experience,
+  interview_path,
+  interview_result,
+  code_test_level
+} from "../CdpTable/CdpTableData";
 
 export class CdpInterview extends Component {
   constructor() {
     super();
     this.state = {
-      data: TableData,
       expData,
       resultData,
+      category,
+      career_year,
+      interview_experience,
+      interview_path,
+      interview_result,
+      code_test_level,
       showModal: false
     };
   }
@@ -28,8 +41,20 @@ export class CdpInterview extends Component {
     });
   };
 
+  handleClick = () => {};
+
   render() {
-    const { expData, resultData, showModal } = this.state;
+    const {
+      expData,
+      resultData,
+      showModal,
+      category,
+      career_year,
+      interview_experience,
+      interview_path,
+      interview_result,
+      code_test_level
+    } = this.state;
     return (
       <div className="interview_container">
         <div className="interview_box_container">
@@ -53,6 +78,13 @@ export class CdpInterview extends Component {
             isOpen={showModal}
             handleCloseModal={this.handleCloseModal}
             handleOpenModal={this.handleOpenModal}
+            category={category}
+            career_year={career_year}
+            interview_experience={interview_experience}
+            interview_path={interview_path}
+            interview_result={interview_result}
+            code_test_level={code_test_level}
+            onClick={this.handleClick}
           />
         </div>
         <CdpReviewBox />
