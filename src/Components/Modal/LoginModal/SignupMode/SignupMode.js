@@ -97,6 +97,9 @@ export class SignupMode extends Component {
           value={this.state.pwCheck}
           onChange={this.handleBtnColor}
         ></input>
+        <div className="error-msg-container">
+          <div className="error-msg">비밀번호가 일치하지 않습니다.</div>
+        </div>
         <div
           className="btn-container"
           style={{ opacity: this.state.opacity }}

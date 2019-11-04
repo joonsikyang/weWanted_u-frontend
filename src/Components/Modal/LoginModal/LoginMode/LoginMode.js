@@ -67,7 +67,7 @@ export class LoginMode extends Component {
             onChange={this.handleBtnColor}
           ></input>
           <div className="error-msg-container">
-            <div>ID/PW를 확인해주세요</div>
+            <div className="error-msg">ID/PW를 확인해주세요</div>
           </div>
           <div
             className="login-btn-container"
