@@ -14,6 +14,7 @@ export class ClpCompany extends Component {
         city={company.city}
         country={company.country}
         deadLine={company.deadLine}
+        onClick={this.props.onClick}
       />
     ));
 

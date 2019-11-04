@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export class CompanyItem extends Component {
   render() {
     return (
-      <li className="company_list_item">
+      <li className="company_list_item" onClick={this.props.onClick}>
         {/* <div className="follow_container">
           <div className="company_follow">likes</div>
         </div> */}
