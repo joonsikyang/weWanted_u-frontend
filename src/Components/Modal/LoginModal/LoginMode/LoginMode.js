@@ -8,7 +8,8 @@ export class LoginMode extends Component {
     this.state = {
       id: "",
       pw: "",
-      opacity: 0.3
+      opacity: 0.3,
+      display: "none"
     };
   }
 
@@ -39,6 +40,8 @@ export class LoginMode extends Component {
         if (res.JsonWebToken) {
           localStorage.setItem("JsonWebToken", res.JsonWebToken);
           this.props.history.push("/company_list");
+        } else {
+          this.setState({ display: "block" });
         }
       });
   };
@@ -63,6 +66,9 @@ export class LoginMode extends Component {
             value={this.state.pw}
             onChange={this.handleBtnColor}
           ></input>
+          <div className="error-msg-container">
+            <div>ID/PW를 확인해주세요</div>
+          </div>
           <div
             className="login-btn-container"
             onClick={this.loginAccess}
