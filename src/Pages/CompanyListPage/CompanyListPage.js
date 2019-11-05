@@ -10,21 +10,48 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export class CompanyListPage extends Component {
-  goToDetail = () => {
-    this.props.history.push("/company_detail");
+  constructor() {
+    super();
+    this.state = { data: [] };
+  }
+
+  componentDidMount = () => {
+    fetch(`http://10.58.4.168:8000/job/job_list/3`)
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        this.setState({
+          data: response.data
+        });
+      });
+  };
+
+  handleCategoryClick = id => {
+    fetch(`http://10.58.4.168:8000/job/job_list/${id}`)
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        this.setState({
+          data: response.data
+        });
+      }, this.props.history.push(`/company_list/${id}`));
   };
 
   render() {
+    console.log(this.state.data);
+
     return (
       <div className="company_list_page">
         <CompanyListPageNavBar />
         <div className="filterArea">
-          <ClpCategory />
+          <ClpCategory onClick={this.handleCategoryClick} />
           <Slick />
         </div>
         <div className="filter_companyList_container">
           <ClpFilter />
-          <ClpCompany onClick={this.goToDetail} />
+          <ClpCompany fetchedData={this.state.data} />
         </div>
       </div>
     );
@@ -32,3 +59,11 @@ export class CompanyListPage extends Component {
 }
 
 export default withRouter(CompanyListPage);
+
+// key={i}
+// img={e.company.main_image}
+// positionName={e.job.position}
+// companyName={e.company.company_name}
+// city={e.company.city}
+// country={e.company.country}
+// deadLine={e.job.dead_line}
