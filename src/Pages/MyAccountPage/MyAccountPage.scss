@@ -26,10 +26,12 @@
     }
 
     .my_job_list {
-      border-bottom: 1px solid #efefef;
       font-size: 20px;
       font-weight: 400;
       font-style: italic;
+      .job_list_title {
+        border-bottom: 1px solid #efefef;
+      }
     }
 
     .my_portfolio_list {
