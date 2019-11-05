@@ -1,17 +1,22 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import "./Slick.scss";
+import LeftBtn from "../../../../Images/left-btn.png";
+import RightBtn from "../../../../Images/right-btn.png";
 
-// function SampleNextArrow(props) {
-//   const { className, style, onClick } = props;
-//   return (
-//     <div
-//       className={className}
-//       style={{ ...style, display: "block", background: "red" }}
-//       onClick={onClick}
-//     />
-//   );
-// }
+function RightArrow(props) {
+  const { className, onClick } = props;
+  return (
+    <img className={className} onClick={onClick} alt="right" src={RightBtn} />
+  );
+}
+
+function LeftArrow(props) {
+  const { className, onClick } = props;
+  return (
+    <img className={className} onClick={onClick} alt="left" src={LeftBtn} />
+  );
+}
 
 export class Slick extends Component {
   render() {
@@ -21,9 +26,9 @@ export class Slick extends Component {
       speed: 500,
       slidesToShow: 7,
       //   slidesToScroll: 3,
-      centerMode: true
-      //   nextArrow: <SampleNextArrow />,
-      //   prevArrow: <SamplePrevArrow />
+      centerMode: true,
+      prevArrow: <LeftArrow />,
+      nextArrow: <RightArrow />
 
       //   responsive: [
       //     {
