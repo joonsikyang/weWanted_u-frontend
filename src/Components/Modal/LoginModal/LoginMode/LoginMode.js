@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./LoginMode.scss";
 import { withRouter } from "react-router-dom";
+import { regExpLiteral } from "@babel/types";
 
 export class LoginMode extends Component {
   constructor() {
@@ -25,7 +26,7 @@ export class LoginMode extends Component {
   };
 
   loginAccess = () => {
-    fetch("http://10.58.5.82:8000/login/signin", {
+    fetch("http://10.58.4.168:8000/login/signin", {
       method: "post",
       body: JSON.stringify({
         email: this.state.id,
@@ -36,11 +37,11 @@ export class LoginMode extends Component {
         return res.json();
       })
       .then(res => {
-        // console.log(res)
+        console.log(res);
         if (res.JsonWebToken) {
           localStorage.setItem("JsonWebToken", res.JsonWebToken);
           this.props.history.push("/company_list");
-        } else {
+        } else if (res.message === "INVALID_EMAIL") {
           this.setState({ display: "block" });
         }
       });
@@ -66,7 +67,10 @@ export class LoginMode extends Component {
             value={this.state.pw}
             onChange={this.handleBtnColor}
           ></input>
-          <div className="error-msg-container">
+          <div
+            className="error-msg-container"
+            style={{ display: this.state.display }}
+          >
             <div className="error-msg">ID/PW를 확인해주세요</div>
           </div>
           <div

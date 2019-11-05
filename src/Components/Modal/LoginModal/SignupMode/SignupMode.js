@@ -9,12 +9,13 @@ export class SignupMode extends Component {
       id: "",
       pw: "",
       pwCheck: "",
-      opacity: 0.3
+      opacity: 0.3,
+      display: "none"
     };
   }
 
   accessSignup = () => {
-    fetch("http://10.58.0.62:8000/users", {
+    fetch("http://10.58.4.168:8000/login/signup", {
       method: "post",
       body: JSON.stringify({
         email: this.state.id,
@@ -40,7 +41,7 @@ export class SignupMode extends Component {
       },
       () => {
         if (this.state.pw !== this.state.pwCheck) {
-          alert("Check Password");
+          this.setState({ display: "block" });
         } else {
           this.accessSignup();
         }
@@ -97,7 +98,10 @@ export class SignupMode extends Component {
           value={this.state.pwCheck}
           onChange={this.handleBtnColor}
         ></input>
-        <div className="error-msg-container">
+        <div
+          className="error-msg-container"
+          style={{ display: this.state.display }}
+        >
           <div className="error-msg">비밀번호가 일치하지 않습니다.</div>
         </div>
         <div
