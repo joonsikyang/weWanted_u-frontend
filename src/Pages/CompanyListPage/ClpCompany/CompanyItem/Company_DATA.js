@@ -1,9 +1,8 @@
 export const CdpCompanyInfoData = [
   {
     id: 1,
-    img: `url(
-     “https://static.wanted.co.kr/images/company/2099/6982_2_0.__400_400.jpg”
-   )`,
+    img:
+      "https://static.wanted.co.kr/images/company/2099/6982_2_0.__400_400.jpg",
     positionName: "웹 개발자(프론트앤드/HTML)",
     companyName: "로켓뷰",
     city: "서울",
