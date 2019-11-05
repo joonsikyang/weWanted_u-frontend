@@ -4,7 +4,7 @@ import CompanyListPageNavBar from "Components/NavBar/CompanyListPageNavBar";
 import "./MyAccountPage.scss";
 import "../../Styles/Reset.scss";
 import MapMyPortfolio from "./MapMyPortfolioList";
-import CompanyItem from "../CompanyListPage/ClpCompany/CompanyItem";
+import CompanyItem from "../CompanyListPage/ClpCompany/CompanyItem/CompanyItem";
 import { CdpCompanyInfoData } from "../CompanyListPage/ClpCompany/CompanyItem/Company_DATA";
 
 class MyAccountPage extends React.Component {

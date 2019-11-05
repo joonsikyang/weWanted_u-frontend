@@ -6,6 +6,7 @@ import CompanyListPage from "Pages/CompanyListPage";
 import MakePortfolioPage from "Pages/MakePortfolioPage";
 import MyAccountPage from "./Pages/MyAccountPage";
 import PreviewPortfolioPage from "./Pages/PreviewPortfolioPage";
+import LoadingPage from "./Pages/LoadingPage";
 
 class Routes extends React.Component {
   render() {
@@ -22,6 +23,7 @@ class Routes extends React.Component {
             component={PreviewPortfolioPage}
           />
           <Route exact path="/company_detail" component={CompanyDetailPage} />
+          <Route exact path="/loading" component={LoadingPage} />
         </Switch>
       </Router>
     );
