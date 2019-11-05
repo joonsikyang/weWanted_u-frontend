@@ -1,3 +1,11 @@
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
 .login-area {
   width: 100%;
   display: flex;
@@ -13,7 +21,15 @@
     padding: 13px 15px;
     border-radius: 3px;
     border: 1px solid #dbdbdb;
-    width: 88%;
+    width: 85%;
+  }
+  .error-msg-container {
+    width: 85%;
+    margin: 0px auto;
+    padding: 0px 0px 10px 0px;
+    font-size: 13px;
+    color: red;
+    // display: none;
   }
   .login-btn-container {
     background-color: #3a68f9;
@@ -21,7 +37,7 @@
     align-items: center;
     border-radius: 45px;
     padding: 13px 0px;
-    margin: 0 auto 10px auto;
+    margin: 10px auto 10px auto;
     width: 80%;
     .login {
       color: #fff;
@@ -52,29 +68,5 @@
     text-align: center;
     font-size: 14px;
     color: #8a8888;
-  }
-}
-
-.signup-area {
-  margin-bottom: 20px;
-  .signup-btn-container {
-    background-color: #3a68f9;
-    display: flex;
-    align-items: center;
-    border-radius: 45px;
-    padding: 13px 0px;
-    margin: 10px auto;
-    width: 80%;
-    .signup {
-      color: #fff;
-      width: 100%;
-      font-size: 16px;
-      font-weight: 600;
-      text-align: center;
-      &:hover {
-        cursor: pointer;
-        font-weight: 900;
-      }
-    }
   }
 }

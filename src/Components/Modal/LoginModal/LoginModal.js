@@ -9,33 +9,25 @@ export class LoginModal extends Component {
   constructor() {
     super();
     this.state = {
-      loginMode: true,
-      backBtnDisplay: "none",
-      signUpBtn: "block"
+      loginMode: true
     };
   }
 
   handleSignupMode = e => {
-    if (this.state.loginMode === true) {
-      this.setState({
-        loginMode: false,
-        backBtnDisplay: "block",
-        signUpBtn: "none"
-      });
-    } else if (this.state.loginMode === false) {
-      this.setState({
-        loginMode: true,
-        backBtnDisplay: "none",
-        signUpBtn: "block"
-      });
-    }
+    this.setState({
+      loginMode: !this.state.loginMode
+    });
   };
 
   handleBackBtn = e => {
     this.setState({
-      loginMode: true,
-      backBtnDisplay: "none",
-      signUpBtn: "block"
+      loginMode: true
+    });
+  };
+
+  handleLoginMode = e => {
+    this.setState({
+      loginMode: true
     });
   };
 
@@ -57,8 +49,9 @@ export class LoginModal extends Component {
       >
         <div className="header-container">
           <div
-            className="back-btn"
-            style={{ display: this.state.backBtnDisplay }}
+            className={`${
+              this.state.loginMode ? "back-btn none" : "back-btn block"
+            }`}
             onClick={this.handleBackBtn}
           >
             Back
@@ -78,12 +71,19 @@ export class LoginModal extends Component {
             </h2>
           </div>
           {/* 바뀌는 부분 */}
-          <>{loginMode ? <LoginMode /> : <SignupMode />}</>
+          {loginMode ? (
+            <LoginMode />
+          ) : (
+            <SignupMode loginMode={this.handleLoginMode} />
+          )}
           {/* 바뀌는 부분 */}
           <div className="signup-area">
             <div
-              className="signup-btn-container"
-              style={{ display: this.state.signUpBtn }}
+              className={`${
+                this.state.loginMode
+                  ? "signup-btn-container block"
+                  : "signup-btn-container none"
+              }`}
             >
               <div className="signup" onClick={this.handleSignupMode}>
                 아직 회원이 아니신가요?

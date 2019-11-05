@@ -1,0 +1,50 @@
+.loading_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  flex-direction: column;
+  .loading_graphic {
+    .circle:nth-child(1),
+    .circle:nth-child(2),
+    .circle:nth-child(3) {
+      width: 70px;
+      height: 70px;
+      margin: -10px;
+      display: inline-flex;
+      border-radius: 50%;
+      animation: popup 0.8s linear infinite;
+    }
+
+    .circle:nth-child(1) {
+      background-color: green;
+      animation-delay: 0.1s;
+    }
+    .circle:nth-child(2) {
+      background-color: teal;
+      animation-delay: 0.2s;
+    }
+    .circle:nth-child(3) {
+      background-color: blue;
+      animation-delay: 0.3s;
+    }
+  }
+  .loading_text {
+    margin-top: 70px;
+    font-weight: 600;
+  }
+
+  @keyframes popup {
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(40px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}
