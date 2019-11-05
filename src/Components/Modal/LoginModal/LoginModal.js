@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactModal from "react-modal";
 import "./LoginModal.scss";
-import "./LoginMode/LoginMode.scss";
 import { withRouter } from "react-router-dom";
 import LoginMode from "./LoginMode";
 import SignupMode from "./SignupMode";
@@ -21,6 +20,12 @@ export class LoginModal extends Component {
   };
 
   handleBackBtn = e => {
+    this.setState({
+      loginMode: true
+    });
+  };
+
+  handleLoginMode = e => {
     this.setState({
       loginMode: true
     });
@@ -66,7 +71,11 @@ export class LoginModal extends Component {
             </h2>
           </div>
           {/* 바뀌는 부분 */}
-          {loginMode ? <LoginMode /> : <SignupMode />}
+          {loginMode ? (
+            <LoginMode />
+          ) : (
+            <SignupMode loginMode={this.handleLoginMode} />
+          )}
           {/* 바뀌는 부분 */}
           <div className="signup-area">
             <div

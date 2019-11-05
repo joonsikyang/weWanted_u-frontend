@@ -70,27 +70,3 @@
     color: #8a8888;
   }
 }
-
-.signup-area {
-  margin-bottom: 10px;
-  .signup-btn-container {
-    background-color: #3a68f9;
-    display: flex;
-    align-items: center;
-    border-radius: 45px;
-    padding: 13px 0px;
-    margin: 10px auto;
-    width: 80%;
-    .signup {
-      color: #fff;
-      width: 100%;
-      font-size: 16px;
-      font-weight: 600;
-      text-align: center;
-      &:hover {
-        cursor: pointer;
-        font-weight: 900;
-      }
-    }
-  }
-}

@@ -26,11 +26,13 @@ export class SignupMode extends Component {
         return res.json();
       })
       .then(res => {
-        console.log(res);
-        if (res.JsonWebToken) {
-          localStorage.setItem("JsonWebToken", res.JsonWebToken);
-          this.props.history.push("/main");
-        }
+        //success message 받으면
+        this.props.loginMode();
+        // console.log(res);
+        // if (res.JsonWebToken) {
+        //   localStorage.setItem("JsonWebToken", res.JsonWebToken);
+        //   this.props.history.push("/main");
+        // }
       });
   };
 
@@ -44,6 +46,7 @@ export class SignupMode extends Component {
           this.setState({ display: "block" });
         } else {
           this.accessSignup();
+          // this.props.loginMode();
         }
       }
     );
