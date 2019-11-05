@@ -9,9 +9,48 @@ export class SignupMode extends Component {
       id: "",
       pw: "",
       pwCheck: "",
-      opacity: 0.3
+      opacity: 0.3,
+      display: "none"
     };
   }
+
+  accessSignup = () => {
+    fetch("http://10.58.4.168:8000/login/signup", {
+      method: "post",
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw
+      })
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(res => {
+        //success message 받으면
+        this.props.loginMode();
+        // console.log(res);
+        // if (res.JsonWebToken) {
+        //   localStorage.setItem("JsonWebToken", res.JsonWebToken);
+        //   this.props.history.push("/main");
+        // }
+      });
+  };
+
+  handlePWCheck = e => {
+    this.setState(
+      {
+        [e.target.name]: e.target.value
+      },
+      () => {
+        if (this.state.pw !== this.state.pwCheck) {
+          this.setState({ display: "block" });
+        } else {
+          this.accessSignup();
+          // this.props.loginMode();
+        }
+      }
+    );
+  };
 
   handleBtnColor = e => {
     this.setState(
@@ -33,8 +72,9 @@ export class SignupMode extends Component {
   };
 
   render() {
-    console.log(this.state.pw);
-    console.log(this.state.pwCheck);
+    // console.log(this.state.pw);
+    // console.log(this.state.pwCheck);
+    // arrow function으로 해결
     return (
       <div className="signup-mode">
         <input
@@ -61,7 +101,17 @@ export class SignupMode extends Component {
           value={this.state.pwCheck}
           onChange={this.handleBtnColor}
         ></input>
-        <div className="btn-container" style={{ opacity: this.state.opacity }}>
+        <div
+          className="error-msg-container"
+          style={{ display: this.state.display }}
+        >
+          <div className="error-msg">비밀번호가 일치하지 않습니다.</div>
+        </div>
+        <div
+          className="btn-container"
+          style={{ opacity: this.state.opacity }}
+          onClick={this.handlePWCheck}
+        >
           <div className="signup">가입하기</div>
         </div>
       </div>

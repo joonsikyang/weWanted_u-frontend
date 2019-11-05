@@ -14,7 +14,15 @@
     padding: 13px 15px;
     border-radius: 3px;
     border: 1px solid #dbdbdb;
-    width: 88%;
+    width: 85%;
+  }
+  .error-msg-container {
+    width: 85%;
+    margin: 0px auto;
+    padding: 0px 0px 10px 0px;
+    font-size: 13px;
+    color: red;
+    // display: none;
   }
   .btn-container {
     background-color: #3a68f9;
