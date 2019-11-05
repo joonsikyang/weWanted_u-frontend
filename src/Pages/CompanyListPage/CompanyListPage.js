@@ -18,7 +18,7 @@ export class CompanyListPage extends Component {
   componentDidMount = () => {
     fetch(`http://10.58.4.168:8000/job/job_list/3`)
       .then(response => {
-        return response.json();
+        response.json();
       })
       .then(response => {
         this.setState({

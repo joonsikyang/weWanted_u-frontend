@@ -3,18 +3,20 @@ import Slider from "react-slick";
 import "./Slick.scss";
 import LeftBtn from "../../../Images/left-btn.png";
 import RightBtn from "../../../Images/right-btn.png";
-
-function RightArrow(props) {
-  const { className, onClick } = props;
-  return (
-    <img className={className} onClick={onClick} alt="right" src={RightBtn} />
-  );
-}
+import SlickDATA from "./SlickDATA";
+import SlickItem from "./SlickItem";
 
 function LeftArrow(props) {
   const { className, onClick } = props;
   return (
     <img className={className} onClick={onClick} alt="left" src={LeftBtn} />
+  );
+}
+
+function RightArrow(props) {
+  const { className, onClick } = props;
+  return (
+    <img className={className} onClick={onClick} alt="right" src={RightBtn} />
   );
 }
 
@@ -30,36 +32,14 @@ export class Slick extends Component {
       prevArrow: <LeftArrow />,
       nextArrow: <RightArrow />
     };
+    const skillMap = SlickDATA.map(item => (
+      <SlickItem key={item.id} title={item.skills} />
+    ));
+
     return (
       <div className="slider-container">
         <Slider {...settings} className="slider">
-          <div className="skill-container">
-            <h3>HTML</h3>
-          </div>
-          <div className="skill-container">
-            <h3>CSS</h3>
-          </div>
-          <div className="skill-container">
-            <h3>JavaScript</h3>
-          </div>
-          <div className="skill-container">
-            <h3>React</h3>
-          </div>
-          <div className="skill-container">
-            <h3>React Native</h3>
-          </div>
-          <div className="skill-container">
-            <h3>Angular</h3>
-          </div>
-          <div className="skill-container">
-            <h3>Vue</h3>
-          </div>
-          <div className="skill-container">
-            <h3>Redux</h3>
-          </div>
-          <div className="skill-container">
-            <h3>TypeScript</h3>
-          </div>
+          {skillMap}
         </Slider>
       </div>
     );
