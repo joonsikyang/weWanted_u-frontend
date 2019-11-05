@@ -9,27 +9,32 @@ export class LoginModal extends Component {
   constructor() {
     super();
     this.state = {
-      loginMode: true,
-      backBtnDisplay: "none",
-      signUpBtn: "block"
+      loginMode: true
+      // backBtnDisplay: "none",
+      // signUpBtn: "block"
     };
   }
 
   handleSignupMode = e => {
-    if (this.state.loginMode === true) {
-      this.setState({
-        loginMode: false,
-        backBtnDisplay: "block",
-        signUpBtn: "none"
-      });
-    } else if (this.state.loginMode === false) {
-      this.setState({
-        loginMode: true,
-        backBtnDisplay: "none",
-        signUpBtn: "block"
-      });
-    }
+    this.setState({
+      loginMode: !this.state.loginMode
+    });
   };
+
+  //   if (this.state.loginMode === true) {
+  //     this.setState({
+  //       loginMode: false,
+  //       // backBtnDisplay: "block",
+  //       // signUpBtn: "none"
+  //     });
+  //   } else if (this.state.loginMode === false) {
+  //     this.setState({
+  //       loginMode: true,
+  //       backBtnDisplay: "none",
+  //       signUpBtn: "block"
+  //     });
+  //   }
+  // };
 
   handleBackBtn = e => {
     this.setState({
@@ -78,9 +83,9 @@ export class LoginModal extends Component {
             </h2>
           </div>
           {/* 바뀌는 부분 */}
-          <>{loginMode ? <LoginMode /> : <SignupMode />}</>
+          {loginMode ? <LoginMode /> : <SignupMode />}
           {/* 바뀌는 부분 */}
-          <div className="signup-area">
+          <div className={`${this.state.loginMode ? "" : ""} signup-area`}>
             <div
               className="signup-btn-container"
               style={{ display: this.state.signUpBtn }}
