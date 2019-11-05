@@ -5,6 +5,7 @@ export class CompanyItem extends Component {
     return (
       <li className="company_list_item">
         <header>
+          {/* <img alt="main" src={`url(${this.props.img})`} /> */}
           <div style={{ backgroundImage: `url(${this.props.img})` }}></div>
         </header>
         <div className="item_bottom">
@@ -16,7 +17,7 @@ export class CompanyItem extends Component {
             <span className="company_country">{this.props.country}</span>
           </div>
           {/* <div className="company_deadline">
-            <span>Deadline: {this.props.deadLine}</span>
+            <span>{this.props.deadLine}</span>
           </div> */}
         </div>
       </li>
