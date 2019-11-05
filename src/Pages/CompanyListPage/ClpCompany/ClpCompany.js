@@ -29,7 +29,7 @@ export class ClpCompany extends Component {
         companyName={e.company.company_name}
         city={e.company.city}
         country={e.company.country}
-        deadLine={e.company.dead_line}
+        deadLine={e.job.dead_line}
       />
     ));
     return <ul className="companyList_container">{companyList}</ul>;
