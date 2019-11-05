@@ -6,11 +6,8 @@ import CompanyListPage from "Pages/CompanyListPage";
 import MakePortfolioPage from "Pages/MakePortfolioPage";
 import MyAccountPage from "./Pages/MyAccountPage";
 import PreviewPortfolioPage from "./Pages/PreviewPortfolioPage";
-<<<<<<< HEAD
 import LoadingPage from "./Pages/LoadingPage";
-=======
 import ErrorPage from "./Pages/ErrorPage";
->>>>>>> b60651d9d39043556fb8bdc81f7976e7054ec601
 
 class Routes extends React.Component {
   render() {
