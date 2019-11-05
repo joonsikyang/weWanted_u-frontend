@@ -8,7 +8,12 @@ const CdpPosition = props => {
       <h5>
         {props.companyData.city} - {props.companyData.country}
       </h5>
-      <p>마감일: {props.positionData.dead_line}</p>
+      <p>
+        마감일:{" "}
+        {props.positionData.dead_line
+          ? props.positionData.dead_line
+          : "상시 채용"}
+      </p>
     </div>
   );
 };

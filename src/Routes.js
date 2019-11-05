@@ -21,7 +21,11 @@ class Routes extends React.Component {
             path="/preview_portfolio"
             component={PreviewPortfolioPage}
           />
-          <Route exact path="/company_detail" component={CompanyDetailPage} />
+          <Route
+            exact
+            path="/company_detail/:id"
+            component={CompanyDetailPage}
+          />
         </Switch>
       </Router>
     );

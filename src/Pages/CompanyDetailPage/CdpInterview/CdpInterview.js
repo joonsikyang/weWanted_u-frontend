@@ -4,14 +4,7 @@ import { expData, resultData } from "../CdpTable/CdpTableData";
 import CdpInterviewBox from "../CdpInterviewBox";
 import CdpReviewBox from "../CdpReviewBox";
 import CdpModal from "../CdpModal/CdpModal";
-import {
-  category,
-  career_year,
-  interview_experience,
-  interview_path,
-  interview_result,
-  code_test_level
-} from "../CdpTable/CdpTableData";
+import { review_list } from "../CdpTable/CdpTableData";
 
 export class CdpInterview extends Component {
   constructor() {
@@ -19,15 +12,22 @@ export class CdpInterview extends Component {
     this.state = {
       expData,
       resultData,
-      category,
-      career_year,
-      interview_experience,
-      interview_path,
-      interview_result,
-      code_test_level,
+      review_list,
       showModal: false
     };
   }
+
+  chart_review_api = () => {
+    fetch("api")
+      .then(res => res.json)
+      .then(data => {
+        this.setState({
+          expData: data.expData,
+          resultData: data.resultData,
+          review_list: data.review_list
+        });
+      });
+  };
 
   handleOpenModal = () => {
     this.setState({
@@ -41,20 +41,8 @@ export class CdpInterview extends Component {
     });
   };
 
-  handleClick = () => {};
-
   render() {
-    const {
-      expData,
-      resultData,
-      showModal,
-      category,
-      career_year,
-      interview_experience,
-      interview_path,
-      interview_result,
-      code_test_level
-    } = this.state;
+    const { expData, resultData, showModal, review_list } = this.state;
     return (
       <div className="interview_container">
         <div className="interview_box_container">
@@ -66,8 +54,8 @@ export class CdpInterview extends Component {
           </div>
         </div>
         <div className="interview_box_container">
-          <CdpInterviewBox data={expData} />
-          <CdpInterviewBox data={resultData} />
+          <CdpInterviewBox title="면접 경험" data={expData} />
+          <CdpInterviewBox title="면접 결과" data={resultData} />
         </div>
         <div className="review_container">
           <div className="review">면접 후기</div>
@@ -78,16 +66,21 @@ export class CdpInterview extends Component {
             isOpen={showModal}
             handleCloseModal={this.handleCloseModal}
             handleOpenModal={this.handleOpenModal}
-            category={category}
-            career_year={career_year}
-            interview_experience={interview_experience}
-            interview_path={interview_path}
-            interview_result={interview_result}
-            code_test_level={code_test_level}
-            onClick={this.handleClick}
           />
         </div>
-        <CdpReviewBox />
+        {review_list.map(e => (
+          <CdpReviewBox
+            category={e.category}
+            career_year={e.career_year}
+            interview_experience={e.interview_experience}
+            interview_path={e.interview_path}
+            code_test_level={e.code_test_level}
+            interview_result={e.interview_result}
+            overall_review={e.overall_review}
+            question={e.question}
+            answer={e.answer}
+          />
+        ))}
       </div>
     );
   }
