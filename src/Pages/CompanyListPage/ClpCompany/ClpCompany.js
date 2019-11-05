@@ -9,7 +9,7 @@ export class ClpCompany extends Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.5.27:8000/job/main/1")
+    fetch("http://10.58.4.168:8000/job/main/1")
       .then(response => {
         return response.json();
       })
@@ -29,7 +29,7 @@ export class ClpCompany extends Component {
         companyName={e.company.company_name}
         city={e.company.city}
         country={e.company.country}
-        // deadLine={e.company.deadLine}
+        deadLine={e.company.dead_line}
       />
     ));
     return <ul className="companyList_container">{companyList}</ul>;
