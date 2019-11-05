@@ -19,11 +19,8 @@
     display: flex;
     align-items: center;
     border-radius: 10px;
-    opacity: 0.8;
-    &:hover {
-      cursor: pointer;
-      opacity: 1;
-    }
+    opacity: 1;
+    cursor: pointer;
     .category_item_title {
       font-size: 2em;
       color: #ffffff;
@@ -32,4 +29,16 @@
       margin: 0 auto;
     }
   }
+}
+
+.front {
+  background-color: rgb(113, 211, 186);
+}
+
+.back {
+  background-color: rgb(61, 126, 255);
+}
+
+.full {
+  background-color: #3a68f9;
 }

@@ -6,19 +6,13 @@ export class ClpCategory extends Component {
     return (
       <div className="category">
         <div className="category_container">
-          <div
-            className="category_item"
-            style={{ backgroundColor: "rgba(57, 194, 159)" }}
-          >
+          <div className="category_item front">
             <div className="category_item_title">FrontEnd</div>
           </div>
-          <div
-            className="category_item"
-            style={{ backgroundColor: "rgba(61, 126, 255)" }}
-          >
+          <div className="category_item back">
             <div className="category_item_title">BackEnd</div>
           </div>
-          <div className="category_item" style={{ backgroundColor: "#3a68f9" }}>
+          <div className="category_item full">
             <div className="category_item_title">FullStack</div>
           </div>
         </div>

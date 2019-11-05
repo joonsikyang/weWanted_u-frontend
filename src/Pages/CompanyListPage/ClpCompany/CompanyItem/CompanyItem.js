@@ -5,7 +5,6 @@ export class CompanyItem extends Component {
     return (
       <li className="company_list_item">
         <header>
-          {/* <img alt="main" src={`url(${this.props.img})`} /> */}
           <div style={{ backgroundImage: `url(${this.props.img})` }}></div>
         </header>
         <div className="item_bottom">

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import "./Slick.scss";
-import LeftBtn from "../../../../Images/left-btn.png";
-import RightBtn from "../../../../Images/right-btn.png";
+import LeftBtn from "../../../Images/left-btn.png";
+import RightBtn from "../../../Images/right-btn.png";
 
 function RightArrow(props) {
   const { className, onClick } = props;
@@ -25,8 +25,8 @@ export class Slick extends Component {
       infinite: true,
       speed: 500,
       slidesToShow: 7,
-      //   slidesToScroll: 3,
-      centerMode: true,
+      slidesToScroll: 3,
+      // centerMode: true,
       prevArrow: <LeftArrow />,
       nextArrow: <RightArrow />
 
@@ -60,7 +60,6 @@ export class Slick extends Component {
     return (
       <div className="slider-container">
         <Slider {...settings} className="slider">
-          {/* <div className="gradation"></div> */}
           <div className="skill-container">
             <h3>HTML</h3>
           </div>
@@ -71,22 +70,22 @@ export class Slick extends Component {
             <h3>JavaScript</h3>
           </div>
           <div className="skill-container">
-            <h3>4</h3>
+            <h3>React</h3>
           </div>
           <div className="skill-container">
-            <h3>5</h3>
+            <h3>React Native</h3>
           </div>
           <div className="skill-container">
-            <h3>6</h3>
+            <h3>Angular</h3>
           </div>
           <div className="skill-container">
-            <h3>7</h3>
+            <h3>Vue</h3>
           </div>
           <div className="skill-container">
-            <h3>8</h3>
+            <h3>Redux</h3>
           </div>
           <div className="skill-container">
-            <h3>9</h3>
+            <h3>TypeScript</h3>
           </div>
         </Slider>
       </div>
