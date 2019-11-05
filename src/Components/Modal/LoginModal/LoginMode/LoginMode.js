@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./LoginMode.scss";
 import { withRouter } from "react-router-dom";
-import { regExpLiteral } from "@babel/types";
 
 export class LoginMode extends Component {
   constructor() {
