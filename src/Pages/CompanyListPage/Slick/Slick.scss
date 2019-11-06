@@ -1,42 +1,18 @@
-.slider-container {
-  display: flex;
-  .slider {
-    max-width: 1060px;
-    margin: 0 auto;
-    position: relative;
-    .gradation {
-      position: absolute;
-      left: -50px;
-      z-index: 5;
-      background-image: url("https://s3.ap-northeast-2.amazonaws.com/wanted-public/category_gradation_l_white2.png");
-    }
-    .skill-container {
-      h3 {
-        // background-color: rgb(85, 83, 83);
-        background-image: linear-gradient(
-          to top,
-          rgb(75, 74, 74),
-          rgb(153, 152, 152)
-        );
-        padding: 20px;
-        margin-right: 10px;
-        text-align: center;
-        color: #fff;
-        font-weight: 500;
-        font-size: 14px;
-        border-radius: 3px;
-      }
-    }
-    .slick-prev:before,
-    .slick-next:before {
-      color: #333;
-      z-index: 9;
+.slick-slide {
+  .skill-container {
+    h3 {
+      background-image: linear-gradient(
+        to top,
+        rgb(75, 74, 74),
+        rgb(153, 152, 152)
+      );
+      padding: 20px;
+      margin-right: 10px;
+      text-align: center;
+      color: #fff;
+      font-weight: 500;
+      font-size: 14px;
+      border-radius: 3px;
     }
   }
 }
-
-// .left-btn-container {
-//   width: 100px;
-//   background-color: blue;
-//   background-image: url("https://s3.ap-northeast-2.amazonaws.com/wanted-public/category_gradation_r_white2.png");
-// }

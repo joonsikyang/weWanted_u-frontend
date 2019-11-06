@@ -3,8 +3,8 @@ import Slider from "react-slick";
 import "./Slick.scss";
 import LeftBtn from "../../../Images/left-btn.png";
 import RightBtn from "../../../Images/right-btn.png";
-import SlickDATA from "./SlickDATA";
-import SlickItem from "./SlickItem";
+// import SlickDATA from "./SlickDATA";
+// import SlickItem from "./SlickItem";
 
 function LeftArrow(props) {
   const { className, onClick } = props;
@@ -20,7 +20,30 @@ function RightArrow(props) {
   );
 }
 
-export class Slick extends Component {
+class Slick extends Component {
+  sliders = () => {
+    return this.props.fetchedData.map((e, i) => {
+      console.log(this.props.fetchedData.length);
+      return (
+        <div
+          style={{
+            padding: 20,
+            marginRight: 10,
+            textAlign: "center",
+            color: "#fff",
+            fontWeight: 500,
+            fontSize: 14,
+            borderRadius: 3,
+            borderColor: "black",
+            borderStyle: "solid"
+          }}
+          className="skill-container"
+        >
+          <h3 data-index={i}>{e.job.position}</h3>
+        </div>
+      );
+    });
+  };
   render() {
     const settings = {
       dots: false,
@@ -32,18 +55,25 @@ export class Slick extends Component {
       prevArrow: <LeftArrow />,
       nextArrow: <RightArrow />
     };
-    const skillMap = SlickDATA.map(item => (
-      <SlickItem key={item.id} title={item.skills} />
-    ));
 
     return (
-      <div className="slider-container">
-        <Slider {...settings} className="slider">
-          {skillMap}
+      <div>
+        <Slider
+          style={{
+            marginLeft: "auto",
+            marginRight: "auto",
+            height: 30,
+            width: 1060
+          }}
+          {...settings}
+          className="slider"
+        >
+          {this.sliders()}
         </Slider>
       </div>
     );
   }
 }
 
+// className="slider-container"
 export default Slick;

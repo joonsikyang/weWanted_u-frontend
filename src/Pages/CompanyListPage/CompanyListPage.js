@@ -33,26 +33,13 @@ export class CompanyListPage extends Component {
   fetchCompany() {
     fetch(`http://10.58.0.253:8000/job/job_list/${this.props.match.params.id}`)
       .then(response => response.json())
-      .then(
-        response => {
-          console.log(response);
-          this.setState({
-            data: response.data
-          });
-        } /*, this.props.history.push(`/company_list/3`)*/
-      );
+      .then(response => {
+        console.log(response);
+        this.setState({
+          data: response.data
+        });
+      });
   }
-
-  // handleCategoryClick = id => {
-  //   fetch(`http://10.58.0.253:8000/job/job_list/${id}`)
-  //     .then(response => response.json())
-  //     .then(response => {
-  //       console.log(response);
-  //       this.setState({
-  //         data: response.data
-  //       });
-  //     }, this.props.history.push(`/company_list/${id}`));
-  // };
 
   render() {
     console.log(this.state.data);
@@ -62,7 +49,7 @@ export class CompanyListPage extends Component {
         <CompanyListPageNavBar />
         <div className="filterArea">
           <ClpCategory onClick={this.handleCategoryClick} />
-          <Slick fetchedTags={this.state.data} />
+          <Slick fetchedData={this.state.data} />
         </div>
         <div className="filter_companyList_container">
           <ClpFilter />
