@@ -16,7 +16,7 @@ export class CompanyItem extends Component {
             <span className="company_country">{this.props.country}</span>
           </div>
           <div className="company_deadline">
-            <span>{this.props.deadLine}</span>
+            <span>{this.props.deadLine ? this.props.deadLine : "상시"}</span>
           </div>
         </div>
       </li>
