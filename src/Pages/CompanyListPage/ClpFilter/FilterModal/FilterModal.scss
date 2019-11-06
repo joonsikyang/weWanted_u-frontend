@@ -6,4 +6,39 @@
   width: 380px;
   border-radius: 10px;
   background-color: #fff;
+  .header-container {
+    font-weight: 400;
+    height: 54px;
+    padding: 16px 20px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+    word-wrap: break-word;
+    display: flex;
+    align-items: center;
+    .header-title {
+      margin: 0 auto;
+    }
+    .close-btn {
+      position: absolute;
+      right: 20px;
+      cursor: pointer;
+    }
+  }
+  .modal-bottom {
+    padding: 20px;
+    .filter-item-container {
+      margin: 10px 0 30px;
+      .filter-item-title {
+        font-size: 16px;
+        font-weight: 400;
+        color: #999;
+        margin: 0 0 10px;
+      }
+      //   .filter-item-contents {
+      //   }
+    }
+  }
 }

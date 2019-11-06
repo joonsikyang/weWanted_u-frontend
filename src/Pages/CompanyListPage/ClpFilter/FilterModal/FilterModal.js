@@ -9,8 +9,9 @@ export class FilterModal extends Component {
         className="filter-modal"
         isOpen={this.props.isOpen}
         contentLabel="filter"
-        // onRequestClose={this.props.close}
+        onRequestClose={this.props.isClose}
         shouldCloseOnOverlayClick={true}
+        shouldCloseOnEsc={true}
         style={{
           overlay: {
             backgroundColor: "rgba(0, 0, 0, 0.4)"
@@ -21,10 +22,31 @@ export class FilterModal extends Component {
         }}
       >
         <div className="modal-container">
-          <header>필터</header>
-          <div>정렬</div>
-          <div>국가</div>
-          <div>지역</div>
+          <header className="header-container">
+            <div className="header-title">필터</div>
+            <div className="close-btn" onClick={this.props.isClose}>
+              close
+            </div>
+          </header>
+          <div className="modal-bottom">
+            <div className="filter-item-container">
+              <div className="filter-item-title">정렬</div>
+              <div className="filter-item-contents">
+                <select>
+                  <option>최신순</option>
+                  <option>인기순</option>
+                </select>
+              </div>
+            </div>
+            <div className="filter-item-container">
+              <div className="filter-item-title">국가</div>
+              <div className="filter-item-contents">Filter Contents</div>
+            </div>
+            <div className="filter-item-container">
+              <div className="filter-item-title">지역</div>
+              <div className="filter-item-contents">Filter Contents</div>
+            </div>
+          </div>
         </div>
       </ReactModal>
     );

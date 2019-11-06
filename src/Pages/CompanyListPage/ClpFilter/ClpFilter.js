@@ -16,6 +16,12 @@ export class ClpFilter extends Component {
     });
   };
 
+  handleCloseFilterModal = () => {
+    this.setState({
+      modal: false
+    });
+  };
+
   render() {
     return (
       <div className="filter_container">
@@ -49,7 +55,10 @@ export class ClpFilter extends Component {
           <div className="filter_btn" onClick={this.handleFilterModal}>
             <div>Filter</div>
           </div>
-          <FilterModal isOpen={this.state.modal} />
+          <FilterModal
+            isOpen={this.state.modal}
+            isClose={this.handleCloseFilterModal}
+          />
         </div>
       </div>
     );
