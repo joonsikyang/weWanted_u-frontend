@@ -9,7 +9,99 @@
   }
   .content_box {
     border: $border-line;
+    display: flex;
+    padding: 20px;
     .left_box {
+      flex: 1;
+      .title {
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+      .difficulty {
+        margin-bottom: 10px;
+        .difficulty_color {
+          .bar_1,
+          .bar_2,
+          .bar_3,
+          .bar_4,
+          .bar_5 {
+            background-color: #efefef;
+            display: inline-block;
+            height: 7px;
+            width: 13px;
+            margin: 0 1px;
+          }
+          .bar_1_on,
+          .bar_2_on,
+          .bar_3_on,
+          .bar_4_on,
+          .bar_5_on {
+            display: inline-block;
+            height: 7px;
+            width: 13px;
+            margin: 0 1px;
+          }
+          .bar_1_on {
+            background-color: rgb(116, 192, 116);
+          }
+          .bar_2_on {
+            background-color: rgb(132, 221, 132);
+          }
+          .bar_3_on {
+            background-color: rgb(231, 161, 29);
+          }
+          .bar_4_on {
+            background-color: rgb(238, 105, 65);
+          }
+          .bar_5_on {
+            background-color: red;
+          }
+        }
+      }
+    }
+    .right_box {
+      flex: 3;
+      .overall_review {
+        font-weight: 700;
+        line-height: 1.5;
+      }
+      .title {
+        font-size: 14px;
+        font-weight: 700;
+        display: inline-block;
+        margin: 10px 0;
+      }
+      .question,
+      .answer {
+        line-height: 1.5;
+        font-size: 14px;
+        word-break: keep-all;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+      }
+      .result_container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+        .result_box {
+          display: flex;
+          justify-content: space-around;
+          width: 80%;
+          height: 30px;
+          padding: 8px;
+          margin: 0 1px;
+          background-color: #efefef;
+          .result_name {
+            margin-right: 5px;
+            font-size: 14px;
+            font-weight: 700;
+          }
+          .result_value {
+            font-size: 14px;
+          }
+        }
+      }
     }
   }
 }
