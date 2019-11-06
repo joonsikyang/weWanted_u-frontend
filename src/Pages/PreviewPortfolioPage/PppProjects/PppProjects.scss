@@ -16,6 +16,8 @@ $border: 1px solid #bebdbd;
       margin: 20px 0px;
       background-color: transparent;
       max-width: 400px;
+      white-space: pre-wrap;
+      word-break: keep-all;
     }
     .ppp_project_title_value {
       font-weight: 600;
@@ -27,12 +29,14 @@ $border: 1px solid #bebdbd;
       background-size: contain;
       background-repeat: no-repeat;
       justify-content: center;
+      white-space: pre-wrap;
+      word-break: keep-all;
     }
   }
 
   .ppp_description_container {
     margin-left: 50px;
-
+    width: 70%;
     .ppp_project_description_title,
     .ppp_what_did_i_do_title,
     .ppp_tech_stack_title {
@@ -44,30 +48,30 @@ $border: 1px solid #bebdbd;
     .ppp_tech_stack_value {
       border: none;
       background: transparent;
-      max-width: 500px;
+      max-width: 600px;
       min-height: 50px;
       font-size: 1em;
       white-space: pre-wrap;
-      word-break: break-word;
-      line-height: 1.7em;
+      word-break: keep-all;
+      line-height: 1.8em;
     }
     .ppp_project_description_title {
       .ppp_period {
-        color: rgb(170, 66, 244);
+        color: rgba(0, 201, 167, 0.9);
         font-size: 60px;
         font-weight: 400;
       }
     }
     .ppp_what_did_i_do_title {
       .ppp_period {
-        color: rgb(115, 211, 211);
+        color: rgba(55, 125, 255, 0.9);
         font-size: 60px;
         font-weight: 400;
       }
     }
     .ppp_tech_stack_title {
       .ppp_period {
-        color: rgb(8, 8, 193);
+        color: rgba(58, 104, 249, 0.9);
         font-size: 60px;
         font-weight: 400;
       }
