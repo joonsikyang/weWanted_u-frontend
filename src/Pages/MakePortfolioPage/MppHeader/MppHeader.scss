@@ -8,18 +8,15 @@ $border: 1px solid #bebdbd;
 
   .title {
     display: flex;
-    justify-content: center;
-    height: 60px;
+    height: 50px;
 
     .title_input {
       border: none;
       font-size: 3em;
       font-weight: 600;
       font-style: italic;
-      width: 650px;
-      text-align: center;
       background-color: transparent;
-
+      width: 100%;
       .title_input::placeholder {
         color: grey;
       }
@@ -29,14 +26,14 @@ $border: 1px solid #bebdbd;
   .contact_info_title {
     font-size: 1.8em;
     .period {
-      color: rgb(170, 66, 244);
+      color: rgba(0, 201, 167, 0.9);
     }
   }
   .phone_input,
   .email_input {
     border: none;
     margin-top: 10px;
-    width: 240px;
+    width: 100%;
     font-size: 1em;
     background-color: transparent;
   }
@@ -47,13 +44,13 @@ $border: 1px solid #bebdbd;
   .blog_link_title {
     font-size: 1.8em;
     .period {
-      color: rgb(115, 211, 211);
+      color: rgba(55, 125, 255, 0.9);
     }
   }
   .blog_link_input {
     border: none;
     margin-top: 10px;
-    width: 550px;
+    width: 100%;
     font-size: 1em;
     background-color: transparent;
   }
@@ -64,17 +61,19 @@ $border: 1px solid #bebdbd;
   .about_me_title {
     font-size: 1.8em;
     .period {
-      color: rgb(8, 8, 193);
+      color: rgba(58, 104, 249, 0.9);
     }
   }
   .about_me_input {
     border: none;
     border-bottom: $border;
-    width: 600px;
+    width: 100%;
     height: 90px;
     font-size: 1em;
     background-color: transparent;
     line-height: 1.8em;
+    word-break: keep-all;
+    white-space: pre-wrap;
   }
 }
 
