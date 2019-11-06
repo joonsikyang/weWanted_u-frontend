@@ -1,0 +1,77 @@
+$border: 1px solid #bebdbd;
+
+.modal_preview_header {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  .modal_preview_title {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+
+    .modal_preview_title_value {
+      border: none;
+      font-size: 4.5em;
+      font-weight: 600;
+      font-style: italic;
+
+      background-color: transparent;
+      color: black;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  }
+
+  .modal_preview_contact_info_title {
+    font-size: 1.8em;
+    .modal_preview_period {
+      color: rgb(170, 66, 244);
+    }
+  }
+  .modal_preview_phone_value,
+  .modal_preview_email_value {
+    border: none;
+    margin-top: 10px;
+    width: 240px;
+    font-size: 1em;
+    background-color: transparent;
+  }
+
+  .modal_preview_blog_link_title {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    .modal_preview_period {
+      color: rgb(115, 211, 211);
+    }
+  }
+  .modal_preview_blog_link_value {
+    border: none;
+    width: 550px;
+    font-size: 1em;
+    background-color: transparent;
+    text-decoration: none;
+    color: black;
+  }
+
+  .modal_preview_about_me_title {
+    font-size: 1.8em;
+    .modal_preview_period {
+      color: rgb(8, 8, 193);
+    }
+  }
+  .modal_preview_about_me_value {
+    border: none;
+    margin-top: 20px;
+    height: auto;
+    font-size: 1em;
+    background-color: transparent;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.8em;
+  }
+}
+
+.modal_preview_period {
+  font-size: 60px;
+}
