@@ -13,6 +13,7 @@ export class ClpCompany extends Component {
         city={e.company.city}
         country={e.company.country}
         deadLine={e.job.dead_line}
+        jobId={e.job.job_id}
       />
     ));
     return <ul className="companyList_container">{companyList}</ul>;
