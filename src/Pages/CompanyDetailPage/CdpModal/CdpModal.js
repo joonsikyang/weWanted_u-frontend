@@ -44,7 +44,7 @@ class CdpModal extends React.Component {
       });
   };
 
-  // handleSubmit = () => {
+  // handlepost = () => {
   //   fetch("api",{
   //     method: 'post'        body: JSON.stringify({
   //       email: this.props.email,
@@ -174,7 +174,7 @@ class CdpModal extends React.Component {
               <div className="close" onClick={this.props.handleCloseModal}>
                 취소
               </div>
-              <div onClick={handleSubmit} className="completed">
+              <div onClick={this.handlepost} className="completed">
                 작성 완료
               </div>
             </div>
