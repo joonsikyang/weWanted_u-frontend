@@ -23,7 +23,6 @@ function RightArrow(props) {
 class Slick extends Component {
   sliders = () => {
     return this.props.fetchedData.map((e, i) => {
-      console.log(this.props.fetchedData.length);
       return (
         <div
           style={{

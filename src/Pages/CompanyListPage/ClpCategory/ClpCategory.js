@@ -8,21 +8,21 @@ export class ClpCategory extends Component {
       <div className="category">
         <div className="category_container">
           <Link
-            to="/company_list/1"
+            to="/company_list?category=1"
             // onClick={() => this.props.onClick(1)}
             className="category_item front"
           >
             <div className="category_item_title">FrontEnd</div>
           </Link>
           <Link
-            to="/company_list/2"
+            to="/company_list?category=2"
             // onClick={() => this.props.onClick(2)}
             className="category_item back"
           >
             <div className="category_item_title">BackEnd</div>
           </Link>
           <Link
-            to="/company_list/3"
+            to="/company_list?category=3"
             // onClick={() => this.props.onClick(3)}
             className="category_item full"
           >

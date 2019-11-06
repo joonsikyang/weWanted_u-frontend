@@ -19,22 +19,24 @@ export class CompanyListPage extends Component {
   }
 
   componentDidMount = () => {
-    console.log("componentDidMount");
     this.fetchCompany();
   };
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(this.props);
-    if (prevProps.match.params.id !== this.props.match.params.id) {
+    if (
+      prevProps.location.search.split("=")[1] !==
+      this.props.location.search.split("=")[1]
+    ) {
       this.fetchCompany();
     }
   }
 
   fetchCompany() {
-    fetch(`http://10.58.0.253:8000/job/job_list/${this.props.match.params.id}`)
+    const queryId = this.props.location.search.split("=")[1];
+    console.log(queryId);
+    fetch(`http://10.58.0.253:8000/job/job_list/${queryId}`)
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         this.setState({
           data: response.data
         });
@@ -42,8 +44,7 @@ export class CompanyListPage extends Component {
   }
 
   render() {
-    console.log(this.state.data);
-
+    console.log(this.props.location.search);
     return (
       <div className="company_list_page">
         <CompanyListPageNavBar />
