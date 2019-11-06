@@ -14,10 +14,10 @@ const CdpDetailIntro = props => {
       </div>
       <ul>
         {props.tagData.map(e => (
-          <SkillTag skill={e.skill} />
+          <SkillTag tag_id={e.tag_id} skill={e.skill} />
         ))}
       </ul>
-      <p>
+      <div className="pTag">
         <span>{props.positionData.intro}</span>
         <div>주요 업무</div>
         <span>{props.positionData.main_tasks}</span>
@@ -27,7 +27,7 @@ const CdpDetailIntro = props => {
         <span>{props.positionData.preferred_points}</span>
         <div>혜택 및 복지</div>
         <span>{props.positionData.benefits}</span>
-      </p>
+      </div>
     </div>
   );
 };

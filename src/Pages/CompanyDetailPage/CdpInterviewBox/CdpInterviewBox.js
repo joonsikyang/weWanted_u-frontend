@@ -5,7 +5,7 @@ import { Doughnut } from "react-chartjs-2";
 const CdpInterviewBox = props => {
   return (
     <div className="interview_box">
-      <h6>면접 경험</h6>
+      <h6>{props.title}</h6>
       <Doughnut
         options={{
           legend: {
@@ -14,7 +14,6 @@ const CdpInterviewBox = props => {
           }
         }}
         data={props.data}
-        height={120}
       />
     </div>
   );

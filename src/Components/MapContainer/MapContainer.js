@@ -13,14 +13,14 @@ const MapContainer = props => {
       zoom={16}
       style={mapStyles}
       initialCenter={{
-        lat: props.companyData.lat,
-        lng: props.companyData.lng
+        lat: parseFloat(props.companyData.lat),
+        lng: parseFloat(props.companyData.lng)
       }}
     >
       <Marker
         position={{
-          lat: props.companyData.lat,
-          lng: props.companyData.lng
+          lat: parseFloat(props.companyData.lat),
+          lng: parseFloat(props.companyData.lng)
         }}
       />
     </Map>

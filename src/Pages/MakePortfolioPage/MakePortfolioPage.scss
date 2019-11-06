@@ -8,6 +8,7 @@ $border: 1px solid #bebdbd;
     padding: 10px 40px 20px;
     margin-top: 70px;
     border-radius: 10px;
+    width: 60%;
 
     .projects_title_bar {
       display: flex;
@@ -37,15 +38,14 @@ $border: 1px solid #bebdbd;
       height: 40px;
       margin-top: 20px;
 
-      .save_btn {
-        background-color: rgb(170, 66, 244);
-      }
       .completed_btn {
-        background-color: rgb(115, 211, 211);
+        background-color: rgba(0, 201, 167, 0.9);
       }
-
+      .save_btn {
+        background-color: rgba(55, 125, 255, 0.9);
+      }
       .preview_btn {
-        background-color: rgb(8, 8, 193);
+        background-color: rgba(58, 104, 249, 0.9);
       }
 
       .save_btn,
@@ -60,6 +60,6 @@ $border: 1px solid #bebdbd;
     }
   }
   .mpp_container:hover {
-    background-color: #f8f8f8;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
   }
 }
