@@ -62,8 +62,9 @@ class Slick extends Component {
           style={{
             marginLeft: "auto",
             marginRight: "auto",
-            height: 30,
-            width: 1060
+            maxWidth: 1060,
+            display: "flex",
+            alignItems: "center"
           }}
           {...settings}
           className="slider"
