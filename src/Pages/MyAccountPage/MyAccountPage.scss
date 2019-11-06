@@ -1,5 +1,6 @@
 .my_account_page {
   display: flex;
+  flex-direction: column;
   margin-top: 50px;
 
   .account_page_container {
@@ -28,8 +29,9 @@
     .my_job_list {
       font-size: 20px;
       font-weight: 400;
-      font-style: italic;
+
       .job_list_title {
+        padding-bottom: 10px;
         border-bottom: 1px solid #efefef;
       }
     }
@@ -37,17 +39,18 @@
     .my_portfolio_list {
       display: flex;
       flex-direction: column;
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 20px;
 
       .portfolio_list_title {
-        font-size: 20px;
-        font-weight: 400;
-        font-style: italic;
         border-bottom: 1px solid #efefef;
+        padding-bottom: 10px;
       }
       .create_new_portfolio_btn {
         font-size: 16px;
         font-weight: 300;
-        color: black;
+        color: #7b7b7b;
         border: 1px solid #efefef;
         border-radius: 10px;
         display: inline-block;
@@ -56,7 +59,7 @@
         width: 120px;
       }
       .create_new_portfolio_btn:hover {
-        background-color: black;
+        background-color: #7b7b7b;
         color: white;
       }
 

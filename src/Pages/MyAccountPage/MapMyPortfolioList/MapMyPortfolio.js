@@ -7,9 +7,11 @@ const MapMyPortfolio = props => {
       <li className="portfolio">
         <div className="portfolio_container">
           <div className="portfolio_details">
-            <div className="details">{props.title}</div>
-            <div className="details">{props.dateCreated}</div>
-            <div className="details">{props.completed}</div>
+            <div className="details_title">{props.title}</div>
+            <div className="date_status_container">
+              <div className="details_date">{props.dateCreated}</div>
+              <div className="details_status">{props.completed}</div>
+            </div>
           </div>
           <div className="portfolio_options">
             <button className="portfolio_view"></button>
