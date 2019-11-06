@@ -48,6 +48,8 @@ export class CdpInterview extends Component {
         <div className="interview_box_container">
           <div className="interview_box">
             <h6>면접 난이도</h6>
+            <div></div>
+            <div></div>
           </div>
           <div className="interview_box">
             <h6>면접 경로</h6>

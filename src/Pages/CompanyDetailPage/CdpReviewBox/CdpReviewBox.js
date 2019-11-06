@@ -11,12 +11,49 @@ const CdpReviewBox = props => {
         <div className="left_box">
           <span className="title">코딩 테스트</span>
           <div className="difficulty">
-            <div>{props.code_test_level}</div>
-            <span className="bar_1"></span>
-            <span className="bar_2"></span>
-            <span className="bar_3"></span>
-            <span className="bar_4"></span>
-            <span className="bar_5"></span>
+            {props.code_test_level === 1 || props.code_test_level === 2 ? (
+              <div>쉬움</div>
+            ) : props.code_test_level === 3 ? (
+              <div>보통</div>
+            ) : props.code_test_level === 4 || props.code_test_level === 5 ? (
+              <div>어려움</div>
+            ) : (
+              <div>없음</div>
+            )}
+            <div className="difficulty_color">
+              <span
+                className={`bar_1${
+                  props.code_test_level !== "없음" ? "_on" : ""
+                }`}
+              ></span>
+              <span
+                className={`bar_2${
+                  props.code_test_level !== "없음" &&
+                  props.code_test_level !== 1
+                    ? "_on"
+                    : ""
+                }`}
+              ></span>
+              <span
+                className={`bar_3${
+                  props.code_test_level === 3 ||
+                  props.code_test_level === 4 ||
+                  props.code_test_level === 5
+                    ? "_on"
+                    : ""
+                }`}
+              ></span>
+              <span
+                className={`bar_4${
+                  props.code_test_level === 4 || props.code_test_level === 5
+                    ? "_on"
+                    : ""
+                }`}
+              ></span>
+              <span
+                className={`bar_5${props.code_test_level === 5 ? "_on" : ""}`}
+              ></span>
+            </div>
           </div>
           <span className="title">면접 경로</span>
           <div>{props.interview_path}</div>

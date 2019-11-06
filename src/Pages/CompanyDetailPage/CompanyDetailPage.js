@@ -36,7 +36,7 @@ export class CompanyDetailPage extends Component {
   componentDidMount() {
     console.log(this.props);
     fetch(
-      `http://10.58.4.168:8000/job/recruitment/${this.props.match.params.id}`
+      `http://10.58.0.253:8000/job/recruitment/${this.props.match.params.id}`
     )
       .then(res => res.json())
       .then(res => {
@@ -47,6 +47,12 @@ export class CompanyDetailPage extends Component {
           imageData: res.company_images
         });
       });
+
+    window.onscroll = () => {
+      if (window.pageYOffset >= 1100) {
+        console.log(window.pageYOffset);
+      }
+    };
   }
 
   render() {
@@ -94,7 +100,10 @@ export class CompanyDetailPage extends Component {
               />
             )}
           </div>
-          <aside className="main_right">
+          <aside
+            style={{ position: this.state.main_right }}
+            className="main_right"
+          >
             <div className="logo_and_name">
               <div
                 style={{
@@ -108,7 +117,7 @@ export class CompanyDetailPage extends Component {
               companyData={companyData}
               positionData={positionData}
             />
-            <button>팔로우하기</button>
+            <button className="follow_btn">팔로우하기</button>
             <MapContainer companyData={companyData} />
           </aside>
         </main>

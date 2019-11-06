@@ -20,6 +20,44 @@
       }
       .difficulty {
         margin-bottom: 10px;
+        .difficulty_color {
+          .bar_1,
+          .bar_2,
+          .bar_3,
+          .bar_4,
+          .bar_5 {
+            background-color: #efefef;
+            display: inline-block;
+            height: 7px;
+            width: 13px;
+            margin: 0 1px;
+          }
+          .bar_1_on,
+          .bar_2_on,
+          .bar_3_on,
+          .bar_4_on,
+          .bar_5_on {
+            display: inline-block;
+            height: 7px;
+            width: 13px;
+            margin: 0 1px;
+          }
+          .bar_1_on {
+            background-color: rgb(116, 192, 116);
+          }
+          .bar_2_on {
+            background-color: rgb(132, 221, 132);
+          }
+          .bar_3_on {
+            background-color: rgb(231, 161, 29);
+          }
+          .bar_4_on {
+            background-color: rgb(238, 105, 65);
+          }
+          .bar_5_on {
+            background-color: red;
+          }
+        }
       }
     }
     .right_box {

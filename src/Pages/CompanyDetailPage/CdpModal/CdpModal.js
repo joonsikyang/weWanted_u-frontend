@@ -26,7 +26,8 @@ class CdpModal extends React.Component {
       interview_experience_value: "긍정적",
       interview_path_value: "지인 추천",
       interview_result_value: "합격",
-      code_test_level_value: "없음"
+      code_test_level_value: "없음",
+      question: ""
     };
   }
 
@@ -89,6 +90,11 @@ class CdpModal extends React.Component {
       interview_result_value: e
     });
   };
+  questionChange = e => {
+    this.setState({
+      question: e.target.value
+    });
+  };
 
   render() {
     const {
@@ -106,14 +112,8 @@ class CdpModal extends React.Component {
       code_test_level_value
     } = this.state;
     const { handleSubmit } = this;
-    console.log(
-      category_value,
-      career_year_value,
-      interview_experience_value,
-      interview_path_value,
-      interview_result_value,
-      code_test_level_value
-    );
+    console.log(this.state.question);
+
     return (
       <ReactModal
         isOpen={this.props.isOpen}
@@ -159,7 +159,10 @@ class CdpModal extends React.Component {
             <div className="modal_middle">
               <div className="question">
                 <span>면접 질문</span>
-                <textarea placeholder=" 최대한 자세하게 작성해주세요."></textarea>
+                <textarea
+                  onChange={this.questionChange}
+                  placeholder=" 최대한 자세하게 작성해주세요."
+                ></textarea>
               </div>
               <div className="answer">
                 <span>면접 답변</span>
