@@ -6,33 +6,35 @@ import ClpFilter from "./ClpFilter";
 import ClpCompany from "./ClpCompany";
 import CompanyListPageNavBar from "../../Components/NavBar/CompanyListPageNavBar/CompanyListPageNavBar";
 import Slick from "./Slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export class CompanyListPage extends Component {
   constructor() {
     super();
-    this.state = { data: [] };
+    this.state = {
+      pageId: 3,
+      data: []
+    };
   }
 
   componentDidMount = () => {
-    fetch(`http://10.58.4.168:8000/job/job_list/3`)
+    fetch(`http://10.58.0.253:8000/job/job_list/3`)
+      .then(response => response.json())
       .then(response => {
-        response.json();
-      })
-      .then(response => {
+        console.log(response);
         this.setState({
           data: response.data
         });
-      });
+      }, this.props.history.push(`/company_list/3`));
   };
 
   handleCategoryClick = id => {
-    fetch(`http://10.58.4.168:8000/job/job_list/${id}`)
+    fetch(`http://10.58.0.253:8000/job/job_list/${id}`)
+      .then(response => response.json())
       .then(response => {
-        return response.json();
-      })
-      .then(response => {
+        console.log(response);
         this.setState({
           data: response.data
         });

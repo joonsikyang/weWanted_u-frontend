@@ -13,7 +13,11 @@
     .skill-container {
       h3 {
         // background-color: rgb(85, 83, 83);
-        background-image: linear-gradient(to top, #333, rgb(136, 135, 135));
+        background-image: linear-gradient(
+          to top,
+          rgb(75, 74, 74),
+          rgb(153, 152, 152)
+        );
         padding: 20px;
         margin-right: 10px;
         text-align: center;

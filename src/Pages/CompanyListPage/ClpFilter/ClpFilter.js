@@ -1,28 +1,55 @@
 import React, { Component } from "react";
 import "./ClpFilter.scss";
+import FilterModal from "./FilterModal";
 
 export class ClpFilter extends Component {
+  constructor() {
+    super();
+    this.state = {
+      modal: false
+    };
+  }
+
+  handleFilterModal = () => {
+    this.setState({
+      modal: true
+    });
+  };
+
   render() {
     return (
       <div className="filter_container">
         <div className="filter_left">
           <div className="filter_item">
-            <div className="filter_item_title">Filter1</div>
+            <div className="filter_item_title">
+              <span className="filter-contents-blue">최신순</span>
+            </div>
+          </div>
+          
+          <div className="filter_item">
+            <div className="filter_item_title">
+              <span className="filter-name">국가</span>
+              <span className="filter-contents-blue">한국</span>
+            </div>
           </div>
           <div className="filter_item">
-            <div className="filter_item_title">Filter2</div>
+            <div className="filter_item_title">
+              <span className="filter-name">지역</span>
+              <span className="filter-contents-black">전국</span>
+            </div>
           </div>
           <div className="filter_item">
-            <div className="filter_item_title">Filter3</div>
-          </div>
-          <div className="filter_item">
-            <div className="filter_item_title">Filter4</div>
+            <div className="filter_item_title">
+              <span className="filter-name">경력</span>
+              <span className="filter-contents-black">전체</span>
+            </div>
           </div>
         </div>
         <div className="filter_right">
-          <div className="filter_btn">
-            <div>FilterBtn</div>
+          <div className="filter_btn" onClick={this.handleFilterModal}>
+            <div>Filter</div>
           </div>
+          <FilterModal isOpen={this.state.modal} />
         </div>
       </div>
     );
