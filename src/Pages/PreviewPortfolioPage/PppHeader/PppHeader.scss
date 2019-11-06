@@ -4,7 +4,6 @@ $border: 1px solid #bebdbd;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-
   .ppp_title {
     display: flex;
     justify-content: flex-start;
@@ -15,49 +14,51 @@ $border: 1px solid #bebdbd;
       font-size: 4.5em;
       font-weight: 600;
       font-style: italic;
-
       background-color: transparent;
       color: black;
       white-space: pre-wrap;
-      word-break: break-all;
+      word-break: keep-all;
+      line-height: 1.3em;
     }
   }
 
   .ppp_contact_info_title {
     font-size: 1.8em;
     .ppp_period {
-      color: rgb(170, 66, 244);
+      color: rgba(0, 201, 167, 0.9);
     }
   }
   .ppp_phone_value,
   .ppp_email_value {
     border: none;
     margin-top: 10px;
-    width: 240px;
     font-size: 1em;
     background-color: transparent;
+    white-space: pre-wrap;
+    word-break: keep-all;
   }
 
   .ppp_blog_link_title {
     font-size: 1.8em;
     margin-bottom: 20px;
     .ppp_period {
-      color: rgb(115, 211, 211);
+      color: rgba(55, 125, 255, 0.9);
     }
   }
   .ppp_blog_link_value {
     border: none;
-    width: 550px;
     font-size: 1em;
     background-color: transparent;
     text-decoration: none;
     color: black;
+    white-space: pre-wrap;
+    word-break: keep-all;
   }
 
   .ppp_about_me_title {
     font-size: 1.8em;
     .ppp_period {
-      color: rgb(8, 8, 193);
+      color: rgba(58, 104, 249, 0.9);
     }
   }
   .ppp_about_me_value {
@@ -67,7 +68,7 @@ $border: 1px solid #bebdbd;
     font-size: 1em;
     background-color: transparent;
     white-space: pre-wrap;
-    word-break: break-word;
+    word-break: keep-all;
     line-height: 1.8em;
   }
 }

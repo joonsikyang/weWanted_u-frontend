@@ -1,3 +1,11 @@
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
 .loginModal {
   position: fixed;
   top: 50%;
@@ -45,26 +53,47 @@
     }
   }
   .contents-container {
-    padding: 10px;
+    padding: 10px 10px 20px;
     .title-container {
       text-align: center;
       word-break: break-word;
       margin-bottom: 20px;
       .title {
         line-height: 1.4;
-        margin: 20px 0 10px;
+        margin: 20px 0 0px;
         font-weight: 600;
-        font-size: 26px;
+        font-size: 24px;
         color: #333;
         text-align: center;
       }
       .subtitle {
-        font-size: 18px;
+        font-size: 17px;
         color: #777;
         line-height: 1.4;
-        margin: 20px 0 10px;
+        margin: 10px 0 0;
         font-weight: 600;
         text-align: center;
+      }
+    }
+  }
+}
+.signup-area {
+  margin-bottom: 10px;
+  .signup-btn-container {
+    background-color: #3a68f9;
+    border-radius: 45px;
+    padding: 13px 0px;
+    margin: 10px auto;
+    width: 80%;
+    .signup {
+      color: #fff;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      &:hover {
+        cursor: pointer;
+        font-weight: 900;
       }
     }
   }

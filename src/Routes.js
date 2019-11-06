@@ -6,6 +6,8 @@ import CompanyListPage from "Pages/CompanyListPage";
 import MakePortfolioPage from "Pages/MakePortfolioPage";
 import MyAccountPage from "./Pages/MyAccountPage";
 import PreviewPortfolioPage from "./Pages/PreviewPortfolioPage";
+import LoadingPage from "./Pages/LoadingPage";
+import ErrorPage from "./Pages/ErrorPage";
 
 class Routes extends React.Component {
   render() {
@@ -26,6 +28,8 @@ class Routes extends React.Component {
             path="/company_detail/:id"
             component={CompanyDetailPage}
           />
+          <Route exact path="/loading" component={LoadingPage} />
+          <Route exact path="/error_page" component={ErrorPage} />
         </Switch>
       </Router>
     );

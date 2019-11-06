@@ -1,9 +1,12 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import CompanyListPageNavBar from "Components/NavBar/CompanyListPageNavBar";
+import HomePageFooter from "Components/Footer/HomePageFooter";
 import "./MyAccountPage.scss";
 import "../../Styles/Reset.scss";
 import MapMyPortfolio from "./MapMyPortfolioList";
+import CompanyItem from "../CompanyListPage/ClpCompany/CompanyItem/CompanyItem";
+import { CdpCompanyInfoData } from "../CompanyListPage/ClpCompany/CompanyItem/Company_DATA";
 
 class MyAccountPage extends React.Component {
   constructor() {
@@ -12,7 +15,8 @@ class MyAccountPage extends React.Component {
       portfolio: [
         { title: "asdfa", date_created: "2019/02/22", completed: "Completed" },
         {
-          title: "반갑습니다 저는 김형목입니다 잘부탁드립니다",
+          title:
+            "반갑습니다 저는 김형목입니다 잘부탁드립니다\n저는 28살 입니다\n아아아아아아앙아아아아아아아아아아아앙아 아앙아아!",
           date_created: "2019/02/22",
           completed: "In Progress"
         },
@@ -22,12 +26,17 @@ class MyAccountPage extends React.Component {
           completed: "In Progress"
         },
         {
-          title: "asdfa",
+          title: "asd22fa",
           date_created: "2019/02/22",
           completed: "In Progress"
         },
-        { title: "asdfa", date_created: "2019/02/22", completed: "In Progress" }
-      ]
+        {
+          title: "asㅇddfa",
+          date_created: "2019/02/22",
+          completed: "In Progress"
+        }
+      ],
+      my_followed_comp_list: CdpCompanyInfoData
     };
   }
 
@@ -45,6 +54,18 @@ class MyAccountPage extends React.Component {
       />
     ));
 
+    const companyList = this.state.my_followed_comp_list.map((e, i) => (
+      <CompanyItem
+        key={i}
+        img={e.img}
+        positionName={e.positionName}
+        companyName={e.companyName}
+        city={e.city}
+        country={e.country}
+        // deadLine={e.company.deadLine}
+      />
+    ));
+
     return (
       <div className="my_account_page">
         <CompanyListPageNavBar />
@@ -57,6 +78,7 @@ class MyAccountPage extends React.Component {
           </a>
           <div className="my_job_list">
             <div className="job_list_title">Job List</div>
+            {companyList}
           </div>
           <div className="my_portfolio_list">
             <div className="portfolio_list_title">Portfolio List</div>
@@ -69,6 +91,7 @@ class MyAccountPage extends React.Component {
             <div className="portfolio_list_container">{portfolioList}</div>
           </div>
         </div>
+        <HomePageFooter />
       </div>
     );
   }

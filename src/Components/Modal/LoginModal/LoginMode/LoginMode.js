@@ -8,7 +8,8 @@ export class LoginMode extends Component {
     this.state = {
       id: "",
       pw: "",
-      opacity: 0.3
+      opacity: 0.3,
+      display: "none"
     };
   }
 
@@ -23,11 +24,28 @@ export class LoginMode extends Component {
     );
   };
 
-  handleLogin = e => {
-    if (this.state.id && this.state.pw) {
-      this.props.history.push("/company_list");
-    }
+  loginAccess = () => {
+    fetch("http://10.58.4.168:8000/login/signin", {
+      method: "post",
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw
+      })
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(res => {
+        console.log(res);
+        if (res.JsonWebToken) {
+          localStorage.setItem("JsonWebToken", res.JsonWebToken);
+          this.props.history.push("/company_list");
+        } else if (res.message === "INVALID_EMAIL") {
+          this.setState({ display: "block" });
+        }
+      });
   };
+
   render() {
     return (
       <>
@@ -49,8 +67,14 @@ export class LoginMode extends Component {
             onChange={this.handleBtnColor}
           ></input>
           <div
+            className="error-msg-container"
+            style={{ display: this.state.display }}
+          >
+            <div className="error-msg">ID/PW를 확인해주세요</div>
+          </div>
+          <div
             className="login-btn-container"
-            onClick={this.handleLogin}
+            onClick={this.loginAccess}
             style={{ opacity: this.state.opacity }}
           >
             <div className="login">Login</div>

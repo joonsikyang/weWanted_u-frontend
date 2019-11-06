@@ -1,0 +1,33 @@
+.slider-container {
+  display: flex;
+  .slider {
+    max-width: 1060px;
+    margin: 0 auto;
+    position: relative;
+    .gradation {
+      position: absolute;
+      left: -50px;
+      z-index: 5;
+      background-image: url("https://s3.ap-northeast-2.amazonaws.com/wanted-public/category_gradation_l_white2.png");
+    }
+    .skill-container {
+      h3 {
+        background-color: #333;
+        // background-image: linear-gradient(to top, #333, rgb(168, 167, 167));
+        // background-image: url("https://static.wanted.co.kr/images/tags/ddb56fa4-43fa-11e6-90dd-0a30d591bfc5.jpg");
+        padding: 20px;
+        margin-right: 10px;
+        text-align: center;
+        color: #fff;
+        font-weight: 500;
+        font-size: 14px;
+        border-radius: 3px;
+      }
+    }
+    .slick-prev:before,
+    .slick-next:before {
+      color: #333;
+      z-index: 9;
+    }
+  }
+}
