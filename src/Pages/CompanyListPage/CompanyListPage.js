@@ -14,32 +14,45 @@ export class CompanyListPage extends Component {
   constructor() {
     super();
     this.state = {
-      pageId: 3,
       data: []
     };
   }
 
   componentDidMount = () => {
-    fetch(`http://10.58.0.253:8000/job/job_list/3`)
-      .then(response => response.json())
-      .then(response => {
-        console.log(response);
-        this.setState({
-          data: response.data
-        });
-      }, this.props.history.push(`/company_list/3`));
+    console.log("componentDidMount");
+    this.fetchCompany();
   };
 
-  handleCategoryClick = id => {
-    fetch(`http://10.58.0.253:8000/job/job_list/${id}`)
+  componentDidUpdate(prevProps, prevState) {
+    console.log(this.props);
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.fetchCompany();
+    }
+  }
+
+  fetchCompany() {
+    fetch(`http://10.58.0.253:8000/job/job_list/${this.props.match.params.id}`)
       .then(response => response.json())
-      .then(response => {
-        console.log(response);
-        this.setState({
-          data: response.data
-        });
-      }, this.props.history.push(`/company_list/${id}`));
-  };
+      .then(
+        response => {
+          console.log(response);
+          this.setState({
+            data: response.data
+          });
+        } /*, this.props.history.push(`/company_list/3`)*/
+      );
+  }
+
+  // handleCategoryClick = id => {
+  //   fetch(`http://10.58.0.253:8000/job/job_list/${id}`)
+  //     .then(response => response.json())
+  //     .then(response => {
+  //       console.log(response);
+  //       this.setState({
+  //         data: response.data
+  //       });
+  //     }, this.props.history.push(`/company_list/${id}`));
+  // };
 
   render() {
     console.log(this.state.data);
@@ -49,7 +62,7 @@ export class CompanyListPage extends Component {
         <CompanyListPageNavBar />
         <div className="filterArea">
           <ClpCategory onClick={this.handleCategoryClick} />
-          <Slick />
+          <Slick fetchedTags={this.state.data} />
         </div>
         <div className="filter_companyList_container">
           <ClpFilter />
@@ -61,11 +74,3 @@ export class CompanyListPage extends Component {
 }
 
 export default withRouter(CompanyListPage);
-
-// key={i}
-// img={e.company.main_image}
-// positionName={e.job.position}
-// companyName={e.company.company_name}
-// city={e.company.city}
-// country={e.company.country}
-// deadLine={e.job.dead_line}
