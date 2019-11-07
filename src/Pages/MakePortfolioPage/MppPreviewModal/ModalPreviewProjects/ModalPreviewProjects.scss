@@ -53,24 +53,45 @@ $border: 1px solid #bebdbd;
     }
     .modal_preview_project_description_title {
       .modal_preview_period {
-        color: rgb(170, 66, 244);
+        color: rgba(0, 201, 167, 0.9);
         font-size: 60px;
         font-weight: 400;
       }
     }
     .modal_preview_what_did_i_do_title {
       .modal_preview_period {
-        color: rgb(115, 211, 211);
+        color: rgba(55, 125, 255, 0.9);
         font-size: 60px;
         font-weight: 400;
       }
     }
     .modal_preview_tech_stack_title {
       .modal_preview_period {
-        color: rgb(8, 8, 193);
+        color: rgba(58, 104, 249, 0.9);
         font-size: 60px;
         font-weight: 400;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .modal_preview_projects {
+    display: inline;
+    .modal_preview_my_projects_container {
+      display: flex;
+      width: 100%;
+      align-items: center;
+
+      .modal_preview_project_links_value {
+        background-image: url(https://image.flaticon.com/icons/svg/25/25231.svg);
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+      }
+    }
+    .modal_preview_description_container {
+      margin: 0px;
     }
   }
 }

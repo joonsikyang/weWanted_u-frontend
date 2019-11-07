@@ -72,3 +72,30 @@ $border: 1px solid #bebdbd;
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .mpp_projects {
+    display: inline;
+    .my_projects_container {
+      display: flex;
+      width: 100%;
+      .project_title_input,
+      .links_input {
+        border: none;
+        font-size: 1em;
+        margin: 20px 0px;
+        background-color: transparent;
+        word-break: keep-all;
+        white-space: pre-wrap;
+      }
+      .remove_btn {
+        width: 15px;
+        height: 15px;
+      }
+    }
+    .description_container {
+      margin-left: 0px;
+      width: 100%;
+    }
+  }
+}

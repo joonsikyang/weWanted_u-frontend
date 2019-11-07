@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./CompanyItem.scss";
 import { withRouter, Link } from "react-router-dom";
 import "./CompanyItem.scss";
 

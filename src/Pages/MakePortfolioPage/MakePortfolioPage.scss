@@ -8,7 +8,7 @@ $border: 1px solid #bebdbd;
     padding: 10px 40px 20px;
     margin-top: 70px;
     border-radius: 10px;
-    width: 60%;
+    min-width: 80%;
 
     .projects_title_bar {
       display: flex;
@@ -61,5 +61,16 @@ $border: 1px solid #bebdbd;
   }
   .mpp_container:hover {
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .make_portfolio_page {
+    .mpp_container {
+      padding: 0px;
+      margin-top: 70px;
+      border-radius: 10px;
+      width: 95%;
+    }
   }
 }
