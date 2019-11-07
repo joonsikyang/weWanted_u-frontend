@@ -32,23 +32,45 @@ class MakePortfolioPage extends React.Component {
   }
 
   componentDidMount = () => {
-    // fetch(`http://10.58.0.62:8000/resume/savingtype`, {
-    //   method: "get",
-    //   headers: {
-    //     Authorization:
-    //       "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndlY29kZUBuYXZlci5jb20ifQ.fJay4OFcWhqdx3qBy0TV9U4iSxXn8IDNthJPqsrl1wE"
-    //   }
-    // })
-    //   .then(response => response.json())
-    //   .then(response => {
-    //     console.log(response);
-    this.setState({
-      completed_button: 1,
-      save_button: 2
-      // completed_button: response.saving_types[0].id,
-      // save_button: response.saving_types[1].id
-    });
-    // });
+    if (this.props.match.params.id) {
+      this.fetchResumeToEdit();
+      this.fetchSavingType();
+    } else {
+      this.fetchSavingType();
+    }
+  };
+
+  fetchSavingType = () => {
+    fetch(`http://10.58.0.209:8000/resume/savingtype`, {
+      method: "get",
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndlY29kZUBuYXZlci5jb20ifQ.fJay4OFcWhqdx3qBy0TV9U4iSxXn8IDNthJPqsrl1wE"
+      }
+    })
+      .then(response => response.json())
+      .then(response => {
+        // console.log(response);
+        this.setState({
+          completed_button: response.saving_type[0].id,
+          save_button: response.saving_type[1].id
+        });
+      });
+  };
+
+  fetchResumeToEdit = () => {
+    fetch(`http://10.58.0.209:8000/resume/${this.props.match.params.id}`, {
+      method: "get",
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndlY29kZUBuYXZlci5jb20ifQ.fJay4OFcWhqdx3qBy0TV9U4iSxXn8IDNthJPqsrl1wE"
+      }
+    })
+      .then(response => response.json())
+      .then(response => {
+        this.setState({ ...response.resume[0] });
+        console.log(response);
+      });
   };
 
   handleProjectsOnChange = (event, index) => {
@@ -80,34 +102,25 @@ class MakePortfolioPage extends React.Component {
   };
 
   onClickPostProject = event => {
-    console.log("buttonName:" + event.target.name);
     this.setState({ saving_type: event.target.name }, () => {
-      this.postFetch(this.state.saving_type);
-      // console.log(this.state);
+      this.postFetch();
     });
+    this.props.history.push("/my_account");
   };
 
-  postFetch = saving_type => {
-    console.log("savingType:" + saving_type);
-    // let token = localStorage.getItem()
-    //   fetch(`http://10.58.0.62:8000/resume/create/${saving_type}`, {
-    //     method: "post",
-    //     headers: {
-    //       Authorization:
-    //         "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndlY29kZUBuYXZlci5jb20ifQ.fJay4OFcWhqdx3qBy0TV9U4iSxXn8IDNthJPqsrl1wE"
-    //     },
-    //     body: JSON.stringify(this.state)
-    //   })
-    //     .then(response => response.json())
-    //     .then(response => console.log(response));
-    // };
+  postFetch = () => {
+    // let token = localStorage.getItem();
+    fetch(`http://10.58.0.209:8000/resume`, {
+      method: "post",
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndlY29kZUBuYXZlci5jb20ifQ.fJay4OFcWhqdx3qBy0TV9U4iSxXn8IDNthJPqsrl1wE"
+      },
+      body: JSON.stringify(this.state)
+    })
+      .then(response => response.json())
+      .then(response => console.log(response));
   };
-
-  // onClickCompletedProject = event => {
-  //   if (event.target.name === "completed") {
-  //     this.setState({ completed: "Completed" });
-  //   }
-  // };
 
   onClickShowPreview = event => {
     if (event.target.name === "preview") {
