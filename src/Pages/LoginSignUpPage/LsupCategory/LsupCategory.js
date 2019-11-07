@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import "./LsupCategory.scss";
 import LoginModal from "../../../Components/Modal/LoginModal";
 
@@ -9,6 +10,10 @@ export class LsupCategory extends Component {
       showModal: false
     };
   }
+
+  goToCompanyList = () => {
+    this.props.history.push("/company_list?category=3");
+  };
 
   handleOpenModal = e => {
     this.setState({
@@ -37,9 +42,16 @@ export class LsupCategory extends Component {
             <button className="back_end_btn">BackEnd</button>
             <button className="full_stack_btn">FullStack</button>
           </div>
-          <div className="start-button">
-            <div className="button-text" onClick={this.handleOpenModal}>
-              지금 시작하기
+          <div className="btn-container">
+            <div className="btn-box">
+              <div className="search-button">
+                <div className="button-text" onClick={this.goToCompanyList}>
+                  탐색하기
+                </div>
+              </div>
+              <div className="start-button" onClick={this.handleOpenModal}>
+                <div className="button-text">시작하기</div>
+              </div>
             </div>
           </div>
           <LoginModal
@@ -52,4 +64,4 @@ export class LsupCategory extends Component {
   }
 }
 
-export default LsupCategory;
+export default withRouter(LsupCategory);

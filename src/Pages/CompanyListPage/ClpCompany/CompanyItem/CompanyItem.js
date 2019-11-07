@@ -18,12 +18,11 @@ export class CompanyItem extends Component {
     fetch("http://10.58.7.182:8001/follow", {
       method: "post",
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IjEyMjMzQHouY29tIn0.YbQFaoF9lE6eTWbzT_nfmrEg7kcFbNGRlMgPXA3EXP4"
+        Authorization: window.localStorage.JsonWebToken
       },
       body: JSON.stringify({
-        job_id: 1,
-        follow: !this.state.followState
+        job_id: this.props.jobId,
+        follow: !this.state.follow
       })
     })
       .then(response => response.json())
@@ -41,15 +40,12 @@ export class CompanyItem extends Component {
             ></div>
             <div
               className={
-                // if(this.props.follow)
                 this.state.follow
                   ? "follow-container true"
                   : "follow-container false"
               }
-              // onClick={(this.sendToken, e => e.stopPropagation())}
               onClick={this.sendToken}
             >
-              {/* <span>Follow</span> */}
               <span>{this.state.follow ? "Following" : "+ Follow"}</span>
             </div>
           </header>
