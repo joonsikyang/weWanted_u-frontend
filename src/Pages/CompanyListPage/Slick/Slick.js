@@ -21,7 +21,6 @@ function RightArrow(props) {
 class Slick extends Component {
   sliders = () => {
     return this.props.fetchedData.map((e, i) => {
-      console.log(this.props.fetchedData.length);
       return (
         <div className="skill-container">
           <h3 data-index={i}>{e.job.position}</h3>
