@@ -16,6 +16,7 @@ export class CompanyListPage extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <div className="company_list_page">
         <CompanyListPageNavBar />
