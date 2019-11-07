@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
+import "./CompanyItem.scss";
 
 export class CompanyItem extends Component {
   render() {

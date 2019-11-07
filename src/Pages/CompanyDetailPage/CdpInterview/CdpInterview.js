@@ -5,6 +5,7 @@ import CdpInterviewBox from "../CdpInterviewBox";
 import CdpReviewBox from "../CdpReviewBox";
 import CdpModal from "../CdpModal/CdpModal";
 import { review_list } from "../CdpTable/CdpTableData";
+import CdpPathTable from "../CdpPathTable";
 
 export class CdpInterview extends Component {
   constructor() {
@@ -43,16 +44,36 @@ export class CdpInterview extends Component {
 
   render() {
     const { expData, resultData, showModal, review_list } = this.state;
+    const avg_num = 2.5;
+    const avg_num_percent = (avg_num / 5) * 100 + "%";
+    const circleStyle = { left: `calc(${avg_num_percent} - 8px)` };
     return (
       <div className="interview_container">
         <div className="interview_box_container">
           <div className="interview_box">
             <h6>면접 난이도</h6>
-            <div></div>
-            <div></div>
+            <div className="score_box">
+              <span className="average_score">{avg_num}</span>
+              <div className="score_bar_box">
+                <div className="score_text">
+                  <span className="easy">쉬움</span>
+                  <span className="difficulty">어려움</span>
+                </div>
+                <div className="score_bar">
+                  <div className="outer_circle" style={circleStyle}>
+                    <div className="inner_circle"></div>
+                  </div>
+                </div>
+                <div className="score_number">
+                  <span className="zero">0</span>
+                  <span className="five">5</span>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="interview_box">
             <h6>면접 경로</h6>
+            <CdpPathTable />
           </div>
         </div>
         <div className="interview_box_container">

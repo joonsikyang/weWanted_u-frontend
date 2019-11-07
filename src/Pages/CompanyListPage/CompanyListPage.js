@@ -22,7 +22,10 @@ export class CompanyListPage extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.match.params.id !== this.props.match.params.id) {
+    if (
+      prevProps.location.search.split("=")[1] !==
+      this.props.location.search.split("=")[1]
+    ) {
       this.fetchCompany();
     }
   }
@@ -30,7 +33,7 @@ export class CompanyListPage extends Component {
   fetchCompany() {
     const queryId = this.props.location.search.split("=")[1];
     console.log(queryId);
-    fetch(`http://10.58.0.253:8000/job/job_list/${queryId}`)
+    fetch(`http://10.58.7.182:8000/job/job_list/${queryId}`)
       .then(response => response.json())
       .then(response => {
         this.setState({
@@ -40,6 +43,7 @@ export class CompanyListPage extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="company_list_page">
         <CompanyListPageNavBar />

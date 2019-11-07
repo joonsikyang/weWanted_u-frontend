@@ -20,6 +20,7 @@
       }
       .difficulty {
         margin-bottom: 10px;
+        font-size: 14px;
         .difficulty_color {
           .bar_1,
           .bar_2,
@@ -58,6 +59,9 @@
             background-color: red;
           }
         }
+      }
+      .interview_path {
+        font-size: 14px;
       }
     }
     .right_box {

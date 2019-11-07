@@ -1,0 +1,27 @@
+.cdp_path_table {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  table {
+    width: 100%;
+    tbody {
+      tr {
+        font-size: 14px;
+        th {
+          padding: 10px;
+        }
+        td {
+          padding: 10px;
+        }
+      }
+    }
+  }
+  .first_row {
+    th {
+      border-bottom: 1px solid #efefef;
+    }
+    td {
+      border-bottom: 1px solid #efefef;
+    }
+  }
+}

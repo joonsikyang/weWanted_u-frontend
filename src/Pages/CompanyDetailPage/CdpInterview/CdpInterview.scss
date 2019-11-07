@@ -5,6 +5,71 @@
   .interview_box_container {
     display: flex;
     border: $border-line;
+    .interview_box {
+      margin: 10px;
+      width: 50%;
+      padding: 10px;
+      .score_box {
+        margin-top: 10px;
+        text-align: center;
+        padding: 0 20px;
+        .average_score {
+          font-size: 40px;
+        }
+        .score_bar_box {
+          align-items: center;
+          .score_text {
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            .easy {
+              color: #258bf7;
+            }
+            .difficulty {
+              color: red;
+            }
+          }
+          .score_bar {
+            height: 10px;
+            background-color: #efefef;
+            border-radius: 10px;
+            margin-top: 5px;
+            position: relative;
+            .outer_circle {
+              width: 16px;
+              height: 16px;
+              border-radius: 50%;
+              background-color: black;
+              position: relative;
+              top: -3px;
+              .inner_circle {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: white;
+                position: absolute;
+                left: 3px;
+                top: 3px;
+              }
+            }
+          }
+          .score_number {
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+            .zero {
+              color: #258bf7;
+            }
+            .five {
+              color: red;
+            }
+          }
+        }
+      }
+      h6 {
+        font-weight: 600;
+      }
+    }
   }
   .review_container {
     margin-top: 40px;
