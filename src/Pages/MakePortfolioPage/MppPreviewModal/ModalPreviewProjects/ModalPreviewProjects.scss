@@ -1,0 +1,76 @@
+$border: 1px solid #bebdbd;
+
+.modal_preview_projects {
+  display: flex;
+  margin-top: 15px;
+  justify-content: flex-start;
+
+  .modal_preview_my_projects_container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+
+    .modal_preview_project_title_value {
+      border: none;
+      font-size: 1.8em;
+      margin: 20px 0px;
+      background-color: transparent;
+      max-width: 400px;
+    }
+    .modal_preview_project_title_value {
+      font-weight: 600;
+    }
+    .modal_preview_project_links_value {
+      background-image: url("https://image.flaticon.com/icons/svg/25/25231.svg");
+      width: 50px;
+      height: 50px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      justify-content: center;
+    }
+  }
+
+  .modal_preview_description_container {
+    margin-left: 50px;
+
+    .modal_preview_project_description_title,
+    .modal_preview_what_did_i_do_title,
+    .modal_preview_tech_stack_title {
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+    .modal_preview_project_description_value,
+    .modal_preview_what_did_i_do_value,
+    .modal_preview_tech_stack_value {
+      border: none;
+      background: transparent;
+      max-width: 500px;
+      min-height: 50px;
+      font-size: 1em;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.7em;
+    }
+    .modal_preview_project_description_title {
+      .modal_preview_period {
+        color: rgb(170, 66, 244);
+        font-size: 60px;
+        font-weight: 400;
+      }
+    }
+    .modal_preview_what_did_i_do_title {
+      .modal_preview_period {
+        color: rgb(115, 211, 211);
+        font-size: 60px;
+        font-weight: 400;
+      }
+    }
+    .modal_preview_tech_stack_title {
+      .modal_preview_period {
+        color: rgb(8, 8, 193);
+        font-size: 60px;
+        font-weight: 400;
+      }
+    }
+  }
+}

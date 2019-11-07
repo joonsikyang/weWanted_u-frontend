@@ -3,25 +3,8 @@ import CompanyItem from "./CompanyItem/CompanyItem";
 import "./ClpCompany.scss";
 
 export class ClpCompany extends Component {
-  constructor() {
-    super();
-    this.state = { data: [] };
-  }
-
-  componentDidMount() {
-    fetch("http://10.58.5.27:8000/job/main/1")
-      .then(response => {
-        return response.json();
-      })
-      .then(response => {
-        this.setState({
-          data: response.data
-        });
-      });
-  }
-
   render() {
-    const companyList = this.state.data.map((e, i) => (
+    const companyList = this.props.fetchedData.map((e, i) => (
       <CompanyItem
         key={i}
         img={e.company.main_image}
@@ -29,10 +12,11 @@ export class ClpCompany extends Component {
         companyName={e.company.company_name}
         city={e.company.city}
         country={e.company.country}
-        // deadLine={e.company.deadLine}
+        deadLine={e.job.dead_line}
+        jobId={e.job.job_id}
       />
     ));
-    return <ul className="companyList_container">{companyList}</ul>;
+    return <ul>{companyList}</ul>;
   }
 }
 
