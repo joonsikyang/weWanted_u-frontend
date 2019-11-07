@@ -36,7 +36,7 @@ export class CompanyDetailPage extends Component {
   componentDidMount() {
     console.log(this.props);
     fetch(
-      `http://10.58.7.182:8000/job/recruitment/${this.props.match.params.id}`
+      `http://10.58.7.182:8001/job/recruitment/${this.props.match.params.id}`
     )
       .then(res => res.json())
       .then(res => {
@@ -54,6 +54,22 @@ export class CompanyDetailPage extends Component {
       }
     };
   }
+
+  sendToken = () => {
+    fetch("http://10.58.7.182:8001/follow", {
+      method: "post",
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IjEyMjMzQHouY29tIn0.YbQFaoF9lE6eTWbzT_nfmrEg7kcFbNGRlMgPXA3EXP4"
+      },
+      body: JSON.stringify({
+        job_id: 1,
+        follow: true
+      })
+    })
+      .then(response => response.json())
+      .then(res => console.log(res));
+  };
 
   render() {
     const {
@@ -117,7 +133,9 @@ export class CompanyDetailPage extends Component {
               companyData={companyData}
               positionData={positionData}
             />
-            <button className="follow_btn">팔로우하기</button>
+            <button onClick={this.sendToken} className="follow_btn">
+              팔로우하기
+            </button>
             <MapContainer companyData={companyData} />
           </aside>
         </main>
