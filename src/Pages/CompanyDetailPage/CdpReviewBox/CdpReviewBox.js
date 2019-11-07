@@ -56,7 +56,7 @@ const CdpReviewBox = props => {
             </div>
           </div>
           <span className="title">면접 경로</span>
-          <div>{props.interview_path}</div>
+          <div className="interview_path">{props.interview_path}</div>
         </div>
         <div className="right_box">
           <div className="overall_review">"{props.overall_review}"</div>

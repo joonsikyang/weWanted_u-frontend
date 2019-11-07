@@ -24,8 +24,14 @@ export class LoginMode extends Component {
     );
   };
 
+  enterPress = e => {
+    if (e.keyCode === 13) {
+      this.loginAccess();
+    }
+  };
+
   loginAccess = () => {
-    fetch("http://10.58.4.168:8000/login/signin", {
+    fetch("http://10.58.7.182:8001/users/auth", {
       method: "post",
       body: JSON.stringify({
         email: this.state.id,
@@ -39,7 +45,7 @@ export class LoginMode extends Component {
         console.log(res);
         if (res.JsonWebToken) {
           localStorage.setItem("JsonWebToken", res.JsonWebToken);
-          this.props.history.push("/company_list");
+          this.props.history.push("/company_list?category=3");
         } else if (res.message === "INVALID_EMAIL") {
           this.setState({ display: "block" });
         }
@@ -65,6 +71,7 @@ export class LoginMode extends Component {
             name="pw"
             value={this.state.pw}
             onChange={this.handleBtnColor}
+            onKeyDown={this.enterPress}
           ></input>
           <div
             className="error-msg-container"
