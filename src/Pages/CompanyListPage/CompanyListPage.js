@@ -33,7 +33,7 @@ export class CompanyListPage extends Component {
   fetchCompany() {
     const queryId = this.props.location.search.split("=")[1];
     console.log(queryId);
-    fetch(`http://10.58.7.182:8000/job/job_list/${queryId}`)
+    fetch(`http://10.58.7.182:8001/job/list/${queryId}`)
       .then(response => response.json())
       .then(response => {
         this.setState({

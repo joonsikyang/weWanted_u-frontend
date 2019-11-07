@@ -17,7 +17,8 @@ export class CompanyDetailPage extends Component {
       companyData: {},
       tagData: [],
       imageData: [],
-      detailSwitch: true
+      detailSwitch: true,
+      follow: false
     };
   }
 
@@ -34,9 +35,8 @@ export class CompanyDetailPage extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
     fetch(
-      `http://10.58.7.182:8000/job/recruitment/${this.props.match.params.id}`
+      `http://10.58.7.182:8001/job/recruitment/${this.props.match.params.id}`
     )
       .then(res => res.json())
       .then(res => {
@@ -54,6 +54,22 @@ export class CompanyDetailPage extends Component {
       }
     };
   }
+
+  sendToken = () => {
+    this.setState({ follow: !this.state.follow });
+    fetch("http://10.58.7.182:8001/follow", {
+      method: "post",
+      headers: {
+        Authorization: window.localStorage.JsonWebToken
+      },
+      body: JSON.stringify({
+        job_id: this.props.match.params.id,
+        follow: this.state.follow
+      })
+    })
+      .then(response => response.json())
+      .then(res => console.log(res));
+  };
 
   render() {
     const {
@@ -91,6 +107,8 @@ export class CompanyDetailPage extends Component {
                 companyData={companyData}
                 positionData={positionData}
                 tagData={tagData}
+                sendToken={this.sendToken}
+                follow={this.state.follow}
               />
             ) : (
               <CdpInterview
@@ -117,8 +135,18 @@ export class CompanyDetailPage extends Component {
               companyData={companyData}
               positionData={positionData}
             />
-            <button className="follow_btn">팔로우하기</button>
-            <MapContainer companyData={companyData} />
+            <button
+              onClick={this.sendToken}
+              className={`follow_btn${this.state.follow ? "" : "_on"}`}
+            >
+              팔로우하기
+            </button>
+            <MapContainer
+              companyData={companyData}
+              width="100%"
+              height="100%"
+              display="block"
+            />
           </aside>
         </main>
         <HomePageFooter />

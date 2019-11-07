@@ -3,9 +3,10 @@ import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 
 const MapContainer = props => {
   const mapStyles = {
-    width: "100%",
-    height: "100%",
-    marginTop: 20
+    width: props.width,
+    height: props.height,
+    marginTop: 20,
+    display: props.display
   };
   return (
     <Map

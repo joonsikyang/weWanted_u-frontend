@@ -25,7 +25,7 @@ export class LoginMode extends Component {
   };
 
   loginAccess = () => {
-    fetch("http://10.58.4.168:8000/login/signin", {
+    fetch("http://10.58.7.182:8001/users/auth", {
       method: "post",
       body: JSON.stringify({
         email: this.state.id,

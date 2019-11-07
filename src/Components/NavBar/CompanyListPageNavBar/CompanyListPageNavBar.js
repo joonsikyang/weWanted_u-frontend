@@ -12,7 +12,7 @@ export class CompanyListPageNavBar extends Component {
   };
 
   goToCompanyList = () => {
-    this.props.history.push("/company_list");
+    this.props.history.push("/company_list?category=3");
   };
 
   render() {
