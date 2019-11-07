@@ -27,28 +27,19 @@ export class ClpFilter extends Component {
       <div className="filter_container">
         <div className="filter_left">
           <div className="filter_item">
-            <div className="filter_item_title">
-              <span className="filter-contents-blue">최신순</span>
-            </div>
-          </div>
-          
-          <div className="filter_item">
-            <div className="filter_item_title">
-              <span className="filter-name">국가</span>
-              <span className="filter-contents-blue">한국</span>
-            </div>
+            <span className="filter-contents-blue">최신순</span>
           </div>
           <div className="filter_item">
-            <div className="filter_item_title">
-              <span className="filter-name">지역</span>
-              <span className="filter-contents-black">전국</span>
-            </div>
+            <span className="filter-name">국가</span>
+            <span className="filter-contents-blue">한국</span>
           </div>
           <div className="filter_item">
-            <div className="filter_item_title">
-              <span className="filter-name">경력</span>
-              <span className="filter-contents-black">전체</span>
-            </div>
+            <span className="filter-name">지역</span>
+            <span className="filter-contents-black">전국</span>
+          </div>
+          <div className="filter_item">
+            <span className="filter-name">경력</span>
+            <span className="filter-contents-black">전체</span>
           </div>
         </div>
         <div className="filter_right">

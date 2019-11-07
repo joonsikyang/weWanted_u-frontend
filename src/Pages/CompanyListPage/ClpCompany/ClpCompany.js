@@ -15,7 +15,7 @@ export class ClpCompany extends Component {
         deadLine={e.job.dead_line}
       />
     ));
-    return <ul className="companyList_container">{companyList}</ul>;
+    return <ul>{companyList}</ul>;
   }
 }
 

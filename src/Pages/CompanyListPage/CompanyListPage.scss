@@ -1,14 +1,13 @@
-@import "Styles/Reset.scss";
 .company_list_page {
   .filterArea {
     margin-top: 50px;
-    border-bottom: 1px solid #efefef;
     padding-bottom: 10px;
+    border-bottom: 1px solid #efefef;
   }
   .filter_companyList_container {
     margin: 0 auto;
+    padding: 20px 0 80px;
     width: 90%;
     max-width: 1060px;
-    padding: 20px 0 80px;
   }
 }

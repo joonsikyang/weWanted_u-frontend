@@ -7,8 +7,8 @@ export class FilterModal extends Component {
     return (
       <ReactModal
         className="filter-modal"
-        isOpen={this.props.isOpen}
         contentLabel="filter"
+        isOpen={this.props.isOpen}
         onRequestClose={this.props.isClose}
         shouldCloseOnOverlayClick={true}
         shouldCloseOnEsc={true}
@@ -22,7 +22,7 @@ export class FilterModal extends Component {
         }}
       >
         <div className="modal-container">
-          <header className="header-container">
+          <header>
             <div className="header-title">필터</div>
             <div className="close-btn" onClick={this.props.isClose}>
               close
@@ -31,12 +31,10 @@ export class FilterModal extends Component {
           <div className="modal-bottom">
             <div className="filter-item-container">
               <div className="filter-item-title">정렬</div>
-              <div className="filter-item-contents">
-                <select>
-                  <option>최신순</option>
-                  <option>인기순</option>
-                </select>
-              </div>
+              <select>
+                <option>최신순</option>
+                <option>인기순</option>
+              </select>
             </div>
             <div className="filter-item-container">
               <div className="filter-item-title">국가</div>

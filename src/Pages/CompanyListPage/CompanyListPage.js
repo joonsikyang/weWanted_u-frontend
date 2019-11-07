@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import "./CompanyListPage.scss";
+import CompanyListPageNavBar from "Components/NavBar/CompanyListPageNavBar";
 import ClpCategory from "./ClpCategory";
 import ClpFilter from "./ClpFilter";
 import ClpCompany from "./ClpCompany";
-import CompanyListPageNavBar from "../../Components/NavBar/CompanyListPageNavBar/CompanyListPageNavBar";
 import Slick from "./Slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -19,12 +18,10 @@ export class CompanyListPage extends Component {
   }
 
   componentDidMount = () => {
-    console.log("componentDidMount");
     this.fetchCompany();
   };
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(this.props);
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.fetchCompany();
     }
@@ -34,7 +31,6 @@ export class CompanyListPage extends Component {
     fetch(`http://10.58.0.253:8000/job/job_list/${this.props.match.params.id}`)
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         this.setState({
           data: response.data
         });
@@ -42,8 +38,6 @@ export class CompanyListPage extends Component {
   }
 
   render() {
-    console.log(this.state.data);
-
     return (
       <div className="company_list_page">
         <CompanyListPageNavBar />
