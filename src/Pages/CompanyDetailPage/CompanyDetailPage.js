@@ -36,7 +36,7 @@ export class CompanyDetailPage extends Component {
   componentDidMount() {
     console.log(this.props);
     fetch(
-      `http://10.58.0.253:8000/job/recruitment/${this.props.match.params.id}`
+      `http://10.58.7.182:8000/job/recruitment/${this.props.match.params.id}`
     )
       .then(res => res.json())
       .then(res => {

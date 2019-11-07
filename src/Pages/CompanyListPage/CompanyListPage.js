@@ -22,7 +22,10 @@ export class CompanyListPage extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.match.params.id !== this.props.match.params.id) {
+    if (
+      prevProps.location.search.split("=")[1] !==
+      this.props.location.search.split("=")[1]
+    ) {
       this.fetchCompany();
     }
   }
