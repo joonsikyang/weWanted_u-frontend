@@ -1,0 +1,28 @@
+.slider {
+  margin: 0 auto;
+  max-width: 1060px;
+  display: flex;
+  align-items: center;
+  .slick-slide {
+    .skill-container {
+      h3 {
+        background-image: linear-gradient(
+          to top,
+          rgb(75, 74, 74),
+          rgb(153, 152, 152)
+        );
+        padding: 20px;
+        margin-right: 10px;
+        text-align: center;
+        color: #fff;
+        font-weight: 500;
+        font-size: 14px;
+        border-radius: 3px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-break: break-word;
+        overflow: hidden;
+      }
+    }
+  }
+}

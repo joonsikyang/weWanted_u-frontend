@@ -1,5 +1,4 @@
 .filter_container {
-  height: 8vh;
   display: flex;
   justify-content: space-between;
   .filter_left,
@@ -11,12 +10,26 @@
       border: 1px solid #e1e2e3;
       font-size: 13px;
       font-weight: 400;
-      padding: 0px 15px;
+      padding: 10px 15px;
       margin: 0 10px 0 0;
       display: flex;
       align-items: center;
       div {
         color: #333;
+      }
+      .filter-contents-blue {
+        color: #2886fa;
+        font-weight: 600;
+        font-size: 13px;
+      }
+      .filter-contents-black {
+        color: #333333;
+        font-weight: 600;
+        font-size: 13px;
+      }
+      .filter-name {
+        color: #999999;
+        margin-right: 5px;
       }
     }
     .filter_btn {
@@ -27,6 +40,7 @@
       padding: 0px 15px;
       display: flex;
       align-items: center;
+      cursor: pointer;
       div {
         color: rgb(37, 139, 247);
       }

@@ -1,32 +1,53 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import "./CompanyListPage.scss";
+import CompanyListPageNavBar from "Components/NavBar/CompanyListPageNavBar";
 import ClpCategory from "./ClpCategory";
-// import ClpSkills from "./ClpSkills";
 import ClpFilter from "./ClpFilter";
 import ClpCompany from "./ClpCompany";
-import CompanyListPageNavBar from "../../Components/NavBar/CompanyListPageNavBar/CompanyListPageNavBar";
-import Slick from "./ClpSkills/Slick/Slick";
+import Slick from "./Slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export class CompanyListPage extends Component {
-  goToDetail = () => {
-    this.props.history.push("/company_detail");
+  constructor() {
+    super();
+    this.state = {
+      data: []
+    };
+  }
+
+  componentDidMount = () => {
+    this.fetchCompany();
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.fetchCompany();
+    }
+  }
+
+  fetchCompany() {
+    fetch(`http://10.58.0.253:8000/job/job_list/${this.props.match.params.id}`)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          data: response.data
+        });
+      });
+  }
 
   render() {
     return (
       <div className="company_list_page">
         <CompanyListPageNavBar />
         <div className="filterArea">
-          <ClpCategory />
-          <Slick />
-          {/* <ClpSkills /> */}
+          <ClpCategory onClick={this.handleCategoryClick} />
+          <Slick fetchedData={this.state.data} />
         </div>
         <div className="filter_companyList_container">
           <ClpFilter />
-          <ClpCompany onClick={this.goToDetail} />
+          <ClpCompany fetchedData={this.state.data} />
         </div>
       </div>
     );
