@@ -8,6 +8,7 @@ export class ClpCompany extends Component {
       <CompanyItem
         key={i}
         img={e.company.main_image}
+        //follow={e.job.follow}
         positionName={e.job.position}
         companyName={e.company.company_name}
         city={e.company.city}
