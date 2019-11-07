@@ -46,16 +46,8 @@ export class HomepageNavBar extends Component {
             <div className="logo_btn">WeWanted</div>
           </div>
           <div className="right">
-            <div className="search-button" onClick={this.handleSearchOpenModal}>
-              Search
-            </div>
-            <SearchModal
-              isOpen={this.state.showSearchModal}
-              onClick={this.handleSearchCloseModal}
-            />
-            <div className="vertical-line"></div>
             <div className="login-signup" onClick={this.handleOpenModal}>
-              Login/Signup
+              Login | Signup
             </div>
             <LoginModal
               isOpen={this.state.showModal}
