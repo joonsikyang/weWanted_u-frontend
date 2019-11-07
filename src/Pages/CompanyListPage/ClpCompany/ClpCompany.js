@@ -16,7 +16,7 @@ export class ClpCompany extends Component {
         jobId={e.job.job_id}
       />
     ));
-    return <ul className="companyList_container">{companyList}</ul>;
+    return <ul>{companyList}</ul>;
   }
 }
 
