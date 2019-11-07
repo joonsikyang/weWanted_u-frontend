@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./HomepageNavBar.scss";
 import LoginModal from "../../Modal/LoginModal";
-import { SearchModal } from "../../Modal/SearchModal/SearchModal";
 import NavBarLogo from "../../Logo/NavBarLogo";
 
 export class HomepageNavBar extends Component {
@@ -22,18 +21,6 @@ export class HomepageNavBar extends Component {
   handleCloseModal = e => {
     this.setState({
       showModal: false
-    });
-  };
-
-  handleSearchOpenModal = e => {
-    this.setState({
-      showSearchModal: true
-    });
-  };
-
-  handleSearchCloseModal = e => {
-    this.setState({
-      showSearchModal: false
     });
   };
 
