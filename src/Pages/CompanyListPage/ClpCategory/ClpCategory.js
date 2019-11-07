@@ -7,13 +7,13 @@ export class ClpCategory extends Component {
     return (
       <div className="category">
         <div className="category_container">
-          <Link to="/company_list/1" className="category_item front">
+          <Link to="/company_list?category=1" className="category_item front">
             <div>FrontEnd</div>
           </Link>
-          <Link to="/company_list/2" className="category_item back">
+          <Link to="/company_list?category=2" className="category_item back">
             <div>BackEnd</div>
           </Link>
-          <Link to="/company_list/3" className="category_item full">
+          <Link to="/company_list?category=3" className="category_item full">
             <div>FullStack</div>
           </Link>
         </div>

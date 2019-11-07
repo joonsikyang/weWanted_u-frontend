@@ -28,9 +28,6 @@ $border: 1px solid #bebdbd;
       height: 50px;
       background-size: contain;
       background-repeat: no-repeat;
-      justify-content: center;
-      white-space: pre-wrap;
-      word-break: keep-all;
     }
   }
 
@@ -74,6 +71,25 @@ $border: 1px solid #bebdbd;
         color: rgba(58, 104, 249, 0.9);
         font-size: 60px;
         font-weight: 400;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .ppp_projects {
+    display: inline;
+    .ppp_my_projects_container {
+      display: flex;
+
+      width: 100%;
+      align-items: center;
+
+      .ppp_links_value {
+        background-image: url(https://image.flaticon.com/icons/svg/25/25231.svg);
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
       }
     }
   }
