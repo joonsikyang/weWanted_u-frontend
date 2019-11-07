@@ -15,7 +15,7 @@ export class SignupMode extends Component {
   }
 
   accessSignup = () => {
-    fetch("http://10.58.4.168:8000/login/signup", {
+    fetch("http://10.58.7.182:8001/users", {
       method: "post",
       body: JSON.stringify({
         email: this.state.id,
@@ -26,13 +26,7 @@ export class SignupMode extends Component {
         return res.json();
       })
       .then(res => {
-        //success message 받으면
         this.props.loginMode();
-        // console.log(res);
-        // if (res.JsonWebToken) {
-        //   localStorage.setItem("JsonWebToken", res.JsonWebToken);
-        //   this.props.history.push("/main");
-        // }
       });
   };
 
@@ -46,7 +40,6 @@ export class SignupMode extends Component {
           this.setState({ display: "block" });
         } else {
           this.accessSignup();
-          // this.props.loginMode();
         }
       }
     );
@@ -72,9 +65,6 @@ export class SignupMode extends Component {
   };
 
   render() {
-    // console.log(this.state.pw);
-    // console.log(this.state.pwCheck);
-    // arrow function으로 해결
     return (
       <div className="signup-mode">
         <input
