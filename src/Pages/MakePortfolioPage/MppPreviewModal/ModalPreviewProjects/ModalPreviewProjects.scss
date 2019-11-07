@@ -19,6 +19,9 @@ $border: 1px solid #bebdbd;
     }
     .modal_preview_project_title_value {
       font-weight: 600;
+      width: 300px;
+      word-break: keep-all;
+      white-space: pre-wrap;
     }
     .modal_preview_project_links_value {
       background-image: url("https://image.flaticon.com/icons/svg/25/25231.svg");
