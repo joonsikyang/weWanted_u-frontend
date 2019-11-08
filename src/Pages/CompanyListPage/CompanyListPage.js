@@ -4,7 +4,7 @@ import "./CompanyListPage.scss";
 import CompanyListPageNavBar from "Components/NavBar/CompanyListPageNavBar";
 import ClpCategory from "./ClpCategory";
 import ClpFilter from "./ClpFilter";
-import ClpCompany from "./ClpCompany";
+import CompanyItem from "./ClpCompany/CompanyItem/CompanyItem";
 import Slick from "./Slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -29,6 +29,13 @@ export class CompanyListPage extends Component {
     ) {
       this.fetchCompany();
     }
+    // } else if (
+    //   prevProps.location.search.split("=")[1] ===
+    //     this.props.location.search.split("=")[1] &&
+    //   prevState.data.follow !== this.state.data.follow
+    // ) {
+    //   this.fetchCompany();
+    // }
   }
 
   fetchCompany() {
@@ -48,8 +55,6 @@ export class CompanyListPage extends Component {
   }
 
   render() {
-    // console.log(this.state.data);
-    // console.log(window.localStorage);
     return (
       <div className="company_list_page">
         <CompanyListPageNavBar />
@@ -59,7 +64,21 @@ export class CompanyListPage extends Component {
         </div>
         <div className="filter_companyList_container">
           <ClpFilter />
-          <ClpCompany fetchedData={this.state.data} />
+          {this.state.data.map((e, i) => (
+            <CompanyItem
+              key={i}
+              idx={i}
+              img={e.company.main_image}
+              positionName={e.job.position}
+              companyName={e.company.company_name}
+              city={e.company.city}
+              country={e.company.country}
+              deadLine={e.job.dead_line}
+              jobId={e.job.job_id}
+              follow={e.follow}
+              refetch={this.fetchCompany}
+            />
+          ))}
         </div>
       </div>
     );

@@ -5,17 +5,24 @@ import "./CompanyItem.scss";
 
 export class CompanyItem extends Component {
   constructor(props) {
+    console.log("CompanyItem-constructor");
     super(props);
     this.state = {
-      follow: false
+      follow: props.follow
     };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(this.props.id === 0);
+    if (prevProps.jobId !== this.props.jobId) {
+      this.setState({ follow: this.props.follow });
+    }
   }
 
   sendToken = e => {
     e.preventDefault();
-    console.log("send");
-
     this.sendFollowingFetch();
+    // this.props.refetch();
   };
 
   sendFollowingFetch = () => {
@@ -32,14 +39,15 @@ export class CompanyItem extends Component {
       .then(response => response.json())
       .then(response => {
         console.log(response.message);
-        this.setState({ follow: !this.state.follow });
+        this.setState({ follow: response.message });
       });
   };
 
   render() {
+    console.log(this.props.idx === 0 && this.props);
+    // console.log(this.props.follow, this.props.companyName);
     return (
       <Link to={`/company_detail/${this.props.jobId}`}>
-        {/* {console.log(this.props.follow)} */}
         <li className="company_list_item">
           <header>
             <div
