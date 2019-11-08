@@ -5,11 +5,11 @@ class CdpTable extends React.Component {
   constructor() {
     super();
     this.state = {
-      category: "frontend",
-      career_year: "신입",
-      interview_experience: "긍정적",
+      category: "front_end",
+      career_year: "1년 이하",
+      interview_experience: "긍정",
       interview_path: "지인추천",
-      code_test_level: "없음",
+      code_test_level: "1",
       interview_result: "합격"
     };
   }
@@ -28,7 +28,7 @@ class CdpTable extends React.Component {
                   }}
                 >
                   {this.props.category.map(e => (
-                    <option key={e.id}>{e.value}</option>
+                    <option key={e.id}>{e.category}</option>
                   ))}
                 </select>
               </div>
@@ -42,7 +42,7 @@ class CdpTable extends React.Component {
                   }}
                 >
                   {this.props.career_year.map(e => (
-                    <option key={e.id}>{e.value}</option>
+                    <option key={e.id}>{e.career}</option>
                   ))}
                 </select>
               </div>
@@ -59,7 +59,7 @@ class CdpTable extends React.Component {
                   }}
                 >
                   {this.props.interview_experience.map(e => (
-                    <option key={e.id}>{e.value}</option>
+                    <option key={e.id}>{e.mood}</option>
                   ))}
                 </select>
               </div>
@@ -73,7 +73,7 @@ class CdpTable extends React.Component {
                   }}
                 >
                   {this.props.interview_path.map(e => (
-                    <option key={e.id}>{e.value}</option>
+                    <option key={e.id}>{e.route}</option>
                   ))}
                 </select>
               </div>
@@ -89,8 +89,9 @@ class CdpTable extends React.Component {
                     this.props.code_change(e.target.value);
                   }}
                 >
+                  <option key="2">없음</option>
                   {this.props.code_test_level.map(e => (
-                    <option key={e.id}>{e.value}</option>
+                    <option key={e.id}>{e.level}</option>
                   ))}
                 </select>
               </div>
@@ -104,7 +105,7 @@ class CdpTable extends React.Component {
                   }}
                 >
                   {this.props.interview_result.map(e => (
-                    <option key={e.id}>{e.value}</option>
+                    <option key={e.id}>{e.result}</option>
                   ))}
                 </select>
               </div>

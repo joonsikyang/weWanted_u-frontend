@@ -15,18 +15,57 @@ export class CdpInterview extends Component {
       expData,
       resultData,
       review_list,
+      category: [],
+      career_year: [],
+      interview_experience: [],
+      interview_path: [],
+      interview_result: [],
+      code_test_level: [],
       showModal: false
     };
   }
 
-  chart_review_api = () => {
-    fetch("api")
-      .then(res => res.json)
+  componentDidMount = () => {
+    fetch("http://10.58.7.182:8000/repl/1")
+      .then(res => res.json())
       .then(data => {
         this.setState({
-          expData: data.expData,
-          resultData: data.resultData,
-          review_list: data.review_list
+          category: data.category
+        });
+      });
+    fetch("http://10.58.7.182:8000/repl/2")
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          career_year: data.career
+        });
+      });
+    fetch("http://10.58.7.182:8000/repl/3")
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          interview_experience: data.mood
+        });
+      });
+    fetch("http://10.58.7.182:8000/repl/4")
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          interview_path: data.route
+        });
+      });
+    fetch("http://10.58.7.182:8000/repl/5")
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          code_test_level: data.test_level
+        });
+      });
+    fetch("http://10.58.7.182:8000/repl/6")
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          interview_result: data.result
         });
       });
   };
@@ -44,7 +83,18 @@ export class CdpInterview extends Component {
   };
 
   render() {
-    const { expData, resultData, showModal, review_list } = this.state;
+    const {
+      expData,
+      resultData,
+      showModal,
+      review_list,
+      category,
+      career_year,
+      interview_experience,
+      interview_path,
+      interview_result,
+      code_test_level
+    } = this.state;
     const avg_num = 2.5;
     const avg_num_percent = (avg_num / 5) * 100 + "%";
     const circleStyle = { left: `calc(${avg_num_percent} - 8px)` };
@@ -90,6 +140,12 @@ export class CdpInterview extends Component {
             isOpen={showModal}
             handleCloseModal={this.handleCloseModal}
             handleOpenModal={this.handleOpenModal}
+            category={category}
+            career_year={career_year}
+            interview_experience={interview_experience}
+            interview_path={interview_path}
+            interview_result={interview_result}
+            code_test_level={code_test_level}
           />
         </div>
         {review_list.map(e => (

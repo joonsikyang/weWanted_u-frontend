@@ -2,58 +2,47 @@ import React from "react";
 import ReactModal from "react-modal";
 import "./CdpModal.scss";
 import CdpTable from "../CdpTable/CdpTable";
-import {
-  category,
-  career_year,
-  interview_experience,
-  interview_path,
-  interview_result,
-  code_test_level
-} from "../CdpTable/CdpTableData";
 
 class CdpModal extends React.Component {
   constructor() {
     super();
     this.state = {
-      category,
-      career_year,
-      interview_experience,
-      interview_path,
-      interview_result,
-      code_test_level,
-      category_value: "frontend",
-      career_year_value: "신입",
-      interview_experience_value: "긍정적",
+      category_value: "front_end",
+      career_year_value: "1년 이하",
+      interview_experience_value: "긍정",
       interview_path_value: "지인 추천",
       interview_result_value: "합격",
       code_test_level_value: "없음",
-      question: ""
+      question: "",
+      answer: "",
+      overall_review: "",
+      review_list: []
     };
   }
 
-  selectApi = () => {
-    fetch("api")
-      .then(res => res.json)
-      .then(data => {
-        this.setState({
-          category: data.category,
-          career_year: data.career_year,
-          interview_experience: data.interview_experience,
-          interview_path: data.interview_path,
-          code_test_level: data.code_test_level
-        });
+  handlePost = () => {
+    fetch("http://10.58.7.182:8001/follow", {
+      method: "post",
+      headers: {
+        Authorization: window.localStorage.JsonWebToken
+      },
+      body: JSON.stringify({
+        category: this.state.career_year_value,
+        career: this.state.career_year_value,
+        mood: this.state.interview_experience_value,
+        route: this.state.interview_path_value,
+        result: this.state.interview_result_value,
+        test_level: this.state.code_test_level_value,
+        question: this.state.question,
+        answer: this.state.answer,
+        overall_review: this.state.overall_review
+      })
+    })
+      .then(response => response.json())
+      .then(res => {
+        this.setState({ review_list: this.state.review_list.concat(res.data) });
       });
   };
-
-  // handlepost = () => {
-  //   fetch("api",{
-  //     method: 'post'        body: JSON.stringify({
-  //       email: this.props.email,
-  //       password: this.props.password
-  //       })
-  //   })
-  //   });
-  // };
 
   categoryChange = e => {
     this.setState({
@@ -95,25 +84,18 @@ class CdpModal extends React.Component {
       question: e.target.value
     });
   };
+  answerChange = e => {
+    this.setState({
+      answer: e.target.value
+    });
+  };
+  overallReviewChange = e => {
+    this.setState({
+      overall_review: e.target.value
+    });
+  };
 
   render() {
-    const {
-      category,
-      career_year,
-      interview_experience,
-      interview_path,
-      interview_result,
-      code_test_level,
-      category_value,
-      career_year_value,
-      interview_experience_value,
-      interview_path_value,
-      interview_result_value,
-      code_test_level_value
-    } = this.state;
-    const { handleSubmit } = this;
-    console.log(this.state.question);
-
     return (
       <ReactModal
         isOpen={this.props.isOpen}
@@ -130,12 +112,12 @@ class CdpModal extends React.Component {
           <div className="modal_main">
             <div className="modal_top">
               <CdpTable
-                category={category}
-                career_year={career_year}
-                interview_experience={interview_experience}
-                interview_path={interview_path}
-                interview_result={interview_result}
-                code_test_level={code_test_level}
+                category={this.props.category}
+                career_year={this.props.career_year}
+                interview_experience={this.props.interview_experience}
+                interview_path={this.props.interview_path}
+                interview_result={this.props.interview_result}
+                code_test_level={this.props.code_test_level}
                 category_change={e => {
                   this.categoryChange(e);
                 }}
@@ -166,18 +148,24 @@ class CdpModal extends React.Component {
               </div>
               <div className="answer">
                 <span>면접 답변</span>
-                <textarea placeholder=" 최대한 자세하게 작성해주세요."></textarea>
+                <textarea
+                  onChange={this.answerChange}
+                  placeholder=" 최대한 자세하게 작성해주세요."
+                ></textarea>
               </div>
               <div className="interview_review">
                 <span>전체적인 면접 후기</span>
-                <textarea placeholder=" 최대한 자세하게 작성해주세요."></textarea>
+                <textarea
+                  onChange={this.overallReviewChange}
+                  placeholder=" 최대한 자세하게 작성해주세요."
+                ></textarea>
               </div>
             </div>
             <div className="modal_bottom">
               <div className="close" onClick={this.props.handleCloseModal}>
                 취소
               </div>
-              <div onClick={this.handlepost} className="completed">
+              <div onClick={this.handlePost} className="completed">
                 작성 완료
               </div>
             </div>
