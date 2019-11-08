@@ -13,7 +13,8 @@ export class CompanyListPage extends Component {
   constructor() {
     super();
     this.state = {
-      data: []
+      data: [],
+      skillData: []
     };
   }
 
@@ -32,24 +33,29 @@ export class CompanyListPage extends Component {
 
   fetchCompany() {
     const queryId = this.props.location.search.split("=")[1];
-    console.log(queryId);
-    fetch(`http://10.58.7.182:8001/job/list/${queryId}`)
+    const token = window.localStorage.JsonWebToken;
+    fetch(`http://10.58.7.182:8001/job/list/${queryId}`, {
+      headers: { Authorization: token }
+    })
       .then(response => response.json())
       .then(response => {
+        console.log(response.data[0].follow);
         this.setState({
-          data: response.data
+          data: response.data,
+          skillData: response.tag_list
         });
       });
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.state.data);
+    // console.log(window.localStorage);
     return (
       <div className="company_list_page">
         <CompanyListPageNavBar />
         <div className="filterArea">
           <ClpCategory onClick={this.handleCategoryClick} />
-          <Slick fetchedData={this.state.data} />
+          <Slick fetchedData={this.state.skillData} />
         </div>
         <div className="filter_companyList_container">
           <ClpFilter />

@@ -4,8 +4,8 @@ import { withRouter, Link } from "react-router-dom";
 import "./CompanyItem.scss";
 
 export class CompanyItem extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       follow: false
     };
@@ -14,7 +14,11 @@ export class CompanyItem extends Component {
   sendToken = e => {
     e.preventDefault();
     console.log("send");
-    this.setState({ follow: !this.state.follow });
+
+    this.sendFollowingFetch();
+  };
+
+  sendFollowingFetch = () => {
     fetch("http://10.58.7.182:8001/follow", {
       method: "post",
       headers: {
@@ -26,12 +30,16 @@ export class CompanyItem extends Component {
       })
     })
       .then(response => response.json())
-      .then(res => console.log(res));
+      .then(response => {
+        console.log(response.message);
+        this.setState({ follow: !this.state.follow });
+      });
   };
 
   render() {
     return (
       <Link to={`/company_detail/${this.props.jobId}`}>
+        {/* {console.log(this.props.follow)} */}
         <li className="company_list_item">
           <header>
             <div

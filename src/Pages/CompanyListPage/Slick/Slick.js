@@ -23,7 +23,7 @@ class Slick extends Component {
     return this.props.fetchedData.map((e, i) => {
       return (
         <div className="skill-container">
-          <h3 data-index={i}>{e.job.position}</h3>
+          <h3 data-index={i}>{e}</h3>
         </div>
       );
     });

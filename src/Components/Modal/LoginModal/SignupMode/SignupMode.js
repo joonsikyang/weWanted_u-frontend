@@ -23,6 +23,7 @@ export class SignupMode extends Component {
       })
     })
       .then(res => {
+        console.log(res);
         return res.json();
       })
       .then(res => {
