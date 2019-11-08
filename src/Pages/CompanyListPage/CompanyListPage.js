@@ -7,18 +7,23 @@ import CompanyItem from "./ClpCompany/CompanyItem/CompanyItem";
 import Slick from "./Slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import LoadingPage from "../LoadingPage";
 
 export class CompanyListPage extends Component {
   constructor() {
     super();
     this.state = {
       data: [],
-      skillData: []
+      skillData: [],
+      isLoading: false
     };
   }
 
   componentDidMount = () => {
     this.fetchCompany();
+    this.setState({
+      isLoading: true
+    });
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -39,6 +44,7 @@ export class CompanyListPage extends Component {
       .then(response => response.json())
       .then(response => {
         this.setState({
+          isLoading: false,
           data: response.data,
           skillData: response.tag_list
         });
@@ -46,6 +52,26 @@ export class CompanyListPage extends Component {
   }
 
   render() {
+    console.log(this.state);
+    const loading = this.state.isLoading ? (
+      <LoadingPage />
+    ) : (
+      this.state.data.map((e, i) => (
+        <CompanyItem
+          key={i}
+          idx={i}
+          img={e.company.main_image}
+          positionName={e.job.position}
+          companyName={e.company.company_name}
+          city={e.company.city}
+          country={e.company.country}
+          deadLine={e.job.dead_line}
+          jobId={e.job.job_id}
+          follow={e.follow}
+          refetch={this.fetchCompany}
+        />
+      ))
+    );
     return (
       <div className="company_list_page">
         <CompanyListPageNavBar />
@@ -53,23 +79,7 @@ export class CompanyListPage extends Component {
           <ClpCategory onClick={this.handleCategoryClick} />
           <Slick fetchedData={this.state.skillData} />
         </div>
-        <div className="filter_companyList_container">
-          {this.state.data.map((e, i) => (
-            <CompanyItem
-              key={i}
-              idx={i}
-              img={e.company.main_image}
-              positionName={e.job.position}
-              companyName={e.company.company_name}
-              city={e.company.city}
-              country={e.company.country}
-              deadLine={e.job.dead_line}
-              jobId={e.job.job_id}
-              follow={e.follow}
-              refetch={this.fetchCompany}
-            />
-          ))}
-        </div>
+        <div className="filter_companyList_container">{loading}</div>
       </div>
     );
   }
