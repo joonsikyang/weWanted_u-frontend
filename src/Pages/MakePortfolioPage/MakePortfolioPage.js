@@ -41,6 +41,7 @@ class MakePortfolioPage extends React.Component {
   };
 
   fetchSavingType = () => {
+    // let token = localStorage.getItem("JsonWebToken") || "";
     fetch(`http://10.58.0.209:8000/resume/savingtype`, {
       method: "get",
       headers: {
@@ -59,6 +60,7 @@ class MakePortfolioPage extends React.Component {
   };
 
   fetchResumeToEdit = () => {
+    // let token = localStorage.getItem("JsonWebToken") || "";
     fetch(`http://10.58.0.209:8000/resume/${this.props.match.params.id}`, {
       method: "get",
       headers: {
@@ -103,13 +105,33 @@ class MakePortfolioPage extends React.Component {
 
   onClickPostProject = event => {
     this.setState({ saving_type: event.target.name }, () => {
-      this.postFetch();
+      if (this.props.match.params.id) {
+        this.postEditedFetch();
+      } else {
+        this.postNewFetch();
+      }
+      setTimeout(() => {
+        this.props.history.push("/my_account");
+      }, 1000);
     });
-    this.props.history.push("/my_account");
   };
 
-  postFetch = () => {
-    // let token = localStorage.getItem();
+  postEditedFetch = () => {
+    // let token = localStorage.getItem("JsonWebToken") || "";
+    fetch(`http://10.58.0.209:8000/resume/${this.props.match.params.id}`, {
+      method: "post",
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndlY29kZUBuYXZlci5jb20ifQ.fJay4OFcWhqdx3qBy0TV9U4iSxXn8IDNthJPqsrl1wE"
+      },
+      body: JSON.stringify(this.state)
+    })
+      .then(response => response.json())
+      .then(response => console.log(response.message));
+  };
+
+  postNewFetch = () => {
+    // let token = localStorage.getItem("JsonWebToken") || "";
     fetch(`http://10.58.0.209:8000/resume`, {
       method: "post",
       headers: {

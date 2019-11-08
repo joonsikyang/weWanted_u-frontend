@@ -17,7 +17,8 @@ export class CompanyDetailPage extends Component {
       companyData: {},
       tagData: [],
       imageData: [],
-      detailSwitch: true
+      detailSwitch: true,
+      follow: false
     };
   }
 
@@ -34,9 +35,14 @@ export class CompanyDetailPage extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
     fetch(
-      `http://10.58.7.182:8001/job/recruitment/${this.props.match.params.id}`
+      `http://10.58.7.182:8001/job/recruitment/${this.props.match.params.id}`,
+      {
+        method: "get",
+        headers: {
+          Authorization: window.localStorage.JsonWebToken
+        }
+      }
     )
       .then(res => res.json())
       .then(res => {
@@ -56,6 +62,7 @@ export class CompanyDetailPage extends Component {
   }
 
   sendToken = () => {
+    this.setState({ follow: !this.state.follow });
     fetch("http://10.58.7.182:8001/follow", {
       method: "post",
       headers: {
@@ -63,7 +70,7 @@ export class CompanyDetailPage extends Component {
       },
       body: JSON.stringify({
         job_id: this.props.match.params.id,
-        follow: true
+        follow: this.state.follow
       })
     })
       .then(response => response.json())
@@ -106,37 +113,43 @@ export class CompanyDetailPage extends Component {
                 companyData={companyData}
                 positionData={positionData}
                 tagData={tagData}
+                sendToken={this.sendToken}
+                follow={this.state.follow}
               />
             ) : (
               <CdpInterview
                 companyData={companyData}
                 positionData={positionData}
                 tagData={tagData}
+                sendToken={this.sendToken}
+                follow={this.state.follow}
               />
             )}
           </div>
-          <aside
-            style={{ position: this.state.main_right }}
-            className="main_right"
-          >
-            <div className="logo_and_name">
-              <div
-                style={{
-                  backgroundImage: `url(${companyData.logo_image})`
-                }}
-                className="logo"
-              ></div>
-              <div className="company_name">{companyData.company_name}</div>
+          <div className="main_right">
+            <div className="sticky_container">
+              <div className="logo_and_name">
+                <div
+                  style={{
+                    backgroundImage: `url(${companyData.logo_image})`
+                  }}
+                  className="logo"
+                ></div>
+                <div className="company_name">{companyData.company_name}</div>
+              </div>
+              <CdpPosition
+                companyData={companyData}
+                positionData={positionData}
+              />
+              <button
+                onClick={this.sendToken}
+                className={`follow_btn${this.state.follow ? "" : "_on"}`}
+              >
+                팔로우하기
+              </button>
+              <MapContainer companyData={companyData} />
             </div>
-            <CdpPosition
-              companyData={companyData}
-              positionData={positionData}
-            />
-            <button onClick={this.sendToken} className="follow_btn">
-              팔로우하기
-            </button>
-            <MapContainer companyData={companyData} />
-          </aside>
+          </div>
         </main>
         <HomePageFooter />
       </div>
