@@ -33,8 +33,24 @@ export class HomepageNavBar extends Component {
             <div className="logo_btn">WeWanted</div>
           </div>
           <div className="right">
-            <div className="login-signup" onClick={this.handleOpenModal}>
+            <div
+              className={
+                window.localStorage.getItem("JsonWebToken")
+                  ? "login-signup none"
+                  : "login-signup block"
+              }
+              onClick={this.handleOpenModal}
+            >
               Login | Signup
+            </div>
+            <div
+              className={
+                window.localStorage.getItem("JsonWebToken")
+                  ? "logout block"
+                  : "logout none"
+              }
+            >
+              Logout
             </div>
             <LoginModal
               isOpen={this.state.showModal}
