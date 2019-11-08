@@ -49,6 +49,7 @@ class MakePortfolioPage extends React.Component {
     })
       .then(response => response.json())
       .then(response => {
+        console.log(response);
         this.setState({
           completed_button: response.saving_type[0].id,
           save_button: response.saving_type[1].id
