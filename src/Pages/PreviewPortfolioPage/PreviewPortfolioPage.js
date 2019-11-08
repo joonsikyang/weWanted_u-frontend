@@ -30,7 +30,7 @@ class PreviewPortfolioPage extends React.Component {
   }
 
   componentDidMount = () => {
-    fetch(`http://10.58.0.209:8000/resume/${this.props.match.params.id}`, {
+    fetch(`http://10.58.7.182:8001/resume/${this.props.match.params.id}`, {
       method: "get",
       headers: {
         Authorization:
