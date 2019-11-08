@@ -4,12 +4,13 @@ import "./MapMyPortfolio.scss";
 
 const MapMyPortfolio = props => {
   const status = () => {
-    if (props.completed === 1) {
+    if (props.completed === 3) {
       return "Completed";
-    } else if (props.completed === 2) {
+    } else if (props.completed === 4) {
       return "In Progress";
     }
   };
+  //please work
 
   return (
     <ul className="map_my_portfolio">
