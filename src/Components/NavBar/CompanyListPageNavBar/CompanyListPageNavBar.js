@@ -40,6 +40,11 @@ export class CompanyListPageNavBar extends Component {
     });
   };
 
+  handleLogout = () => {
+    window.localStorage.removeItem("JsonWebToken");
+    document.location.reload();
+  };
+
   render() {
     return (
       <div className="CLP-navBar">
@@ -62,7 +67,7 @@ export class CompanyListPageNavBar extends Component {
             </div>
             <div
               className={
-                window.localStorage.getItem("JsonWebToken")
+                window.localStorage.JsonWebToken
                   ? "login-signup none"
                   : "login-signup block"
               }
@@ -74,15 +79,16 @@ export class CompanyListPageNavBar extends Component {
               isOpen={this.state.showModal}
               onClick={this.handleCloseModal}
             />
-            <div
+            {/* <div
               className={
-                window.localStorage.getItem("JsonWebToken")
+                window.localStorage.JsonWebToken
                   ? "logout block"
                   : "logout none"
               }
+              onClick={this.handleLogout}
             >
               Logout
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
