@@ -4,7 +4,6 @@ import { expData, resultData } from "../CdpTable/CdpTableData";
 import CdpInterviewBox from "../CdpInterviewBox";
 import CdpReviewBox from "../CdpReviewBox";
 import CdpModal from "../CdpModal/CdpModal";
-import { review_list } from "../CdpTable/CdpTableData";
 import CdpPathTable from "../CdpPathTable";
 import MapContainer from "Components/MapContainer";
 
@@ -14,7 +13,7 @@ export class CdpInterview extends Component {
     this.state = {
       expData,
       resultData,
-      review_list,
+      review_list: [],
       category: [],
       career_year: [],
       interview_experience: [],
@@ -26,48 +25,54 @@ export class CdpInterview extends Component {
   }
 
   componentDidMount = () => {
-    fetch("http://10.58.7.182:8000/repl/1")
+    fetch("http://10.58.7.182:8001/repl/1")
       .then(res => res.json())
       .then(data => {
         this.setState({
           category: data.category
         });
       });
-    fetch("http://10.58.7.182:8000/repl/2")
+    fetch("http://10.58.7.182:8001/repl/2")
       .then(res => res.json())
       .then(data => {
         this.setState({
           career_year: data.career
         });
       });
-    fetch("http://10.58.7.182:8000/repl/3")
+    fetch("http://10.58.7.182:8001/repl/3")
       .then(res => res.json())
       .then(data => {
         this.setState({
           interview_experience: data.mood
         });
       });
-    fetch("http://10.58.7.182:8000/repl/4")
+    fetch("http://10.58.7.182:8001/repl/4")
       .then(res => res.json())
       .then(data => {
         this.setState({
           interview_path: data.route
         });
       });
-    fetch("http://10.58.7.182:8000/repl/5")
+    fetch("http://10.58.7.182:8001/repl/5")
       .then(res => res.json())
       .then(data => {
         this.setState({
           code_test_level: data.test_level
         });
       });
-    fetch("http://10.58.7.182:8000/repl/6")
+    fetch("http://10.58.7.182:8001/repl/6")
       .then(res => res.json())
       .then(data => {
         this.setState({
           interview_result: data.result
         });
       });
+  };
+
+  setReviewList = review_list => {
+    this.setState({
+      review_list
+    });
   };
 
   handleOpenModal = () => {
@@ -146,17 +151,19 @@ export class CdpInterview extends Component {
             interview_path={interview_path}
             interview_result={interview_result}
             code_test_level={code_test_level}
+            companyData={this.props.companyData}
+            setReviewList={this.setReviewList}
           />
         </div>
         {review_list.map(e => (
           <CdpReviewBox
             category={e.category}
-            career_year={e.career_year}
-            interview_experience={e.interview_experience}
-            interview_path={e.interview_path}
-            code_test_level={e.code_test_level}
-            interview_result={e.interview_result}
-            overall_review={e.overall_review}
+            career_year={e.career}
+            interview_experience={e.mood}
+            interview_path={e.route}
+            code_test_level={e.test_level}
+            interview_result={e.result}
+            overall_review={e.review}
             question={e.question}
             answer={e.answer}
           />
