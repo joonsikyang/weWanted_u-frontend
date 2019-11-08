@@ -36,7 +36,13 @@ export class CompanyDetailPage extends Component {
 
   componentDidMount() {
     fetch(
-      `http://10.58.7.182:8001/job/recruitment/${this.props.match.params.id}`
+      `http://10.58.7.182:8001/job/recruitment/${this.props.match.params.id}`,
+      {
+        method: "get",
+        headers: {
+          Authorization: window.localStorage.JsonWebToken
+        }
+      }
     )
       .then(res => res.json())
       .then(res => {
@@ -115,39 +121,35 @@ export class CompanyDetailPage extends Component {
                 companyData={companyData}
                 positionData={positionData}
                 tagData={tagData}
+                sendToken={this.sendToken}
+                follow={this.state.follow}
               />
             )}
           </div>
-          <aside
-            style={{ position: this.state.main_right }}
-            className="main_right"
-          >
-            <div className="logo_and_name">
-              <div
-                style={{
-                  backgroundImage: `url(${companyData.logo_image})`
-                }}
-                className="logo"
-              ></div>
-              <div className="company_name">{companyData.company_name}</div>
+          <div className="main_right">
+            <div className="sticky_container">
+              <div className="logo_and_name">
+                <div
+                  style={{
+                    backgroundImage: `url(${companyData.logo_image})`
+                  }}
+                  className="logo"
+                ></div>
+                <div className="company_name">{companyData.company_name}</div>
+              </div>
+              <CdpPosition
+                companyData={companyData}
+                positionData={positionData}
+              />
+              <button
+                onClick={this.sendToken}
+                className={`follow_btn${this.state.follow ? "" : "_on"}`}
+              >
+                팔로우하기
+              </button>
+              <MapContainer companyData={companyData} />
             </div>
-            <CdpPosition
-              companyData={companyData}
-              positionData={positionData}
-            />
-            <button
-              onClick={this.sendToken}
-              className={`follow_btn${this.state.follow ? "" : "_on"}`}
-            >
-              팔로우하기
-            </button>
-            <MapContainer
-              companyData={companyData}
-              width="100%"
-              height="100%"
-              display="block"
-            />
-          </aside>
+          </div>
         </main>
         <HomePageFooter />
       </div>

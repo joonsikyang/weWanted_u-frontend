@@ -5,10 +5,9 @@
   margin: 0 auto;
   margin-top: 70px;
   position: relative;
-
+  display: flex;
   .main_left {
-    width: calc(100% - 360px);
-    position: relative;
+    flex: 2;
     .main_image {
       background-size: cover;
       height: 500px;
@@ -60,48 +59,48 @@
   }
 
   .main_right {
-    width: 340px;
     margin-left: 20px;
-    height: 338px;
-    position: fixed;
-    top: 70px;
-    right: 10%;
-    .logo_and_name {
-      display: flex;
-      align-items: center;
-      height: 70px;
-      .logo {
-        width: 50px;
+    flex: 1;
+    .sticky_container {
+      position: sticky;
+      top: 50px;
+      .logo_and_name {
+        display: flex;
+        align-items: center;
+        height: 70px;
+        .logo {
+          width: 50px;
+          height: 50px;
+          background-size: 100%;
+          border: $border-line;
+        }
+        .company_name {
+          font-weight: 600;
+          margin-left: 10px;
+        }
+      }
+      .like_container {
+        height: 70px;
+        border-top: $border-line;
+      }
+      .follow_btn,
+      .follow_btn_on {
+        width: 100%;
         height: 50px;
-        background-size: 100%;
-        border: $border-line;
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: 700;
+        border-radius: 3px;
+        margin-top: 20px;
       }
-      .company_name {
-        font-weight: 600;
-        margin-left: 10px;
+      .follow_btn {
+        background-color: #258bf7;
       }
-    }
-    .like_container {
-      height: 70px;
-      border-top: $border-line;
-    }
-    .follow_btn,
-    .follow_btn_on {
-      width: 100%;
-      height: 50px;
-      font-size: 16px;
-      color: #ffffff;
-      font-weight: 700;
-      border-radius: 3px;
-      margin-top: 20px;
-    }
-    .follow_btn {
-      background-color: #258bf7;
-    }
-    .follow_btn_on {
-      background-color: white;
-      border: 1px solid #258bf7;
-      color: #258bf7;
+      .follow_btn_on {
+        background-color: white;
+        border: 1px solid #258bf7;
+        color: #258bf7;
+      }
     }
   }
 }

@@ -30,13 +30,9 @@ const CdpDetailIntro = props => {
         <span>{props.positionData.benefits}</span>
       </div>
       <div className="bottom_responsive">
-        <MapContainer
-          companyData={props.companyData}
-          width="100%"
-          height="300px"
-          className="bottom_map"
-          display="none"
-        />
+        <div className="map_bottom">
+          <MapContainer companyData={props.companyData} />
+        </div>
         <div className="cdp_position">
           <div className="position_box">
             <h4>{props.positionData.position}</h4>

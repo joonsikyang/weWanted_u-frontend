@@ -6,6 +6,7 @@ import CdpReviewBox from "../CdpReviewBox";
 import CdpModal from "../CdpModal/CdpModal";
 import { review_list } from "../CdpTable/CdpTableData";
 import CdpPathTable from "../CdpPathTable";
+import MapContainer from "Components/MapContainer";
 
 export class CdpInterview extends Component {
   constructor() {
@@ -104,6 +105,44 @@ export class CdpInterview extends Component {
             answer={e.answer}
           />
         ))}
+        <div className="bottom_responsive">
+          <div className="map_bottom">
+            <MapContainer companyData={this.props.companyData} />
+          </div>
+          <div className="cdp_position">
+            <div className="position_box">
+              <h4>{this.props.positionData.position}</h4>
+              <h5>
+                {this.props.companyData.city} - {this.props.companyData.country}
+              </h5>
+              <p>
+                마감일:
+                {this.props.positionData.dead_line
+                  ? this.props.positionData.dead_line
+                  : "상시 채용"}
+              </p>
+            </div>
+            <div className="logo_and_name">
+              <div
+                style={{
+                  backgroundImage: `url(${this.props.companyData.logo_image})`
+                }}
+                className="logo"
+              ></div>
+              <div>
+                <div className="company_name">
+                  {this.props.companyData.company_name}
+                </div>
+                <button
+                  onClick={this.props.sendToken}
+                  className={`follow_btn${this.props.follow ? "" : "_on"}`}
+                >
+                  팔로우하기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
