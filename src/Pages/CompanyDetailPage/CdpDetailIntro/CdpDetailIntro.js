@@ -20,13 +20,13 @@ const CdpDetailIntro = props => {
       </ul>
       <div className="pTag">
         <span>{props.positionData.intro}</span>
-        <div>주요 업무</div>
+        <div className="title">주요 업무</div>
         <span>{props.positionData.main_tasks}</span>
-        <div>자격 요건</div>
+        <div className="title">자격 요건</div>
         <span>{props.positionData.requirements}</span>
-        <div>우대 사항</div>
+        <div className="title">우대 사항</div>
         <span>{props.positionData.preferred_points}</span>
-        <div>혜택 및 복지</div>
+        <div className="title">혜택 및 복지</div>
         <span>{props.positionData.benefits}</span>
       </div>
       <div className="bottom_responsive">
