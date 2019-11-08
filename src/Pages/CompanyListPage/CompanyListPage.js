@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import "./CompanyListPage.scss";
 import CompanyListPageNavBar from "Components/NavBar/CompanyListPageNavBar";
 import ClpCategory from "./ClpCategory";
-import ClpFilter from "./ClpFilter";
 import CompanyItem from "./ClpCompany/CompanyItem/CompanyItem";
 import Slick from "./Slick";
 import "slick-carousel/slick/slick.css";
@@ -29,13 +28,6 @@ export class CompanyListPage extends Component {
     ) {
       this.fetchCompany();
     }
-    // } else if (
-    //   prevProps.location.search.split("=")[1] ===
-    //     this.props.location.search.split("=")[1] &&
-    //   prevState.data.follow !== this.state.data.follow
-    // ) {
-    //   this.fetchCompany();
-    // }
   }
 
   fetchCompany() {
@@ -46,7 +38,6 @@ export class CompanyListPage extends Component {
     })
       .then(response => response.json())
       .then(response => {
-        console.log(response.data[0].follow);
         this.setState({
           data: response.data,
           skillData: response.tag_list
@@ -63,7 +54,6 @@ export class CompanyListPage extends Component {
           <Slick fetchedData={this.state.skillData} />
         </div>
         <div className="filter_companyList_container">
-          <ClpFilter />
           {this.state.data.map((e, i) => (
             <CompanyItem
               key={i}
