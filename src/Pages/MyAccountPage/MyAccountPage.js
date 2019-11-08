@@ -12,33 +12,26 @@ class MyAccountPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      portfolio: [
-        { title: "asdfa", date_created: "2019/02/22", completed: "Completed" },
-        {
-          title:
-            "반갑습니다 저는 김형목입니다 잘부탁드립니다\n저는 28살 입니다\n아아아아아아앙아아아아아아아아아아아앙아 아앙아아!",
-          date_created: "2019/02/22",
-          completed: "In Progress"
-        },
-        {
-          title: "asdfa",
-          date_created: "2019/02/22",
-          completed: "In Progress"
-        },
-        {
-          title: "asd22fa",
-          date_created: "2019/02/22",
-          completed: "In Progress"
-        },
-        {
-          title: "asㅇddfa",
-          date_created: "2019/02/22",
-          completed: "In Progress"
-        }
-      ],
+      portfolio: [],
+
       my_followed_comp_list: CdpCompanyInfoData
     };
   }
+
+  componentDidMount = () => {
+    fetch(`http://10.58.0.209:8000/resume`, {
+      method: "get",
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndlY29kZUBuYXZlci5jb20ifQ.fJay4OFcWhqdx3qBy0TV9U4iSxXn8IDNthJPqsrl1wE"
+      }
+    })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response.resume_list);
+        this.setState({ portfolio: response.resume_list });
+      });
+  };
 
   OnClickGoToMakePortfolio = () => {
     this.props.history.push("/make_portfolio");
@@ -49,8 +42,9 @@ class MyAccountPage extends React.Component {
       <MapMyPortfolio
         key={i}
         title={eachPortfolio.title}
-        dateCreated={eachPortfolio.date_created}
-        completed={eachPortfolio.completed}
+        dateCreated={eachPortfolio.created_at.slice(0, 10)}
+        completed={eachPortfolio.saving_type}
+        portfolioId={eachPortfolio.id}
       />
     ));
 

@@ -15,7 +15,6 @@ $border: 1px solid #bebdbd;
       font-size: 4.5em;
       font-weight: 600;
       font-style: italic;
-
       background-color: transparent;
       color: black;
       white-space: pre-wrap;
@@ -25,29 +24,30 @@ $border: 1px solid #bebdbd;
 
   .modal_preview_contact_info_title {
     font-size: 1.8em;
+
     .modal_preview_period {
-      color: rgb(170, 66, 244);
+      color: rgba(0, 201, 167, 0.9);
     }
   }
   .modal_preview_phone_value,
   .modal_preview_email_value {
     border: none;
     margin-top: 10px;
-    width: 240px;
     font-size: 1em;
     background-color: transparent;
+    width: 100%;
   }
 
   .modal_preview_blog_link_title {
     font-size: 1.8em;
     margin-bottom: 20px;
     .modal_preview_period {
-      color: rgb(115, 211, 211);
+      color: rgba(55, 125, 255, 0.9);
     }
   }
   .modal_preview_blog_link_value {
     border: none;
-    width: 550px;
+    width: 100%;
     font-size: 1em;
     background-color: transparent;
     text-decoration: none;
@@ -57,12 +57,14 @@ $border: 1px solid #bebdbd;
   .modal_preview_about_me_title {
     font-size: 1.8em;
     .modal_preview_period {
-      color: rgb(8, 8, 193);
+      color: rgba(58, 104, 249, 0.9);
     }
   }
+
   .modal_preview_about_me_value {
     border: none;
     margin-top: 20px;
+    width: 100%;
     height: auto;
     font-size: 1em;
     background-color: transparent;

@@ -1,8 +1,25 @@
 import React, { Component } from "react";
 import "./CompanyListPageNavBar.scss";
 import { withRouter } from "react-router-dom";
+import NavBarLogo from "../../Logo/NavBarLogo";
+import { LoginModal } from "../../Modal/LoginModal/LoginModal";
 
 export class CompanyListPageNavBar extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showModal: false
+    };
+  }
+
+  goToHome = () => {
+    this.props.history.push("/");
+  };
+
+  goToCompanyList = () => {
+    this.props.history.push("/company_list?category=3");
+  };
+
   goToMyAccount = () => {
     this.props.history.push("/my_account");
   };
@@ -11,8 +28,16 @@ export class CompanyListPageNavBar extends Component {
     this.props.history.push("/make_portfolio");
   };
 
-  goToCompanyList = () => {
-    this.props.history.push("/company_list?category=3");
+  handleOpenModal = e => {
+    this.setState({
+      showModal: true
+    });
+  };
+
+  handleCloseModal = e => {
+    this.setState({
+      showModal: false
+    });
   };
 
   render() {
@@ -20,33 +45,44 @@ export class CompanyListPageNavBar extends Component {
       <div className="CLP-navBar">
         <div className="btn-container">
           <div className="left">
-            {/* <NavBarLogo /> */}
-            <div onClick={this.goToCompanyList} className="logo_btn">
+            <NavBarLogo />
+            <div onClick={this.goToHome} className="logo_btn">
               WeWanted
             </div>
           </div>
           <div className="right">
-            {/* <div className="search-button" onClick={this.handleSearchOpenModal}> */}
-            <div className="search-button">Search</div>
-            {/* <SearchModal
-              isOpen={this.state.showSearchModal}
-              onClick={this.handleSearchCloseModal}
-            /> */}
-            <div className="vertical-line"></div>
+            <div onClick={this.goToCompanyList} className="companyList">
+              Company List
+            </div>
             <div onClick={this.goToMyAccount} className="my-account">
               My Account
             </div>
             <div className="make-portfolio" onClick={this.goToMakePortfolio}>
               Make Porfolio
             </div>
-            {/* <div className="login-signup" onClick={this.handleOpenModal}> */}
-            <div className="login-signup">Login/Signup</div>
-            <div className="logout">Logout</div>
-
-            {/* <LoginModal
+            <div
+              className={
+                window.localStorage.getItem("JsonWebToken")
+                  ? "login-signup none"
+                  : "login-signup block"
+              }
+              onClick={this.handleOpenModal}
+            >
+              Login/Signup
+            </div>
+            <LoginModal
               isOpen={this.state.showModal}
               onClick={this.handleCloseModal}
-            /> */}
+            />
+            <div
+              className={
+                window.localStorage.getItem("JsonWebToken")
+                  ? "logout block"
+                  : "logout none"
+              }
+            >
+              Logout
+            </div>
           </div>
         </div>
       </div>

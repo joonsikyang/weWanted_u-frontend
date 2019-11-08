@@ -18,9 +18,14 @@ class Routes extends React.Component {
           <Route exact path="/my_account" component={MyAccountPage} />
           <Route exact path="/company_list" component={CompanyListPage} />
           <Route exact path="/make_portfolio" component={MakePortfolioPage} />
+          <Route path="/make_portfolio/:id" component={MakePortfolioPage} />
           <Route
             exact
             path="/preview_portfolio"
+            component={PreviewPortfolioPage}
+          />
+          <Route
+            path="/preview_portfolio/:id"
             component={PreviewPortfolioPage}
           />
           <Route

@@ -38,8 +38,11 @@ class MppPreviewModal extends React.Component {
         >
           <div>
             <>
-              <div className="portfolio_preview_modal_top_bar"></div>
               <div className="portfolio_preview_modal_page">
+                <button
+                  onClick={this.props.onClickCloseModal}
+                  className="close_modal"
+                ></button>
                 <div className="portfolio_preview_modal_container">
                   <ModalPreviewHeader
                     title={this.props.title}
@@ -59,12 +62,6 @@ class MppPreviewModal extends React.Component {
                       {myProjectList}
                     </ul>
                   </div>
-                  <button
-                    onClick={this.props.onClickCloseModal}
-                    className="close_modal"
-                  >
-                    Close
-                  </button>
                 </div>
               </div>
             </>

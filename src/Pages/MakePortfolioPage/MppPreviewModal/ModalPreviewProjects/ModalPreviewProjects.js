@@ -8,10 +8,9 @@ const ModalPreviewProjects = props => {
         <div className="modal_preview_project_title_value">
           {props.project_title}
         </div>
-        <a
-          href={props.github}
-          className="modal_preview_project_links_value"
-        ></a>
+        <a href={props.github} className="modal_preview_project_links_value">
+          ""
+        </a>
       </div>
 
       <div className="modal_preview_description_container">
