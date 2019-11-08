@@ -6,30 +6,47 @@ import "./MyAccountPage.scss";
 import "../../Styles/Reset.scss";
 import MapMyPortfolio from "./MapMyPortfolioList";
 import CompanyItem from "../CompanyListPage/ClpCompany/CompanyItem/CompanyItem";
-import { CdpCompanyInfoData } from "../CompanyListPage/ClpCompany/CompanyItem/Company_DATA";
 
 class MyAccountPage extends React.Component {
   constructor() {
     super();
     this.state = {
       portfolio: [],
-
-      my_followed_comp_list: CdpCompanyInfoData
+      job_list: []
     };
   }
 
   componentDidMount = () => {
-    fetch(`http://10.58.0.209:8000/resume`, {
+    // this.fetchResumeList();
+    this.fetchFollowedJobList();
+  };
+
+  // fetchResumeList = () => {
+  //   fetch(`http://10.58.0.209:8000/resume`, {
+  //     method: "get",
+  //     headers: {
+  //       Authorization: window.localStorage.JsonWebToken
+  //     }
+  //   })
+  //     .then(response => response.json())
+  //     .then(response => {
+  //       console.log(response);
+
+  //       // this.setState({ portfolio: response.resume_list });
+  //     });
+  // };
+
+  fetchFollowedJobList = () => {
+    fetch(`http://10.58.7.182:8001/job/my_account`, {
       method: "get",
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndlY29kZUBuYXZlci5jb20ifQ.fJay4OFcWhqdx3qBy0TV9U4iSxXn8IDNthJPqsrl1wE"
+        Authorization: window.localStorage.JsonWebToken
       }
     })
       .then(response => response.json())
       .then(response => {
-        console.log(response.resume_list);
-        this.setState({ portfolio: response.resume_list });
+        console.log(response);
+        this.setState({ job_list: response.data });
       });
   };
 
@@ -38,25 +55,28 @@ class MyAccountPage extends React.Component {
   };
 
   render() {
-    const portfolioList = this.state.portfolio.map((eachPortfolio, i) => (
-      <MapMyPortfolio
-        key={i}
-        title={eachPortfolio.title}
-        dateCreated={eachPortfolio.created_at.slice(0, 10)}
-        completed={eachPortfolio.saving_type}
-        portfolioId={eachPortfolio.id}
-      />
-    ));
+    // const portfolioList = this.state.portfolio.map((eachPortfolio, i) => (
+    //   <MapMyPortfolio
+    //     key={i}
+    //     title={eachPortfolio.title}
+    //     dateCreated={eachPortfolio.created_at.slice(0, 10)}
+    //     completed={eachPortfolio.saving_type}
+    //     portfolioId={eachPortfolio.id}
+    //   />
+    // ));
 
-    const companyList = this.state.my_followed_comp_list.map((e, i) => (
+    const companyList = this.state.job_list.map((e, i) => (
       <CompanyItem
         key={i}
-        img={e.img}
-        positionName={e.positionName}
-        companyName={e.companyName}
-        city={e.city}
-        country={e.country}
-        // deadLine={e.company.deadLine}
+        img={e.company.main_image}
+        positionName={e.job.position}
+        companyName={e.company.company_name}
+        city={e.company.city}
+        country={e.company.country}
+        deadLine={e.job.dead_line}
+        jobId={e.job.job_id}
+        follow={e.follow}
+        refetch={this.props.refetch}
       />
     ));
 
@@ -82,7 +102,7 @@ class MyAccountPage extends React.Component {
             >
               New Portfolio
             </button>
-            <div className="portfolio_list_container">{portfolioList}</div>
+            {/* <div className="portfolio_list_container">{portfolioList}</div> */}
           </div>
         </div>
         <HomePageFooter />

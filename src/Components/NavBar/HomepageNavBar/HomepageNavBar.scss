@@ -5,7 +5,6 @@ button {
 .homepage-navBar {
   display: flex;
   align-items: center;
-  // background-color: rgb(19, 18, 18);
   background-color: #fff;
   position: fixed;
   width: 100%;
@@ -39,17 +38,12 @@ button {
       align-items: center;
       .vertical-line {
         width: 2px;
-        // background-color: #efefef;
         background-color: #333;
         height: 14px;
         margin: 0px 13px;
       }
-      .search-button,
-      .my-account,
-      .make-portfolio,
       .login-signup,
       .logout {
-        // color: #efefef;
         color: #333;
         vertical-align: middle;
         font-size: 14px;
@@ -60,6 +54,16 @@ button {
           cursor: pointer;
           text-decoration: underline;
         }
+      }
+      .logout:hover {
+        color: red;
+        text-decoration: none;
+      }
+      .block {
+        display: block;
+      }
+      .none {
+        display: none;
       }
     }
   }

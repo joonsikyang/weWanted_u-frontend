@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import "./CompanyListPage.scss";
 import CompanyListPageNavBar from "Components/NavBar/CompanyListPageNavBar";
 import ClpCategory from "./ClpCategory";
-import ClpFilter from "./ClpFilter";
 import CompanyItem from "./ClpCompany/CompanyItem/CompanyItem";
 import Slick from "./Slick";
 import "slick-carousel/slick/slick.css";
@@ -44,7 +43,6 @@ export class CompanyListPage extends Component {
     })
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         this.setState({
           isLoading: false,
           data: response.data,
@@ -81,10 +79,7 @@ export class CompanyListPage extends Component {
           <ClpCategory onClick={this.handleCategoryClick} />
           <Slick fetchedData={this.state.skillData} />
         </div>
-        <div className="filter_companyList_container">
-          <ClpFilter />
-          {loading}
-        </div>
+        <div className="filter_companyList_container">{loading}</div>
       </div>
     );
   }

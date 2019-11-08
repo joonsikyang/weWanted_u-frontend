@@ -16,9 +16,11 @@ export class LsupCategory extends Component {
   };
 
   handleOpenModal = e => {
-    this.setState({
-      showModal: true
-    });
+    window.localStorage.JsonWebToken
+      ? alert("이미 로그인하셨습니다.")
+      : this.setState({
+          showModal: true
+        });
   };
 
   handleCloseModal = e => {

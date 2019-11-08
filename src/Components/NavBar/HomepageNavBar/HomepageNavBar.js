@@ -24,6 +24,11 @@ export class HomepageNavBar extends Component {
     });
   };
 
+  handleLogout = () => {
+    window.localStorage.removeItem("JsonWebToken");
+    document.location.reload();
+  };
+
   render() {
     return (
       <div className="homepage-navBar">
@@ -33,13 +38,30 @@ export class HomepageNavBar extends Component {
             <div className="logo_btn">WeWanted</div>
           </div>
           <div className="right">
-            <div className="login-signup" onClick={this.handleOpenModal}>
+            <div
+              className={
+                window.localStorage.JsonWebToken
+                  ? "login-signup none"
+                  : "login-signup block"
+              }
+              onClick={this.handleOpenModal}
+            >
               Login | Signup
             </div>
             <LoginModal
               isOpen={this.state.showModal}
               onClick={this.handleCloseModal}
             />
+            <div
+              className={
+                window.localStorage.JsonWebToken
+                  ? "logout block"
+                  : "logout none"
+              }
+              onClick={this.handleLogout}
+            >
+              Logout
+            </div>
           </div>
         </div>
       </div>
