@@ -17,24 +17,23 @@ class MyAccountPage extends React.Component {
   }
 
   componentDidMount = () => {
-    // this.fetchResumeList();
+    this.fetchResumeList();
     this.fetchFollowedJobList();
   };
 
-  // fetchResumeList = () => {
-  //   fetch(`http://10.58.0.209:8000/resume`, {
-  //     method: "get",
-  //     headers: {
-  //       Authorization: window.localStorage.JsonWebToken
-  //     }
-  //   })
-  //     .then(response => response.json())
-  //     .then(response => {
-  //       console.log(response);
-
-  //       // this.setState({ portfolio: response.resume_list });
-  //     });
-  // };
+  fetchResumeList = () => {
+    fetch(`http://10.58.7.182:8001/resume`, {
+      method: "get",
+      headers: {
+        Authorization: window.localStorage.JsonWebToken
+      }
+    })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+        this.setState({ portfolio: response.resume_list });
+      });
+  };
 
   fetchFollowedJobList = () => {
     fetch(`http://10.58.7.182:8001/job/my_account`, {
@@ -55,15 +54,15 @@ class MyAccountPage extends React.Component {
   };
 
   render() {
-    // const portfolioList = this.state.portfolio.map((eachPortfolio, i) => (
-    //   <MapMyPortfolio
-    //     key={i}
-    //     title={eachPortfolio.title}
-    //     dateCreated={eachPortfolio.created_at.slice(0, 10)}
-    //     completed={eachPortfolio.saving_type}
-    //     portfolioId={eachPortfolio.id}
-    //   />
-    // ));
+    const portfolioList = this.state.portfolio.map((eachPortfolio, i) => (
+      <MapMyPortfolio
+        key={i}
+        title={eachPortfolio.title}
+        dateCreated={eachPortfolio.created_at.slice(0, 10)}
+        completed={eachPortfolio.saving_type}
+        portfolioId={eachPortfolio.id}
+      />
+    ));
 
     const companyList = this.state.job_list.map((e, i) => (
       <CompanyItem
@@ -102,7 +101,7 @@ class MyAccountPage extends React.Component {
             >
               New Portfolio
             </button>
-            {/* <div className="portfolio_list_container">{portfolioList}</div> */}
+            <div className="portfolio_list_container">{portfolioList}</div>
           </div>
         </div>
         <HomePageFooter />

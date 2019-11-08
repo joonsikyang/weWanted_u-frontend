@@ -41,17 +41,14 @@ class MakePortfolioPage extends React.Component {
   };
 
   fetchSavingType = () => {
-    // let token = localStorage.getItem("JsonWebToken") || "";
-    fetch(`http://10.58.0.209:8000/resume/savingtype`, {
+    fetch(`http://10.58.7.182:8001/resume/savingtype`, {
       method: "get",
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndlY29kZUBuYXZlci5jb20ifQ.fJay4OFcWhqdx3qBy0TV9U4iSxXn8IDNthJPqsrl1wE"
+        Authorization: window.localStorage.JsonWebToken
       }
     })
       .then(response => response.json())
       .then(response => {
-        // console.log(response);
         this.setState({
           completed_button: response.saving_type[0].id,
           save_button: response.saving_type[1].id
@@ -60,12 +57,10 @@ class MakePortfolioPage extends React.Component {
   };
 
   fetchResumeToEdit = () => {
-    // let token = localStorage.getItem("JsonWebToken") || "";
-    fetch(`http://10.58.0.209:8000/resume/${this.props.match.params.id}`, {
+    fetch(`http://10.58.7.182:8001/resume/${this.props.match.params.id}`, {
       method: "get",
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndlY29kZUBuYXZlci5jb20ifQ.fJay4OFcWhqdx3qBy0TV9U4iSxXn8IDNthJPqsrl1wE"
+        Authorization: window.localStorage.JsonWebToken
       }
     })
       .then(response => response.json())
@@ -117,13 +112,12 @@ class MakePortfolioPage extends React.Component {
   };
 
   postEditedFetch = () => {
-    // let token = localStorage.getItem("JsonWebToken") || "";
-    fetch(`http://10.58.0.209:8000/resume/${this.props.match.params.id}`, {
+    fetch(`http://10.58.7.182:8001/resume/${this.props.match.params.id}`, {
       method: "post",
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndlY29kZUBuYXZlci5jb20ifQ.fJay4OFcWhqdx3qBy0TV9U4iSxXn8IDNthJPqsrl1wE"
+        Authorization: window.localStorage.JsonWebToken
       },
+
       body: JSON.stringify(this.state)
     })
       .then(response => response.json())
@@ -131,12 +125,10 @@ class MakePortfolioPage extends React.Component {
   };
 
   postNewFetch = () => {
-    // let token = localStorage.getItem("JsonWebToken") || "";
-    fetch(`http://10.58.0.209:8000/resume`, {
+    fetch(`http://10.58.7.182:8001/resume`, {
       method: "post",
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndlY29kZUBuYXZlci5jb20ifQ.fJay4OFcWhqdx3qBy0TV9U4iSxXn8IDNthJPqsrl1wE"
+        Authorization: window.localStorage.JsonWebToken
       },
       body: JSON.stringify(this.state)
     })
