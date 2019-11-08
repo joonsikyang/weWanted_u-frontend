@@ -14,6 +14,8 @@ export class ClpCompany extends Component {
         country={e.company.country}
         deadLine={e.job.dead_line}
         jobId={e.job.job_id}
+        follow={e.follow}
+        refetch={this.props.refetch}
       />
     ));
     return <ul>{companyList}</ul>;
